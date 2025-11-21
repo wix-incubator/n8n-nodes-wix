@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies
         run: 'yarn install'
 
-      - name: Install peer dependencies
-        run: 'yarn add n8n-workflow@latest'
-
       - name: Run lint
         run: 'yarn run lint'
 
