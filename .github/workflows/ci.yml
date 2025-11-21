@@ -19,7 +19,11 @@ jobs:
           node-version: '24'
 
       - name: Install dependencies
-        run: 'yarn install'
+        run: 'yarn install --immutable'
+
+      # 👇 Explicit peer dependency installation
+      - name: Install peer dependencies
+        run: 'yarn add n8n-workflow@latest --no-lockfile --mode=skip-build'
 
       - name: Run lint
         run: 'yarn run lint'
