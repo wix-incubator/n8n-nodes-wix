@@ -6,7 +6,7 @@ export class Wix implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Wix',
 		name: 'wix',
-		icon: { light: 'file:wix.svg', dark: 'file:wix.dark.svg' },
+		icon: { light: 'file:../../icons/wix.svg', dark: 'file:../../icons/wix.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
