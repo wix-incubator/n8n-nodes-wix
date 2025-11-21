@@ -21,7 +21,6 @@ jobs:
       - name: Install dependencies
         run: 'yarn install'
 
-      # 👇 Explicit peer dependency installation
       - name: Install peer dependencies
         run: 'yarn add n8n-workflow@latest'
 
