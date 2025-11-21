@@ -1,5 +1,6 @@
 import type {
 	IAuthenticateGeneric,
+	Icon,
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
@@ -10,8 +11,11 @@ export class WixApi implements ICredentialType {
 
 	displayName = 'Wix API';
 
+	icon: Icon = { light: 'file:../icons/wix.svg', dark: 'file:../icons/wix.dark.svg' };
+
 	// Link to your community node's README
-	documentationUrl = 'https://github.com/org/@wix/-wix?tab=readme-ov-file#credentials';
+	documentationUrl =
+		'https://dev.wix.com/docs/api-reference/articles/authentication/about-api-keys#about-api-keys';
 
 	properties: INodeProperties[] = [
 		{
@@ -22,21 +26,34 @@ export class WixApi implements ICredentialType {
 			required: true,
 			default: '',
 		},
+		{
+			displayName: 'Site ID',
+			name: 'siteId',
+			type: 'string',
+			typeOptions: {},
+			required: true,
+			description: 'The Wix Site to use for the API',
+			default: '',
+		},
 	];
 
 	authenticate: IAuthenticateGeneric = {
 		type: 'generic',
 		properties: {
 			headers: {
-				'x-api-key': '={{$credentials.apiKey}}',
+				'wix-site-id': '={{$credentials?.siteId}}',
+				Authorization: '={{$credentials?.apiKey}}',
 			},
 		},
 	};
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://www.wixapis.com',
-			url: '/v1/user',
+			url: 'https://www.wixapis.com/site-properties/v4/properties?fields.paths=locale&fields.paths=businessName',
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
 		},
 	};
 }
