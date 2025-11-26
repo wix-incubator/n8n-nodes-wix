@@ -5,38 +5,15 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-	IHttpRequestOptions,
-	IHttpRequestMethods,
 } from 'n8n-workflow';
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
-import * as crypto from 'crypto';
-
-const credentialType = 'wixApi';
-
-async function wixApiRequest(
-	this: IHookFunctions | IWebhookFunctions,
-	method: IHttpRequestMethods,
-	endpoint: string,
-	body: IDataObject | undefined = undefined,
-): Promise<IDataObject> {
-	const options: IHttpRequestOptions = {
-		method,
-		url: `https://www.wixapis.com${endpoint}`,
-		json: true,
-	};
-
-	if (body) {
-		options.body = body;
-	}
-
-	const credentials = await this.getCredentials(credentialType);
-	options.headers = {
-		'wix-site-id': credentials.siteId as string,
-		Authorization: credentials.apiKey as string,
-	};
-
-	return this.helpers.httpRequestWithAuthentication.call(this, credentialType, options);
-}
+import { wixAutomationsTriggers } from './config/wix-automations-triggers';
+import { wixApiRequest } from './utils/wix-api-request';
+import {
+	hasWebhookWithUrl,
+	createWixAutomationsRequest,
+	findAutomationWithWebhookUrl,
+} from './utils/wix-automations';
 
 export class WixTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -82,10 +59,6 @@ export class WixTrigger implements INodeType {
 						name: 'API Key',
 						value: 'apiKey',
 					},
-					{
-						name: 'OAuth2',
-						value: 'oAuth2',
-					},
 				],
 				default: 'apiKey',
 			},
@@ -93,21 +66,11 @@ export class WixTrigger implements INodeType {
 				displayName: 'Trigger On',
 				name: 'event',
 				type: 'options',
-				default: 'order_placed',
-				options: [
-					{
-						name: 'Order Placed',
-						value: 'order_placed',
-					},
-					{
-						name: 'Product Created',
-						value: 'product_created',
-					},
-					{
-						name: 'Order Placed Legacy',
-						value: 'order_placed_legacy',
-					},
-				],
+				default: '',
+				options: Object.values(wixAutomationsTriggers).map((trigger) => ({
+					name: trigger.displayName,
+					value: trigger.triggerKey,
+				})),
 			},
 		],
 	};
@@ -125,16 +88,8 @@ export class WixTrigger implements INodeType {
 						const automation = (await wixApiRequest.call(this, 'GET', endpoint)) as IDataObject;
 
 						// Verify the automation still has our webhook URL
-						const actions = (automation.actions as IDataObject[]) || [];
-						for (const action of actions) {
-							const appDefinedInfo = (action as IDataObject).appDefinedInfo as IDataObject;
-							const inputMapping = appDefinedInfo?.inputMapping as IDataObject;
-							if (
-								appDefinedInfo?.actionKey === 'webhooks-action' &&
-								inputMapping?.url === webhookUrl
-							) {
-								return true;
-							}
+						if (hasWebhookWithUrl(automation, webhookUrl as string)) {
+							return true;
 						}
 					} catch {
 						// Automation doesn't exist or is invalid, clear the stored ID
@@ -153,19 +108,13 @@ export class WixTrigger implements INodeType {
 					// Handle both array and object with automations property
 					const automationList = Array.isArray(automations) ? automations : [];
 
-					for (const automation of automationList) {
-						const actions = ((automation as IDataObject).actions as IDataObject[]) || [];
-						for (const action of actions) {
-							const appDefinedInfo = (action as IDataObject).appDefinedInfo as IDataObject;
-							const inputMapping = appDefinedInfo?.inputMapping as IDataObject;
-							if (
-								appDefinedInfo?.actionKey === 'webhooks-action' &&
-								inputMapping?.url === webhookUrl
-							) {
-								webhookData.automationId = automation.id;
-								return true;
-							}
-						}
+					const foundAutomation = findAutomationWithWebhookUrl(
+						automationList,
+						webhookUrl as string,
+					);
+					if (foundAutomation) {
+						webhookData.automationId = foundAutomation.id;
+						return true;
 					}
 				} catch {
 					// Query endpoint might not exist or failed, return false
@@ -175,68 +124,16 @@ export class WixTrigger implements INodeType {
 				return false;
 			},
 			async create(this: IHookFunctions): Promise<boolean> {
-				const webhookUrl = this.getNodeWebhookUrl('default');
+				const webhookUrl = this.getNodeWebhookUrl('default') as string;
 				const event = this.getNodeParameter('event') as string;
 				const webhookData = this.getWorkflowStaticData('node');
 
-				// Map event to trigger configuration
-				const triggerConfig: { [key: string]: { appId: string; triggerKey: string } } = {
-					product_created: {
-						appId: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
-						triggerKey: 'wixstores-catalog-product-created-product_created',
-					},
-					order_placed: {
-						appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
-						triggerKey: 'wix_e_commerce-order_placed',
-					},
-					order_placed_legacy: {
-						appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
-						triggerKey: 'wixstores-legacy_order_placed_v1',
-					},
-				};
-
-				const trigger = triggerConfig[event];
+				const trigger = wixAutomationsTriggers[event];
 				if (!trigger) {
 					throw new NodeOperationError(this.getNode(), `Unknown event: ${event}`);
 				}
 
-				const actionId = crypto.randomUUID();
-
-				const automationBody = {
-					automation: {
-						name: `n8n Webhook - ${event}`,
-						origin: 'USER',
-						settings: {
-							hidden: false,
-							readonly: false,
-						},
-						configuration: {
-							status: 'ACTIVE',
-							trigger: {
-								appId: trigger.appId,
-								triggerKey: trigger.triggerKey,
-								filters: [],
-							},
-							rootActionIds: [actionId],
-							actions: {
-								[actionId]: {
-									id: actionId,
-									type: 'APP_DEFINED',
-									namespace: 'webhooks-action-1',
-									appDefinedInfo: {
-										appId: '139ef4fa-c108-8f9a-c7be-d5f492a2c939',
-										actionKey: 'webhooks-action',
-										inputMapping: {
-											url: webhookUrl,
-											method: 'POST',
-											hasCustomParams: false,
-										},
-									},
-								},
-							},
-						},
-					},
-				};
+				const automationBody = createWixAutomationsRequest(webhookUrl, event, trigger);
 
 				const endpoint = '/automations-service/v2/automations';
 				const responseData = (await wixApiRequest.call(
