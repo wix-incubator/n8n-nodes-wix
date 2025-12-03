@@ -67,9 +67,9 @@ export class WixTrigger implements INodeType {
 				name: 'event',
 				type: 'options',
 				default: '',
-				options: Object.values(wixAutomationsTriggers).map((trigger) => ({
-					name: trigger.displayName,
-					value: trigger.triggerKey,
+				options: Object.keys(wixAutomationsTriggers).map((key) => ({
+					name: wixAutomationsTriggers[key].displayName,
+					value: key,
 				})),
 			},
 		],
