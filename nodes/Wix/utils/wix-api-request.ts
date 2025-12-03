@@ -4,12 +4,13 @@ import type {
 	IDataObject,
 	IHttpRequestOptions,
 	IHttpRequestMethods,
+	ILoadOptionsFunctions,
 } from 'n8n-workflow';
 
 const credentialType = 'wixApi';
 
 export async function wixApiRequest(
-	this: IHookFunctions | IWebhookFunctions,
+	this: IHookFunctions | IWebhookFunctions | ILoadOptionsFunctions,
 	method: IHttpRequestMethods,
 	endpoint: string,
 	body: IDataObject | undefined = undefined,

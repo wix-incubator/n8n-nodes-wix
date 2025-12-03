@@ -1,6 +1,10 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
-import { userDescription } from './resources/user';
-import { companyDescription } from './resources/company';
+import { orderDescription } from './resources/order';
+import { productDescription } from './resources/product';
+import { postDescription } from './resources/post';
+import { contactDescription } from './resources/contact';
+import { communicationDescription } from './resources/communication';
+import { getOrders } from './listSearch/order/getOrders';
 
 export class Wix implements INodeType {
 	description: INodeTypeDescription = {
@@ -33,18 +37,39 @@ export class Wix implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'User',
-						value: 'user',
+						name: 'Communication',
+						value: 'communication',
 					},
 					{
-						name: 'Company',
-						value: 'company',
+						name: 'Contact',
+						value: 'contact',
+					},
+					{
+						name: 'Order',
+						value: 'order',
+					},
+					{
+						name: 'Post',
+						value: 'post',
+					},
+					{
+						name: 'Product',
+						value: 'product',
 					},
 				],
-				default: 'user',
+				default: 'order',
 			},
-			...userDescription,
-			...companyDescription,
+			...orderDescription,
+			...productDescription,
+			...postDescription,
+			...contactDescription,
+			...communicationDescription,
 		],
+	};
+
+	methods = {
+		listSearch: {
+			getOrders,
+		},
 	};
 }
