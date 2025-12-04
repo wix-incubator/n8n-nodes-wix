@@ -26,27 +26,16 @@ export async function getOrders(
 	filter?: string,
 	paginationToken?: string,
 ): Promise<INodeListSearchResult> {
-	const limit = 100;
-	const cursorPaging: IDataObject = {
-		limit,
-	};
-
-	if (paginationToken) {
-		cursorPaging.cursor = paginationToken;
-	}
 
 	const body: IDataObject = {
-		cursorPaging,
+		search: {
+			cursorPaging: {
+				limit: 100,
+				...(paginationToken ? { cursor: paginationToken } : {}),
+			},
+			...(filter ? { filter: { $or: [ { number: { $startsWith: filter } }, { 'buyerInfo.email': { $startsWith: filter } } ] } } : {}),
+		},
 	};
-
-	if (filter) {
-		body.filter = {
-			$or: [
-				{ number: { $contains: filter } },
-				{ 'buyerInfo.email': { $contains: filter } },
-			],
-		};
-	}
 
 	const responseData = (await wixApiRequest.call(
 		this,
