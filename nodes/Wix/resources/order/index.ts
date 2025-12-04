@@ -2,7 +2,7 @@ import type { INodeProperties } from 'n8n-workflow';
 import { orderGetDescription } from './get';
 import { orderCreateDescription } from './create';
 import { orderUpdateDescription } from './update';
-import { orderSearchDescription } from './search';
+import { orderGetManyDescription } from './getMany';
 import { orderCancelDescription } from './cancel';
 
 const showOnlyForOrders = {
@@ -56,10 +56,10 @@ export const orderDescription: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'Search',
-				value: 'search',
-				action: 'Search orders',
-				description: 'Search and list orders',
+				name: 'Get Many',
+				value: 'getMany',
+				action: 'Get many orders',
+				description: 'Query and list orders',
 				routing: {
 					request: {
 						method: 'POST',
@@ -85,7 +85,7 @@ export const orderDescription: INodeProperties[] = [
 	...orderGetDescription,
 	...orderCreateDescription,
 	...orderUpdateDescription,
-	...orderSearchDescription,
+	...orderGetManyDescription,
 	...orderCancelDescription,
 ];
 
