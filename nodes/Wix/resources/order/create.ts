@@ -109,8 +109,8 @@ export const orderCreateDescription: INodeProperties[] = [
 		routing: {
 			send: {
 				type: 'body',
-				property: 'lineItems',
-				value: '={{ $value.map(item => ({ itemType: item.itemType, catalogReference: item.catalogReference?.catalogReferenceValues, quantity: item.quantity, price: { amount:item.price }, productName: item.productName })) }}',
+				property: 'order.lineItems',
+				value: '={{ $value.lineItem ? $value.lineItem.map(item => ({ itemType: item.itemType, catalogReference: item.catalogReference?.catalogReferenceValues, quantity: item.quantity, price: { amount: item.price }, productName: item.productName })) : [] }}',
 			},
 		},
 	},
@@ -158,8 +158,171 @@ export const orderCreateDescription: INodeProperties[] = [
 		routing: {
 			send: {
 				type: 'body',
-				property: 'buyerInfo',
-				value: '={{ $value.buyerInfoValues }}',
+				property: 'order.buyerInfo',
+				value: '={{ Object.fromEntries(Object.entries($value.buyerInfoValues || {}).filter(([_, v]) => v !== "" && v !== null && v !== undefined)) }}',
+			},
+		},
+	},
+	{
+		displayName: 'Channel Info',
+		name: 'channelInfo',
+		type: 'fixedCollection',
+		displayOptions: {
+			show: showOnlyForOrderCreate,
+		},
+		default: {},
+		required: true,
+		description: 'Channel information for the order',
+		options: [
+			{
+				displayName: 'Channel Info',
+				name: 'channelInfoValues',
+				values: [
+					{
+						displayName: 'Channel Type',
+						name: 'type',
+						type: 'options',
+						options: [
+							{
+								name: 'Amazon',
+								value: 'AMAZON',
+							},
+							{
+								name: 'Backoffice Merchant',
+								value: 'BACKOFFICE_MERCHANT',
+							},
+							{
+								name: 'ClassPass',
+								value: 'CLASS_PASS',
+							},
+							{
+								name: 'eBay',
+								value: 'EBAY',
+							},
+							{
+								name: 'Etsy',
+								value: 'ETSY',
+							},
+							{
+								name: 'Facebook',
+								value: 'FACEBOOK',
+							},
+							{
+								name: 'Faire Com',
+								value: 'FAIRE_COM',
+							},
+							{
+								name: 'Global-E',
+								value: 'GLOBAL_E',
+							},
+							{
+								name: 'Other Platform',
+								value: 'OTHER_PLATFORM',
+							},
+							{
+								name: 'PayPal Agentic Checkout',
+								value: 'PAYPAL_AGENTIC_CHECKOUT',
+							},
+							{
+								name: 'Point of Sale',
+								value: 'POS',
+							},
+							{
+								name: 'TikTok',
+								value: 'TIKTOK',
+							},
+							{
+								name: 'Web',
+								value: 'WEB',
+							},
+							{
+								name: 'Wish',
+								value: 'WISH',
+							},
+							{
+								name: 'Wix App Store',
+								value: 'WIX_APP_STORE',
+							},
+							{
+								name: 'Wix Invoices',
+								value: 'WIX_INVOICES',
+							},
+						],
+						default: 'WEB',
+						required: true,
+					},
+					{
+						displayName: 'External Order ID',
+						name: 'externalOrderId',
+						type: 'string',
+						default: '',
+						description: 'A unique identifier for the order in an external system',
+					},
+					{
+						displayName: 'External Order URL',
+						name: 'externalOrderUrl',
+						type: 'string',
+						default: '',
+						description: 'A URL linking to the order in an external system',
+					},
+				],
+			},
+		],
+		routing: {
+			send: {
+				type: 'body',
+				property: 'order.channelInfo',
+				value: '={{ Object.fromEntries(Object.entries($value.channelInfoValues || {}).filter(([_, v]) => v !== "" && v !== null && v !== undefined)) }}',
+			},
+		},
+	},
+	{
+		displayName: 'Price Summary',
+		name: 'priceSummary',
+		type: 'fixedCollection',
+		displayOptions: {
+			show: showOnlyForOrderCreate,
+		},
+		default: {},
+		required: true,
+		description: 'Price summary for the order',
+		options: [
+			{
+				displayName: 'Price Summary',
+				name: 'priceSummaryValues',
+				values: [
+					{
+						displayName: 'Subtotal',
+						name: 'subtotal',
+						type: 'string',
+						default: '',
+						required: true,
+						description: 'The subtotal amount (e.g., "100.00")',
+					},
+					{
+						displayName: 'Total',
+						name: 'total',
+						type: 'string',
+						default: '',
+						required: true,
+						description: 'The total amount (e.g., "100.00")',
+					},
+					{
+						displayName: 'Currency',
+						name: 'currency',
+						type: 'string',
+						default: 'USD',
+						required: true,
+						description: 'The currency code (e.g., USD, EUR)',
+					},
+				],
+			},
+		],
+		routing: {
+			send: {
+				type: 'body',
+				property: 'order.priceSummary',
+				value: '={{ { subtotal: { amount: $value.priceSummaryValues?.subtotal, currency: $value.priceSummaryValues?.currency || "USD" }, total: { amount: $value.priceSummaryValues?.total, currency: $value.priceSummaryValues?.currency || "USD" } } }}',
 			},
 		},
 	},
@@ -174,48 +337,6 @@ export const orderCreateDescription: INodeProperties[] = [
 		default: {},
 		description: 'Additional optional fields for the order',
 		options: [
-			{
-				displayName: 'Payment Info',
-				name: 'paymentInfo',
-				type: 'fixedCollection',
-				default: {},
-				description: 'Payment information for the order',
-				options: [
-					{
-						displayName: 'Payment Info',
-						name: 'paymentInfoValues',
-						values: [
-							{
-								displayName: 'Payment Method',
-								name: 'method',
-								type: 'options',
-								options: [
-									{
-										name: 'Online',
-										value: 'ONLINE',
-									},
-									{
-										name: 'Offline',
-										value: 'OFFLINE',
-									},
-									{
-										name: 'Manual',
-										value: 'MANUAL',
-									},
-								],
-								default: 'ONLINE',
-							},
-							{
-								displayName: 'Payment Provider',
-								name: 'paymentProvider',
-								type: 'string',
-								default: '',
-								description: 'The payment provider name',
-							},
-						],
-					},
-				],
-			},
 			{
 				displayName: 'Billing Info',
 				name: 'billingInfo',
@@ -329,6 +450,55 @@ export const orderCreateDescription: INodeProperties[] = [
 				],
 			},
 			{
+				displayName: 'Currency',
+				name: 'currency',
+				type: 'string',
+				default: 'USD',
+				description: 'The currency code (e.g., USD, EUR)',
+			},
+			{
+				displayName: 'Payment Info',
+				name: 'paymentInfo',
+				type: 'fixedCollection',
+				default: {},
+				description: 'Payment information for the order',
+				options: [
+					{
+						displayName: 'Payment Info',
+						name: 'paymentInfoValues',
+						values: [
+							{
+								displayName: 'Payment Method',
+								name: 'method',
+								type: 'options',
+								options: [
+									{
+										name: 'Manual',
+										value: 'MANUAL',
+									},
+									{
+										name: 'Offline',
+										value: 'OFFLINE',
+									},
+									{
+										name: 'Online',
+										value: 'ONLINE',
+									},
+								],
+								default: 'ONLINE',
+							},
+							{
+								displayName: 'Payment Provider',
+								name: 'paymentProvider',
+								type: 'string',
+								default: '',
+								description: 'The payment provider name',
+							},
+						],
+					},
+				],
+			},
+			{
 				displayName: 'Shipping Info',
 				name: 'shippingInfo',
 				type: 'fixedCollection',
@@ -423,19 +593,12 @@ export const orderCreateDescription: INodeProperties[] = [
 					},
 				],
 			},
-			{
-				displayName: 'Currency',
-				name: 'currency',
-				type: 'string',
-				default: 'USD',
-				description: 'The currency code (e.g., USD, EUR)',
-			},
 		],
 		routing: {
 			send: {
 				type: 'body',
-				property: '=',
-				value: '={{ Object.fromEntries(Object.entries($value).filter(([_, v]) => v !== "" && v !== null && v !== undefined).map(([k, v]) => { if (k === "billingInfo") return [k, { contactDetails: v.billingInfoValues?.contactDetails?.contactDetailsValues, address: v.billingInfoValues?.address?.addressValues }]; if (k === "shippingInfo") return [k, { deliveryType: v.shippingInfoValues?.deliveryType, address: v.shippingInfoValues?.address?.addressValues }]; if (k === "paymentInfo") return [k, v.paymentInfoValues]; return [k, v]; })) }}',
+				property: 'order',
+				value: '={{ Object.fromEntries(Object.entries($value).filter(([_, v]) => v !== "" && v !== null && v !== undefined).map(([k, v]) => { if (k === "billingInfo") return [k, { contactDetails: v.billingInfoValues?.contactDetails?.contactDetailsValues, address: v.billingInfoValues?.address?.addressValues }]; if (k === "shippingInfo") return [k, { deliveryType: v.shippingInfoValues?.deliveryType, address: v.shippingInfoValues?.address?.addressValues }]; if (k === "paymentInfo") return [k, v.paymentInfoValues]; if (k === "currency") return [k, v]; return [k, v]; })) }}',
 			},
 		},
 	},
