@@ -23,7 +23,7 @@ export const orderGetManyDescription: INodeProperties[] = [
 				pagination: {
 					type: 'generic',
 					properties: {
-						continue: '={{ $response.pagingMetadata?.cursor }}',
+						continue: '={{ $response.body.metadata?.cursors?.next }}',
 						request: {
 							body: {
 								search: {
