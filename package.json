@@ -40,6 +40,7 @@
 	"devDependencies": {
 		"@n8n/node-cli": "*",
 		"@types/node": "^24.10.1",
+		"@wix/ecom": "^1.0.1501",
 		"eslint": "9.32.0",
 		"prettier": "3.6.2",
 		"release-it": "^19.0.4",

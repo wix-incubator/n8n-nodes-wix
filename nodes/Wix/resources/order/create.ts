@@ -49,27 +49,60 @@ export const orderCreateDescription: INodeProperties[] = [
 									{
 										displayName: 'App ID',
 										name: 'appId',
-										type: 'string',
-										default: '',
+										type: 'options',
+										options: [
+											{
+												name: 'Wix Bookings',
+												value: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+											},
+											{
+												name: 'Wix Restaurants',
+												value: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
+											},
+											{
+												name: 'Wix Stores',
+												value: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
+											},
+										],
+										default: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
 										required: true,
 										description: 'The ID of the app that owns the catalog',
+										typeOptions: {
+											allowAny: true,
+										},
 									},
 								],
 							},
 						],
-					},
+					},					
 					{
 						displayName: 'Item Type',
 						name: 'itemType',
 						type: 'options',
 						options: [
 							{
+								name: 'Custom',
+								value: 'CUSTOM',
+							},
+							{
 								name: 'Digital',
 								value: 'DIGITAL',
 							},
 							{
+								name: 'Gift Card',
+								value: 'GIFT_CARD',
+							},
+							{
 								name: 'Physical',
 								value: 'PHYSICAL',
+							},
+							{
+								name: 'Service',
+								value: 'SERVICE',
+							},
+							{
+								name: 'Unrecognised',
+								value: 'UNRECOGNISED',
 							},
 						],
 						default: 'PHYSICAL',
@@ -77,12 +110,25 @@ export const orderCreateDescription: INodeProperties[] = [
 						description: 'The type of item',
 					},
 					{
+						displayName: 'Item Type - Custom',
+						name: 'itemTypeCustom',
+						type: 'string',
+						displayOptions: {
+							show: {
+								itemType: ['CUSTOM'],
+							},
+						},
+						default: '',
+						required: true,
+						description: 'Custom item type (used when preset types are not suitable)',
+					},
+					{
 						displayName: 'Price',
 						name: 'price',
 						type: 'string',
 						default: '',
 						required: true,
-						description: 'The price of the line item (e.g., "10.00")',
+						description: 'The price of the line item (e.g., 10.00)',						
 					},
 					{
 						displayName: 'Product Name',
@@ -90,7 +136,7 @@ export const orderCreateDescription: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						required: true,
-						description: 'The name of the product',
+						description: 'The name of the product',						
 					},
 					{
 						displayName: 'Quantity',
@@ -103,6 +149,57 @@ export const orderCreateDescription: INodeProperties[] = [
 							minValue: 1,
 						},
 					},
+					{
+						displayName: 'Tax Info',
+						name: 'taxInfo',
+						type: 'fixedCollection',
+						placeholder: 'Add Tax Info',
+						default: {},
+						required: true,
+						description: 'Tax information for the line item',
+						options: [
+							{
+								displayName: 'Tax Info',
+								name: 'taxInfoValues',
+								values: [
+									{
+										displayName: 'Tax Amount',
+										name: 'taxAmount',
+										type: 'string',
+										default: '',
+										description: 'Calculated tax amount (e.g., 1.50)',
+									},
+									{
+										displayName: 'Tax Group ID',
+										name: 'taxGroupId',
+										type: 'string',
+										default: '',
+									},
+									{
+										displayName: 'Tax Included in Price',
+										name: 'taxIncludedInPrice',
+										type: 'boolean',
+										default: false,
+										description: 'Whether the price already includes tax',
+									},
+									{
+										displayName: 'Tax Rate',
+										name: 'taxRate',
+										type: 'string',
+										default: '',
+										description: 'Tax rate as a decimal (e.g., "0.10" for 10%)',
+									},
+									{
+										displayName: 'Taxable Amount',
+										name: 'taxableAmount',
+										type: 'string',
+										default: '',
+										description: 'Amount for which tax is calculated (e.g., 10.00)',
+									},
+								],
+							},
+						],
+					},
 				],
 			},
 		],
@@ -110,7 +207,7 @@ export const orderCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'order.lineItems',
-				value: '={{ $value.lineItem ? $value.lineItem.map(item => ({ itemType: item.itemType, catalogReference: item.catalogReference?.catalogReferenceValues, quantity: item.quantity, price: { amount: item.price }, productName: item.productName })) : [] }}',
+				value: '={{ $value.lineItem ? $value.lineItem.map(item => ({ itemType: item.itemType === "CUSTOM" ? { custom: item.itemTypeCustom } : { preset: item.itemType }, catalogReference: item.catalogReference?.catalogReferenceValues, quantity: item.quantity, price: { amount: item.price }, productName: { original: item.productName }, taxInfo: item.taxInfo?.taxInfoValues ? { ...(item.taxInfo.taxInfoValues.taxAmount ? { taxAmount: { amount: item.taxInfo.taxInfoValues.taxAmount } } : {}), ...(item.taxInfo.taxInfoValues.taxableAmount ? { taxableAmount: { amount: item.taxInfo.taxInfoValues.taxableAmount } } : {}), ...(item.taxInfo.taxInfoValues.taxRate ? { taxRate: item.taxInfo.taxInfoValues.taxRate } : {}), ...(item.taxInfo.taxInfoValues.taxGroupId ? { taxGroupId: item.taxInfo.taxInfoValues.taxGroupId } : {}), ...(item.taxInfo.taxInfoValues.taxIncludedInPrice !== undefined ? { taxIncludedInPrice: item.taxInfo.taxInfoValues.taxIncludedInPrice } : {}) } : {} })) : [] }}',
 			},
 		},
 	},
@@ -118,6 +215,7 @@ export const orderCreateDescription: INodeProperties[] = [
 		displayName: 'Buyer Info',
 		name: 'buyerInfo',
 		type: 'fixedCollection',
+		placeholder: 'Add Buyer Info',
 		displayOptions: {
 			show: showOnlyForOrderCreate,
 		},
@@ -144,14 +242,7 @@ export const orderCreateDescription: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						description: 'The ID of the contact',
-					},
-					{
-						displayName: 'Member ID',
-						name: 'memberId',
-						type: 'string',
-						default: '',
-						description: 'The ID of the member',
-					},
+					}
 				],
 			},
 		],
@@ -167,6 +258,7 @@ export const orderCreateDescription: INodeProperties[] = [
 		displayName: 'Channel Info',
 		name: 'channelInfo',
 		type: 'fixedCollection',
+		placeholder: 'Add Channel Info',
 		displayOptions: {
 			show: showOnlyForOrderCreate,
 		},
@@ -280,6 +372,7 @@ export const orderCreateDescription: INodeProperties[] = [
 		displayName: 'Price Summary',
 		name: 'priceSummary',
 		type: 'fixedCollection',
+		placeholder: 'Add Price Summary',
 		displayOptions: {
 			show: showOnlyForOrderCreate,
 		},
@@ -294,26 +387,50 @@ export const orderCreateDescription: INodeProperties[] = [
 					{
 						displayName: 'Subtotal',
 						name: 'subtotal',
-						type: 'string',
-						default: '',
+						type: 'fixedCollection',
+						default: {},
 						required: true,
-						description: 'The subtotal amount (e.g., "100.00")',
+						description: 'Subtotal of all line items, before discounts and before tax',
+						options: [
+							{
+								displayName: 'Subtotal',
+								name: 'subtotalValues',
+								values: [
+									{
+										displayName: 'Amount',
+										name: 'amount',
+										type: 'string',
+										default: '',
+										required: true,
+										description: 'The subtotal amount (e.g., "100.00")',
+									},
+								],
+							},
+						],
 					},
 					{
 						displayName: 'Total',
 						name: 'total',
-						type: 'string',
-						default: '',
+						type: 'fixedCollection',
+						default: {},
 						required: true,
-						description: 'The total amount (e.g., "100.00")',
-					},
-					{
-						displayName: 'Currency',
-						name: 'currency',
-						type: 'string',
-						default: 'USD',
-						required: true,
-						description: 'The currency code (e.g., USD, EUR)',
+						description: 'Order total price after discounts and tax',
+						options: [
+							{
+								displayName: 'Total',
+								name: 'totalValues',
+								values: [
+									{
+										displayName: 'Amount',
+										name: 'amount',
+										type: 'string',
+										default: '',
+										required: true,
+										description: 'The total amount (e.g., "100.00")',
+									},
+								],
+							},
+						],
 					},
 				],
 			},
@@ -322,7 +439,7 @@ export const orderCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'order.priceSummary',
-				value: '={{ { subtotal: { amount: $value.priceSummaryValues?.subtotal, currency: $value.priceSummaryValues?.currency || "USD" }, total: { amount: $value.priceSummaryValues?.total, currency: $value.priceSummaryValues?.currency || "USD" } } }}',
+				value: '={{ { subtotal: $value.priceSummaryValues?.subtotal?.subtotalValues ? { amount: $value.priceSummaryValues.subtotal.subtotalValues.amount } : {}, total: $value.priceSummaryValues?.total?.totalValues ? { amount: $value.priceSummaryValues.total.totalValues.amount } : {} } }}',
 			},
 		},
 	},
