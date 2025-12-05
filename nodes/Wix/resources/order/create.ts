@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+import { addressField, contactDetailsField } from './common';
+
 const showOnlyForOrderCreate = {
 	operation: ['create'],
 	resource: ['order'],
@@ -69,6 +71,16 @@ export const orderCreateDescription: INodeProperties[] = [
 										description: 'The ID of the app that owns the catalog',
 										typeOptions: {
 											allowAny: true,
+										},
+									},
+									{
+										displayName: 'Options',
+										name: 'options',
+										type: 'json',
+										default: '{}',
+										description: 'Additional item details in key-value pairs. Use this optional field to provide more specificity with item selection. The options field values differ depending on which catalog is providing the items.',
+										typeOptions: {
+											alwaysOpenEditWindow: false,
 										},
 									},
 								],
@@ -207,7 +219,7 @@ export const orderCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'order.lineItems',
-				value: '={{ $value.lineItem ? $value.lineItem.map(item => ({ itemType: item.itemType === "CUSTOM" ? { custom: item.itemTypeCustom } : { preset: item.itemType }, catalogReference: item.catalogReference?.catalogReferenceValues, quantity: item.quantity, price: { amount: item.price }, productName: { original: item.productName }, taxInfo: item.taxInfo?.taxInfoValues ? { ...(item.taxInfo.taxInfoValues.taxAmount ? { taxAmount: { amount: item.taxInfo.taxInfoValues.taxAmount } } : {}), ...(item.taxInfo.taxInfoValues.taxableAmount ? { taxableAmount: { amount: item.taxInfo.taxInfoValues.taxableAmount } } : {}), ...(item.taxInfo.taxInfoValues.taxRate ? { taxRate: item.taxInfo.taxInfoValues.taxRate } : {}), ...(item.taxInfo.taxInfoValues.taxGroupId ? { taxGroupId: item.taxInfo.taxInfoValues.taxGroupId } : {}), ...(item.taxInfo.taxInfoValues.taxIncludedInPrice !== undefined ? { taxIncludedInPrice: item.taxInfo.taxInfoValues.taxIncludedInPrice } : {}) } : {} })) : [] }}',
+				value: '={{ $value.lineItem ? $value.lineItem.map(item => ({ itemType: item.itemType === "CUSTOM" ? { custom: item.itemTypeCustom } : { preset: item.itemType }, ...(item.catalogReference?.catalogReferenceValues?.catalogItemId ? { catalogReference: { ...item.catalogReference.catalogReferenceValues, ...(item.catalogReference.catalogReferenceValues.options ? { options: typeof item.catalogReference.catalogReferenceValues.options === "string" ? JSON.parse(item.catalogReference.catalogReferenceValues.options) : item.catalogReference.catalogReferenceValues.options } : {}) } } : {}), quantity: item.quantity, price: { amount: item.price }, productName: { original: item.productName }, taxInfo: item.taxInfo?.taxInfoValues ? { ...(item.taxInfo.taxInfoValues.taxAmount ? { taxAmount: { amount: item.taxInfo.taxInfoValues.taxAmount } } : {}), ...(item.taxInfo.taxInfoValues.taxableAmount ? { taxableAmount: { amount: item.taxInfo.taxInfoValues.taxableAmount } } : {}), ...(item.taxInfo.taxInfoValues.taxRate ? { taxRate: item.taxInfo.taxInfoValues.taxRate } : {}), ...(item.taxInfo.taxInfoValues.taxGroupId ? { taxGroupId: item.taxInfo.taxInfoValues.taxGroupId } : {}), ...(item.taxInfo.taxInfoValues.taxIncludedInPrice !== undefined ? { taxIncludedInPrice: item.taxInfo.taxInfoValues.taxIncludedInPrice } : {}) } : {} })) : [] }}',
 			},
 		},
 	},
@@ -272,9 +284,9 @@ export const orderCreateDescription: INodeProperties[] = [
 				values: [
 					{
 						displayName: 'Channel Type',
-						name: 'type',
+						name: 'type',						
 						type: 'options',
-						options: [
+						options: [							
 							{
 								name: 'Amazon',
 								value: 'AMAZON',
@@ -306,6 +318,10 @@ export const orderCreateDescription: INodeProperties[] = [
 							{
 								name: 'Global-E',
 								value: 'GLOBAL_E',
+							},
+							{
+								name: 'None',
+								value: '',
 							},
 							{
 								name: 'Other Platform',
@@ -340,7 +356,7 @@ export const orderCreateDescription: INodeProperties[] = [
 								value: 'WIX_INVOICES',
 							},
 						],
-						default: 'WEB',
+						default: '',
 						required: true,
 					},
 					{
@@ -385,52 +401,46 @@ export const orderCreateDescription: INodeProperties[] = [
 				name: 'priceSummaryValues',
 				values: [
 					{
+						displayName: 'Discount',
+						name: 'discount',
+						type: 'string',
+						default: '',
+						description: 'Total calculated discount value (e.g., 10.00)',
+					},
+					{
+						displayName: 'Shipping',
+						name: 'shipping',
+						type: 'string',
+						default: '',
+						description: 'Total shipping price, before discounts and before tax (e.g., 5.00)',
+					},
+					{
 						displayName: 'Subtotal',
 						name: 'subtotal',
-						type: 'fixedCollection',
-						default: {},
-						required: true,
-						description: 'Subtotal of all line items, before discounts and before tax',
-						options: [
-							{
-								displayName: 'Subtotal',
-								name: 'subtotalValues',
-								values: [
-									{
-										displayName: 'Amount',
-										name: 'amount',
-										type: 'string',
-										default: '',
-										required: true,
-										description: 'The subtotal amount (e.g., "100.00")',
-									},
-								],
-							},
-						],
+						type: 'string',
+						default: '',
+						description: 'Subtotal of all line items, before discounts and before tax (e.g., 100.00)',
+					},
+					{
+						displayName: 'Tax',
+						name: 'tax',
+						type: 'string',
+						default: '',
+						description: 'Total tax on this order (e.g., 8.00)',
 					},
 					{
 						displayName: 'Total',
 						name: 'total',
-						type: 'fixedCollection',
-						default: {},
-						required: true,
-						description: 'Order total price after discounts and tax',
-						options: [
-							{
-								displayName: 'Total',
-								name: 'totalValues',
-								values: [
-									{
-										displayName: 'Amount',
-										name: 'amount',
-										type: 'string',
-										default: '',
-										required: true,
-										description: 'The total amount (e.g., "100.00")',
-									},
-								],
-							},
-						],
+						type: 'string',
+						default: '',
+						description: 'Order total price after discounts and tax (e.g., 100.00)',
+					},
+					{
+						displayName: 'Total Additional Fees',
+						name: 'totalAdditionalFees',
+						type: 'string',
+						default: '',
+						description: 'Total price of additional fees before tax (e.g., 2.00)',
 					},
 				],
 			},
@@ -439,7 +449,7 @@ export const orderCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'order.priceSummary',
-				value: '={{ { subtotal: $value.priceSummaryValues?.subtotal?.subtotalValues ? { amount: $value.priceSummaryValues.subtotal.subtotalValues.amount } : {}, total: $value.priceSummaryValues?.total?.totalValues ? { amount: $value.priceSummaryValues.total.totalValues.amount } : {} } }}',
+				value: '={{ Object.fromEntries(Object.entries({ subtotal: $value.priceSummaryValues?.subtotal ? { amount: $value.priceSummaryValues.subtotal } : null, shipping: $value.priceSummaryValues?.shipping ? { amount: $value.priceSummaryValues.shipping } : null, tax: $value.priceSummaryValues?.tax ? { amount: $value.priceSummaryValues.tax } : null, discount: $value.priceSummaryValues?.discount ? { amount: $value.priceSummaryValues.discount } : null, total: $value.priceSummaryValues?.total ? { amount: $value.priceSummaryValues.total } : null, totalAdditionalFees: $value.priceSummaryValues?.totalAdditionalFees ? { amount: $value.priceSummaryValues.totalAdditionalFees } : null }).filter(([_, v]) => v !== null)) }}',
 			},
 		},
 	},
@@ -462,107 +472,18 @@ export const orderCreateDescription: INodeProperties[] = [
 				description: 'Billing information for the order',
 				options: [
 					{
-						displayName: 'Billing Info',
-						name: 'billingInfoValues',
-						values: [
-							{
-								displayName: 'Contact Details',
-								name: 'contactDetails',
-								type: 'fixedCollection',
-								default: {},
-								description: 'Contact details for billing',
-								options: [
-									{
-										displayName: 'Contact Details',
-										name: 'contactDetailsValues',
-										values: [
-											{
-												displayName: 'First Name',
-												name: 'firstName',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'Last Name',
-												name: 'lastName',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'Phone',
-												name: 'phone',
-												type: 'string',
-												default: '',
-												description: 'Phone number',
-											},
-											{
-												displayName: 'Email',
-												name: 'email',
-												type: 'string',
-												placeholder: 'name@email.com',
-												default: '',
-											},
-										],
-									},
-								],
-							},
-							{
-								displayName: 'Address',
-								name: 'address',
-								type: 'fixedCollection',
-								default: {},
-								description: 'Billing address',
-								options: [
-									{
-										displayName: 'Address',
-										name: 'addressValues',
-										values: [
-											{
-												displayName: 'Address Line 1',
-												name: 'addressLine1',
-												type: 'string',
-												default: '',
-												description: 'Street address',
-											},
-											{
-												displayName: 'Address Line 2',
-												name: 'addressLine2',
-												type: 'string',
-												default: '',
-												description: 'Apartment, suite, etc',
-											},
-											{
-												displayName: 'City',
-												name: 'city',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'State',
-												name: 'state',
-												type: 'string',
-												default: '',
-												description: 'State or province',
-											},
-											{
-												displayName: 'Postal Code',
-												name: 'postalCode',
-												type: 'string',
-												default: '',
-												description: 'Postal or ZIP code',
-											},
-											{
-												displayName: 'Country',
-												name: 'country',
-												type: 'string',
-												default: '',
-												description: 'Country code (e.g., US)',
-											},
-										],
-									},
-								],
-							},
-						],
+					displayName: 'Billing Info',
+					name: 'billingInfoValues',
+					values: [
+						{
+							...addressField,
+							description: 'Billing address',
+						},
+						{
+							...contactDetailsField,
+							description: 'Contact details for billing',
+						},
+					],
 					},
 				],
 			},
@@ -573,149 +494,136 @@ export const orderCreateDescription: INodeProperties[] = [
 				default: 'USD',
 				description: 'The currency code (e.g., USD, EUR)',
 			},
-			{
-				displayName: 'Payment Info',
-				name: 'paymentInfo',
-				type: 'fixedCollection',
-				default: {},
-				description: 'Payment information for the order',
-				options: [
-					{
-						displayName: 'Payment Info',
-						name: 'paymentInfoValues',
-						values: [
-							{
-								displayName: 'Payment Method',
-								name: 'method',
-								type: 'options',
-								options: [
-									{
-										name: 'Manual',
-										value: 'MANUAL',
-									},
-									{
-										name: 'Offline',
-										value: 'OFFLINE',
-									},
-									{
-										name: 'Online',
-										value: 'ONLINE',
-									},
-								],
-								default: 'ONLINE',
-							},
-							{
-								displayName: 'Payment Provider',
-								name: 'paymentProvider',
-								type: 'string',
-								default: '',
-								description: 'The payment provider name',
-							},
-						],
-					},
-				],
+		{
+			displayName: 'Shipping Info',
+			name: 'shippingInfo',
+			type: 'fixedCollection',
+			default: {},
+			description: 'Shipping information for the order',
+			options: [
+				{
+					displayName: 'Shipping Info',
+					name: 'shippingInfoValues',
+					values: [
+						{
+							displayName: 'Carrier ID',
+							name: 'carrierId',
+							type: 'string',
+							default: '',
+							description: 'App Def ID of external provider which was a source of shipping info',
+						},
+						{
+							displayName: 'Logistics',
+							name: 'logistics',
+							type: 'fixedCollection',
+							default: {},
+							description: 'Shipping logistics',
+							options: [
+								{
+									displayName: 'Logistics',
+									name: 'logisticsValues',
+									values: [
+										{
+											displayName: 'Shipping Destination',
+											name: 'shippingDestination',
+											type: 'fixedCollection',
+											default: {},
+											description: 'Shipping address and contact details',
+											options: [
+												{
+													displayName: 'Shipping Destination',
+													name: 'shippingDestinationValues',
+													values: [
+														{
+															...addressField,
+															description: 'Shipping address',
+														},
+														{
+															...contactDetailsField,
+															description: 'Contact details for shipping',
+														},
+													],
+												},
+											],
+										},
+										{
+											displayName: 'Delivery Time',
+											name: 'deliveryTime',
+											type: 'string',
+											default: '',
+											description: 'Expected delivery time in free text (e.g., "3-5 business days")',
+										},
+										{
+											displayName: 'Instructions',
+											name: 'instructions',
+											type: 'string',
+											default: '',
+											description: 'Instructions for carrier',
+										},
+									],
+								},
+							],
+						},
+						{
+							displayName: 'Region',
+							name: 'region',
+							type: 'fixedCollection',
+							default: {},
+							description: 'Shipping region',
+							options: [
+								{
+									displayName: 'Region',
+									name: 'regionValues',
+									values: [
+										{
+											displayName: 'Name',
+											name: 'name',
+											type: 'string',
+											default: '',
+											description: 'Name of shipping region (e.g., "Metropolitan London")',
+										},
+									],
+								},
+							],
+						},
+						{
+							displayName: 'Shipping Code',
+							name: 'code',
+							type: 'string',
+							default: '',
+							description: 'Unique code (or ID) of selected shipping option (e.g., "usps_std_overnight")',
+						},
+						{
+							displayName: 'Shipping Cost',
+							name: 'cost',
+							type: 'string',
+							default: '',
+							description: 'Shipping costs (e.g., 10.00)',
+						},
+						{
+							displayName: 'Shipping Title',
+							name: 'title',
+							type: 'string',
+							default: '',
+							description: 'Shipping option title (e.g., "USPS Standard Overnight Delivery")',
+						},
+					],
+				},
+			],
+			routing: {
+				send: {
+					type: 'body',
+					property: 'order.shippingInfo',
+					value: '={{ Object.fromEntries(Object.entries({ carrierId: $value.shippingInfoValues?.carrierId || null, code: $value.shippingInfoValues?.code || null, title: $value.shippingInfoValues?.title || null, cost: $value.shippingInfoValues?.cost ? { price: { amount: $value.shippingInfoValues.cost } } : null, logistics: $value.shippingInfoValues?.logistics?.logisticsValues ? { shippingDestination: $value.shippingInfoValues.logistics.logisticsValues.shippingDestination?.shippingDestinationValues ? { address: $value.shippingInfoValues.logistics.logisticsValues.shippingDestination.shippingDestinationValues.address?.addressValues || null, contactDetails: $value.shippingInfoValues.logistics.logisticsValues.shippingDestination.shippingDestinationValues.contactDetails?.contactDetailsValues || null } : null, ...($value.shippingInfoValues.logistics.logisticsValues.deliveryTime ? { deliveryTime: $value.shippingInfoValues.logistics.logisticsValues.deliveryTime } : {}), ...($value.shippingInfoValues.logistics.logisticsValues.instructions ? { instructions: $value.shippingInfoValues.logistics.logisticsValues.instructions } : {}) } : null, region: $value.shippingInfoValues?.region?.regionValues?.name ? { name: $value.shippingInfoValues.region.regionValues.name } : null }).filter(([_, v]) => v !== null && v !== undefined)) }}',
+				},
 			},
-			{
-				displayName: 'Shipping Info',
-				name: 'shippingInfo',
-				type: 'fixedCollection',
-				default: {},
-				description: 'Shipping information for the order',
-				options: [
-					{
-						displayName: 'Shipping Info',
-						name: 'shippingInfoValues',
-						values: [
-							{
-								displayName: 'Delivery Type',
-								name: 'deliveryType',
-								type: 'options',
-								options: [
-									{
-										name: 'Digital',
-										value: 'DIGITAL',
-									},
-									{
-										name: 'Physical',
-										value: 'PHYSICAL',
-									},
-									{
-										name: 'Pickup',
-										value: 'PICKUP',
-									},
-									{
-										name: 'Shipment',
-										value: 'SHIPMENT',
-									},
-								],
-								default: 'SHIPMENT',
-							},
-							{
-								displayName: 'Address',
-								name: 'address',
-								type: 'fixedCollection',
-								default: {},
-								description: 'Shipping address',
-								options: [
-									{
-										displayName: 'Address',
-										name: 'addressValues',
-										values: [
-											{
-												displayName: 'Address Line 1',
-												name: 'addressLine1',
-												type: 'string',
-												default: '',
-												description: 'Street address',
-											},
-											{
-												displayName: 'Address Line 2',
-												name: 'addressLine2',
-												type: 'string',
-												default: '',
-												description: 'Apartment, suite, etc',
-											},
-											{
-												displayName: 'City',
-												name: 'city',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'State',
-												name: 'state',
-												type: 'string',
-												default: '',
-												description: 'State or province',
-											},
-											{
-												displayName: 'Postal Code',
-												name: 'postalCode',
-												type: 'string',
-												default: '',
-												description: 'Postal or ZIP code',
-											},
-											{
-												displayName: 'Country',
-												name: 'country',
-												type: 'string',
-												default: '',
-												description: 'Country code (e.g., US)',
-											},
-										],
-									},
-								],
-							},
-						],
-					},
-				],
-			},
+		},
 		],
 		routing: {
 			send: {
 				type: 'body',
 				property: 'order',
-				value: '={{ Object.fromEntries(Object.entries($value).filter(([_, v]) => v !== "" && v !== null && v !== undefined).map(([k, v]) => { if (k === "billingInfo") return [k, { contactDetails: v.billingInfoValues?.contactDetails?.contactDetailsValues, address: v.billingInfoValues?.address?.addressValues }]; if (k === "shippingInfo") return [k, { deliveryType: v.shippingInfoValues?.deliveryType, address: v.shippingInfoValues?.address?.addressValues }]; if (k === "paymentInfo") return [k, v.paymentInfoValues]; if (k === "currency") return [k, v]; return [k, v]; })) }}',
+				value: '={{ Object.fromEntries(Object.entries($value).filter(([_, v]) => v !== "" && v !== null && v !== undefined).map(([k, v]) => { if (k === "billingInfo") return [k, { contactDetails: v.billingInfoValues?.contactDetails?.contactDetailsValues, address: v.billingInfoValues?.address?.addressValues }]; if (k === "currency") return [k, v]; return [k, v]; })) }}',
 			},
 		},
 	},
