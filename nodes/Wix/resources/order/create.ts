@@ -224,6 +224,46 @@ export const orderCreateDescription: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Status',
+		name: 'status',
+		type: 'options',
+		options: [
+			{
+				name: 'Approved',
+				value: 'APPROVED',
+			},
+			{
+				name: 'Canceled',
+				value: 'CANCELED',
+			},
+			{
+				name: 'Initialized',
+				value: 'INITIALIZED',
+			},
+			{
+				name: 'Pending',
+				value: 'PENDING',
+			},
+			{
+				name: 'Rejected',
+				value: 'REJECTED',
+			},
+		],
+		default: 'APPROVED',
+		required: true,
+		displayOptions: {
+			show: showOnlyForOrderCreate,
+		},
+		description: 'The status of the order',
+		routing: {
+			send: {
+				type: 'body',
+				property: 'order.status',
+				value: '={{ $value }}',
+			},
+		},
+	},
+	{
 		displayName: 'Buyer Info',
 		name: 'buyerInfo',
 		type: 'fixedCollection',
@@ -487,13 +527,23 @@ export const orderCreateDescription: INodeProperties[] = [
 					},
 				],
 			},
-			{
-				displayName: 'Currency',
-				name: 'currency',
-				type: 'string',
-				default: 'USD',
-				description: 'The currency code (e.g., USD, EUR)',
+		{
+			displayName: 'Currency',
+			name: 'currency',
+			type: 'string',
+			default: 'USD',
+			description: 'The currency code (e.g., USD, EUR)',
+		},
+		{
+			displayName: 'Custom',
+			name: 'custom',
+			type: 'json',
+			default: '{}',
+			description: 'Custom JSON to extend the order create call with additional fields not available in this form',
+			typeOptions: {
+				alwaysOpenEditWindow: true,
 			},
+		},
 		{
 			displayName: 'Shipping Info',
 			name: 'shippingInfo',
@@ -623,7 +673,7 @@ export const orderCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'order',
-				value: '={{ Object.fromEntries(Object.entries($value).filter(([_, v]) => v !== "" && v !== null && v !== undefined).map(([k, v]) => { if (k === "billingInfo") return [k, { contactDetails: v.billingInfoValues?.contactDetails?.contactDetailsValues, address: v.billingInfoValues?.address?.addressValues }]; if (k === "currency") return [k, v]; return [k, v]; })) }}',
+				value: '={{ (() => { const customData = $value.custom ? (typeof $value.custom === "string" ? JSON.parse($value.custom) : $value.custom) : {}; const fields = Object.fromEntries(Object.entries($value).filter(([k, v]) => k !== "custom" && v !== "" && v !== null && v !== undefined).map(([k, v]) => { if (k === "billingInfo") return [k, { contactDetails: v.billingInfoValues?.contactDetails?.contactDetailsValues, address: v.billingInfoValues?.address?.addressValues }]; if (k === "currency") return [k, v]; return [k, v]; })); return { ...fields, ...customData }; })() }}',
 			},
 		},
 	},
