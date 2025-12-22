@@ -610,6 +610,35 @@ export const orderCreateDescription: INodeProperties[] = [
 											default: '',
 											description: 'Instructions for carrier',
 										},
+										{
+											displayName: 'Delivery Time Slot',
+											name: 'deliveryTimeSlot',
+											type: 'fixedCollection',
+											default: {},
+											description: 'Delivery time slot for the order',
+											options: [
+												{
+													displayName: 'Delivery Time Slot',
+													name: 'deliveryTimeSlotValues',
+													values: [
+														{
+															displayName: 'From',
+															name: 'from',
+															type: 'string',
+															default: '',
+															description: 'Start of the delivery time slot (ISO 8601 format)',
+														},
+														{
+															displayName: 'To',
+															name: 'to',
+															type: 'string',
+															default: '',
+															description: 'End of the delivery time slot (ISO 8601 format)',
+														},
+													],
+												},
+											],
+										},
 									],
 								},
 							],
@@ -664,7 +693,7 @@ export const orderCreateDescription: INodeProperties[] = [
 				send: {
 					type: 'body',
 					property: 'order.shippingInfo',
-					value: '={{ Object.fromEntries(Object.entries({ carrierId: $value.shippingInfoValues?.carrierId || null, code: $value.shippingInfoValues?.code || null, title: $value.shippingInfoValues?.title || null, cost: $value.shippingInfoValues?.cost ? { price: { amount: $value.shippingInfoValues.cost } } : null, logistics: $value.shippingInfoValues?.logistics?.logisticsValues ? { shippingDestination: $value.shippingInfoValues.logistics.logisticsValues.shippingDestination?.shippingDestinationValues ? { address: $value.shippingInfoValues.logistics.logisticsValues.shippingDestination.shippingDestinationValues.address?.addressValues || null, contactDetails: $value.shippingInfoValues.logistics.logisticsValues.shippingDestination.shippingDestinationValues.contactDetails?.contactDetailsValues || null } : null, ...($value.shippingInfoValues.logistics.logisticsValues.deliveryTime ? { deliveryTime: $value.shippingInfoValues.logistics.logisticsValues.deliveryTime } : {}), ...($value.shippingInfoValues.logistics.logisticsValues.instructions ? { instructions: $value.shippingInfoValues.logistics.logisticsValues.instructions } : {}) } : null, region: $value.shippingInfoValues?.region?.regionValues?.name ? { name: $value.shippingInfoValues.region.regionValues.name } : null }).filter(([_, v]) => v !== null && v !== undefined)) }}',
+					value: '={{ Object.fromEntries(Object.entries({ carrierId: $value.shippingInfoValues?.carrierId || null, code: $value.shippingInfoValues?.code || null, title: $value.shippingInfoValues?.title || null, cost: $value.shippingInfoValues?.cost ? { price: { amount: $value.shippingInfoValues.cost } } : null, logistics: $value.shippingInfoValues?.logistics?.logisticsValues ? { shippingDestination: $value.shippingInfoValues.logistics.logisticsValues.shippingDestination?.shippingDestinationValues ? { address: $value.shippingInfoValues.logistics.logisticsValues.shippingDestination.shippingDestinationValues.address?.addressValues || null, contactDetails: $value.shippingInfoValues.logistics.logisticsValues.shippingDestination.shippingDestinationValues.contactDetails?.contactDetailsValues || null } : null, ...($value.shippingInfoValues.logistics.logisticsValues.deliveryTime ? { deliveryTime: $value.shippingInfoValues.logistics.logisticsValues.deliveryTime } : {}), ...($value.shippingInfoValues.logistics.logisticsValues.instructions ? { instructions: $value.shippingInfoValues.logistics.logisticsValues.instructions } : {}), ...($value.shippingInfoValues.logistics.logisticsValues.deliveryTimeSlot?.deliveryTimeSlotValues ? { deliveryTimeSlot: { from: $value.shippingInfoValues.logistics.logisticsValues.deliveryTimeSlot.deliveryTimeSlotValues.from, to: $value.shippingInfoValues.logistics.logisticsValues.deliveryTimeSlot.deliveryTimeSlotValues.to } } : {}) } : null, region: $value.shippingInfoValues?.region?.regionValues?.name ? { name: $value.shippingInfoValues.region.regionValues.name } : null }).filter(([_, v]) => v !== null && v !== undefined)) }}',
 				},
 			},
 		},
