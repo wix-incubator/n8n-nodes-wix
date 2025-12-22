@@ -17,18 +17,18 @@ export const orderGetManyDescription: INodeProperties[] = [
 		description: 'Whether to return all results or only up to a given limit',
 		routing: {
 			send: {
-				paginate: '={{ $value }}',				
-			},
+				paginate: '={{ $value }}',
+			},			
 			operations: {
 				pagination: {
 					type: 'generic',
 					properties: {
-						continue: '={{ $response.body.metadata?.cursors?.next }}',
+						continue: '={{ $response.body?.metadata?.hasNext }}',
 						request: {
 							body: {
 								search: {
 									cursorPaging: {
-										cursor: '={{ $paginationToken }}',
+										cursor: '={{ $response.body?.metadata?.cursors?.next }}',
 										limit: '={{ $parameter.returnAll ? 100 : Math.min($parameter.limit || 100, 100) }}',
 									},
 								},

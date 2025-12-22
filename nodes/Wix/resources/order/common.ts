@@ -29,12 +29,6 @@ export const contactDetailsValues: INodeProperties[] = [
 		default: '',
 		description: 'Phone number',
 	},
-	{
-		displayName: 'VAT ID',
-		name: 'vatId',
-		type: 'string',
-		default: '',
-	},
 ];
 
 /**
@@ -42,8 +36,8 @@ export const contactDetailsValues: INodeProperties[] = [
  */
 export const addressValues: INodeProperties[] = [
 	{
-		displayName: 'Address Line 1',
-		name: 'addressLine1',
+		displayName: 'Address Line',
+		name: 'addressLine',
 		type: 'string',
 		default: '',
 		description: 'Street address',
