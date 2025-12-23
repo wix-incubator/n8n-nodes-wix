@@ -1,5 +1,6 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { orderSelect } from '../../listSearch/order/orderSelect';
+import { addressField, contactDetailsField } from './common';
 
 const showOnlyForOrderUpdate = {
 	operation: ['update'],
@@ -51,101 +52,12 @@ export const orderUpdateDescription: INodeProperties[] = [
 						name: 'billingInfoValues',
 						values: [
 							{
-								displayName: 'Address',
-								name: 'address',
-								type: 'fixedCollection',
-								default: {},
+								...addressField,
 								description: 'Billing address',
-								options: [
-									{
-										displayName: 'Address',
-										name: 'addressValues',
-										values: [
-											{
-												displayName: 'Address Line 1',
-												name: 'addressLine1',
-												type: 'string',
-												default: '',
-												description: 'Street address',
-											},
-											{
-												displayName: 'Address Line 2',
-												name: 'addressLine2',
-												type: 'string',
-												default: '',
-												description: 'Apartment, suite, etc',
-											},
-											{
-												displayName: 'City',
-												name: 'city',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'State',
-												name: 'state',
-												type: 'string',
-												default: '',
-												description: 'State or province',
-											},
-											{
-												displayName: 'Postal Code',
-												name: 'postalCode',
-												type: 'string',
-												default: '',
-												description: 'Postal or ZIP code',
-											},
-											{
-												displayName: 'Country',
-												name: 'country',
-												type: 'string',
-												default: '',
-												description: 'Country code (e.g., US)',
-											},
-										],
-									},
-								],
 							},
 							{
-								displayName: 'Contact Details',
-								name: 'contactDetails',
-								type: 'fixedCollection',
-								default: {},
+								...contactDetailsField,
 								description: 'Contact details for billing',
-								options: [
-									{
-										displayName: 'Contact Details',
-										name: 'contactDetailsValues',
-										values: [
-											{
-												displayName: 'First Name',
-												name: 'firstName',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'Last Name',
-												name: 'lastName',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'Phone',
-												name: 'phone',
-												type: 'string',
-												default: '',
-												description: 'Phone number',
-											},
-											{
-												displayName: 'Email',
-												name: 'email',
-												type: 'string',
-												placeholder: 'name@email.com',
-												default: '',
-											},
-										],
-									},
-								],
 							},
 						],
 					},
@@ -203,101 +115,12 @@ export const orderUpdateDescription: INodeProperties[] = [
 						name: 'recipientInfoValues',
 						values: [
 							{
-								displayName: 'Address',
-								name: 'address',
-								type: 'fixedCollection',
-								default: {},
+								...addressField,
 								description: 'Recipient address',
-								options: [
-									{
-										displayName: 'Address',
-										name: 'addressValues',
-										values: [
-											{
-												displayName: 'Address Line 1',
-												name: 'addressLine1',
-												type: 'string',
-												default: '',
-												description: 'Street address',
-											},
-											{
-												displayName: 'Address Line 2',
-												name: 'addressLine2',
-												type: 'string',
-												default: '',
-												description: 'Apartment, suite, etc',
-											},
-											{
-												displayName: 'City',
-												name: 'city',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'State',
-												name: 'state',
-												type: 'string',
-												default: '',
-												description: 'State or province',
-											},
-											{
-												displayName: 'Postal Code',
-												name: 'postalCode',
-												type: 'string',
-												default: '',
-												description: 'Postal or ZIP code',
-											},
-											{
-												displayName: 'Country',
-												name: 'country',
-												type: 'string',
-												default: '',
-												description: 'Country code (e.g., US)',
-											},
-										],
-									},
-								],
 							},
 							{
-								displayName: 'Contact Details',
-								name: 'contactDetails',
-								type: 'fixedCollection',
-								default: {},
+								...contactDetailsField,
 								description: 'Recipient contact details',
-								options: [
-									{
-										displayName: 'Contact Details',
-										name: 'contactDetailsValues',
-										values: [
-											{
-												displayName: 'First Name',
-												name: 'firstName',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'Last Name',
-												name: 'lastName',
-												type: 'string',
-												default: '',
-											},
-											{
-												displayName: 'Phone',
-												name: 'phone',
-												type: 'string',
-												default: '',
-												description: 'Phone number',
-											},
-											{
-												displayName: 'Email',
-												name: 'email',
-												type: 'string',
-												placeholder: 'name@email.com',
-												default: '',
-											},
-										],
-									},
-								],
 							},
 						],
 					},
@@ -343,101 +166,12 @@ export const orderUpdateDescription: INodeProperties[] = [
 														name: 'shippingDestinationValues',
 														values: [
 															{
-																displayName: 'Address',
-																name: 'address',
-																type: 'fixedCollection',
-																default: {},
+																...addressField,
 																description: 'Destination address',
-																options: [
-																	{
-																		displayName: 'Address',
-																		name: 'addressValues',
-																		values: [
-																			{
-																				displayName: 'Address Line 1',
-																				name: 'addressLine1',
-																				type: 'string',
-																				default: '',
-																				description: 'Street address',
-																			},
-																			{
-																				displayName: 'Address Line 2',
-																				name: 'addressLine2',
-																				type: 'string',
-																				default: '',
-																				description: 'Apartment, suite, etc',
-																			},
-																			{
-																				displayName: 'City',
-																				name: 'city',
-																				type: 'string',
-																				default: '',
-																			},
-																			{
-																				displayName: 'State',
-																				name: 'state',
-																				type: 'string',
-																				default: '',
-																				description: 'State or province',
-																			},
-																			{
-																				displayName: 'Postal Code',
-																				name: 'postalCode',
-																				type: 'string',
-																				default: '',
-																				description: 'Postal or ZIP code',
-																			},
-																			{
-																				displayName: 'Country',
-																				name: 'country',
-																				type: 'string',
-																				default: '',
-																				description: 'Country code (e.g., US)',
-																			},
-																		],
-																	},
-																],
 															},
 															{
-																displayName: 'Contact Details',
-																name: 'contactDetails',
-																type: 'fixedCollection',
-																default: {},
+																...contactDetailsField,
 																description: 'Destination contact details',
-																options: [
-																	{
-																		displayName: 'Contact Details',
-																		name: 'contactDetailsValues',
-																		values: [
-																			{
-																				displayName: 'First Name',
-																				name: 'firstName',
-																				type: 'string',
-																				default: '',
-																			},
-																			{
-																				displayName: 'Last Name',
-																				name: 'lastName',
-																				type: 'string',
-																				default: '',
-																			},
-																			{
-																				displayName: 'Phone',
-																				name: 'phone',
-																				type: 'string',
-																				default: '',
-																				description: 'Phone number',
-																			},
-																			{
-																				displayName: 'Email',
-																				name: 'email',
-																				type: 'string',
-																				placeholder: 'name@email.com',
-																				default: '',
-																			},
-																		],
-																	},
-																],
 															},
 														],
 													},
@@ -472,7 +206,7 @@ export const orderUpdateDescription: INodeProperties[] = [
 		routing: {
 			send: {
 				type: 'body',
-				property: '=',
+				property: 'order',
 				value: '={{ Object.fromEntries(Object.entries($value).filter(([_, v]) => v !== "" && v !== null && v !== undefined).map(([k, v]) => { if (k === "buyerInfo") return ["buyerInfo", { email: v.buyerInfoValues?.email }]; if (k === "billingInfo") return ["billingInfo", { address: v.billingInfoValues?.address?.addressValues, contactDetails: v.billingInfoValues?.contactDetails?.contactDetailsValues }]; if (k === "recipientInfo") return ["recipientInfo", { address: v.recipientInfoValues?.address?.addressValues, contactDetails: v.recipientInfoValues?.contactDetails?.contactDetailsValues }]; if (k === "shippingInfo") return ["shippingInfo", { logistics: { shippingDestination: { address: v.shippingInfoValues?.logistics?.logisticsValues?.shippingDestination?.shippingDestinationValues?.address?.addressValues, contactDetails: v.shippingInfoValues?.logistics?.logisticsValues?.shippingDestination?.shippingDestinationValues?.contactDetails?.contactDetailsValues } } }]; return [k, v]; })) }}',
 			},
 		},
