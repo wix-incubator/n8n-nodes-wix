@@ -5,7 +5,7 @@ import type {
 	INodeListSearchItems,
 } from 'n8n-workflow';
 import { wixApiRequest } from '../../utils/wix-api-request';
-import type { Order, SearchOrdersResponse } from '@wix/auto_sdk_ecom_orders';
+import type { Order, SearchOrdersResponse } from '../../types';
 
 export async function getOrders(
 	this: ILoadOptionsFunctions,
@@ -32,7 +32,7 @@ export async function getOrders(
 
 	const results: INodeListSearchItems[] = (responseData.orders || []).map((order: Order) => ({
 		name: `Order #${order.number}${order.buyerInfo?.email ? ` - ${order.buyerInfo.email}` : ''}`,
-		value: (order as any).id,
+		value: order.id || '',
 	}));
 
 	const nextPaginationToken = responseData.metadata?.cursors?.next;
