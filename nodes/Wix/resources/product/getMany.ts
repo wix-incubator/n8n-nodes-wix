@@ -6,35 +6,35 @@ import {
 	sortRoutingValue,
 } from '../common/getMany';
 
-const showOnlyForOrderGetMany = {
+const showOnlyForProductGetMany = {
 	operation: ['getMany'],
-	resource: ['order'],
+	resource: ['product'],
 };
 
-export const orderGetManyDescription: INodeProperties[] = [
+export const productGetManyDescription: INodeProperties[] = [
 	{
 		displayName: 'Return All',
 		name: 'returnAll',
 		type: 'boolean',
 		displayOptions: {
-			show: showOnlyForOrderGetMany,
+			show: showOnlyForProductGetMany,
 		},
 		default: false,
 		description: 'Whether to return all results or only up to a given limit',
 		routing: {
 			send: {
 				paginate: '={{ $value }}',
-			},			
+			},
 			operations: {
 				pagination: {
 					type: 'generic',
 					properties: {
-						continue: '={{ $response.body?.metadata?.hasNext }}',
+						continue: '={{ $response.body?.pagingMetadata?.hasNext }}',
 						request: {
 							body: {
 								search: {
 									cursorPaging: {
-										cursor: '={{ $response.body?.metadata?.cursors?.next }}',
+										cursor: '={{ $response.body?.pagingMetadata?.cursors?.next }}',
 										limit: '={{ $parameter.returnAll ? 100 : Math.min($parameter.limit || 100, 100) }}',
 									},
 								},
@@ -51,7 +51,7 @@ export const orderGetManyDescription: INodeProperties[] = [
 		type: 'number',
 		displayOptions: {
 			show: {
-				...showOnlyForOrderGetMany,
+				...showOnlyForProductGetMany,
 				returnAll: [false],
 			},
 		},
@@ -79,11 +79,11 @@ export const orderGetManyDescription: INodeProperties[] = [
 			multipleValues: true,
 		},
 		displayOptions: {
-			show: showOnlyForOrderGetMany,
+			show: showOnlyForProductGetMany,
 		},
 		default: {},
 		placeholder: 'Add Filter',
-		description: 'Filter criteria for searching orders',
+		description: 'Filter criteria for searching products',
 		options: [
 			{
 				displayName: 'Filter Field',
@@ -107,7 +107,7 @@ export const orderGetManyDescription: INodeProperties[] = [
 			multipleValues: true,
 		},
 		displayOptions: {
-			show: showOnlyForOrderGetMany,
+			show: showOnlyForProductGetMany,
 		},
 		default: {},
 		placeholder: 'Add Sort Criteria',
@@ -123,28 +123,28 @@ export const orderGetManyDescription: INodeProperties[] = [
 						type: 'options',
 						options: [
 							{
+								name: 'Actual Price Max',
+								value: 'actualPriceRange.maxValue.amount',
+							},
+							{
+								name: 'Actual Price Min',
+								value: 'actualPriceRange.minValue.amount',
+							},
+							{
+								name: 'Compare At Price Max',
+								value: 'compareAtPriceRange.maxValue.amount',
+							},
+							{
+								name: 'Compare At Price Min',
+								value: 'compareAtPriceRange.minValue.amount',
+							},
+							{
 								name: 'Created Date',
 								value: 'createdDate',
 							},
 							{
-								name: 'Fulfillment Status',
-								value: 'fulfillmentStatus',
-							},
-							{
-								name: 'Payment Status',
-								value: 'paymentStatus',
-							},
-							{
-								name: 'Purchased Date',
-								value: 'purchasedDate',
-							},
-							{
-								name: 'Status',
-								value: 'status',
-							},
-							{
-								name: 'Total Amount',
-								value: 'priceSummary.total.amount',
+								name: 'Name',
+								value: 'name',
 							},
 							{
 								name: 'Updated Date',

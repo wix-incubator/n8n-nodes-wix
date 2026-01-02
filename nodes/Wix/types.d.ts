@@ -6,6 +6,11 @@ import type {
 	SearchOrdersResponse as WixSearchOrdersResponse,
 } from '@wix/auto_sdk_ecom_orders';
 
+import type {
+	V3Product as WixV3Product,
+	V3SearchProductsResponse as WixSearchProductsResponse,
+} from '@wix/auto_sdk_stores_products-v-3';
+
 export type WithId<T> = T extends (infer U)[]
 	? WithId<U>[]
 	: T extends object
@@ -15,3 +20,5 @@ export type WithId<T> = T extends (infer U)[]
 export type Order = WithId<WixOrder>;
 export type SearchOrdersResponse = WithId<WixSearchOrdersResponse>;
 
+export type Product = WithId<WixV3Product>;
+export type SearchProductsResponse = WithId<WixSearchProductsResponse>;

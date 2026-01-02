@@ -5,6 +5,7 @@ import { postDescription } from './resources/post';
 import { contactDescription } from './resources/contact';
 import { communicationDescription } from './resources/communication';
 import { getOrders } from './listSearch/order/getOrders';
+import { getProducts } from './listSearch/product/getProducts';
 
 export class Wix implements INodeType {
 	description: INodeTypeDescription = {
@@ -70,6 +71,7 @@ export class Wix implements INodeType {
 	methods = {
 		listSearch: {
 			getOrders,
+			getProducts,
 		},
 	};
 }
