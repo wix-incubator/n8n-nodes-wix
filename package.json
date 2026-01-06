@@ -34,7 +34,8 @@
 			"dist/credentials/WixApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/Wix/Wix.node.js"
+			"dist/nodes/Wix/Wix.node.js",
+			"dist/nodes/Wix/WixTrigger.node.js"
 		]
 	},
 	"devDependencies": {
