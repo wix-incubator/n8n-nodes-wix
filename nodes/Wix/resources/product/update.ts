@@ -92,7 +92,6 @@ export const productUpdateDescription: INodeProperties[] = [
 								name: 'shippingGroupId',
 								type: 'string',
 								default: '',
-								description: 'Shipping group ID',
 							},
 						],
 					},
@@ -173,6 +172,81 @@ export const productUpdateDescription: INodeProperties[] = [
 				description: 'Tax group ID for the product',
 			},
 			{
+				displayName: 'Update Variant Inventory',
+				name: 'variantInventory',
+				type: 'fixedCollection',
+				typeOptions: {
+					multipleValues: true,
+				},
+				default: {},
+				placeholder: 'Add Variant Inventory Update',
+				description: 'Update inventory for existing variants. Provide the variant ID from a Get Product call.',
+				options: [
+					{
+						displayName: 'Variant',
+						name: 'variant',
+						values: [
+							{
+								displayName: 'In Stock',
+								name: 'inventoryInStock',
+								type: 'boolean',
+								default: true,
+								description: 'Whether this variant is in stock',
+								displayOptions: {
+									show: {
+										inventoryTracking: ['IN_STOCK'],
+									},
+								},
+							},
+							{
+								displayName: 'Inventory Tracking',
+								name: 'inventoryTracking',
+								type: 'options',
+								options: [
+									{
+										name: 'No Change',
+										value: 'NO_CHANGE',
+										description: 'Keep current inventory settings',
+									},
+									{
+										name: 'Track by Availability',
+										value: 'IN_STOCK',
+										description: 'Simple in stock / out of stock',
+									},
+									{
+										name: 'Track by Quantity',
+										value: 'QUANTITY',
+										description: 'Track exact stock counts',
+									},
+								],
+								default: 'NO_CHANGE',
+								description: 'How to track inventory for this variant',
+							},
+							{
+								displayName: 'Quantity',
+								name: 'inventoryQuantity',
+								type: 'number',
+								default: 0,
+								description: 'Stock quantity for this variant',
+								displayOptions: {
+									show: {
+										inventoryTracking: ['QUANTITY'],
+									},
+								},
+							},
+							{
+								displayName: 'Variant ID',
+								name: 'id',
+								type: 'string',
+								default: '',
+								required: true,
+								description: 'The ID of the existing variant to update',
+							},
+						],
+					},
+				],
+			},
+			{
 				displayName: 'Visible',
 				name: 'visible',
 				type: 'boolean',
@@ -191,7 +265,7 @@ export const productUpdateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'product',
-				value: '={{ (() => { const customData = $value.custom ? (typeof $value.custom === "string" ? JSON.parse($value.custom) : $value.custom) : {}; const fields = {}; if ($value.name) fields.name = $value.name; if ($value.description) fields.description = $value.description; if ($value.slug) fields.slug = $value.slug; if ($value.productType) fields.productType = $value.productType; if ($value.visible !== undefined) fields.visible = $value.visible; if ($value.visibleInPos !== undefined) fields.visibleInPos = $value.visibleInPos; if ($value.seoTitle) fields.seoTitle = $value.seoTitle; if ($value.seoDescription) fields.seoDescription = $value.seoDescription; if ($value.taxGroupId) fields.taxGroupId = $value.taxGroupId; if ($value.ribbon?.ribbonValues?.text) { fields.ribbon = { text: $value.ribbon.ribbonValues.text }; if ($value.ribbon.ribbonValues.id) fields.ribbon._id = $value.ribbon.ribbonValues.id; } if ($value.physicalProperties?.physicalPropertiesValues) { const pp = $value.physicalProperties.physicalPropertiesValues; fields.physicalProperties = {}; if (pp.fulfillerId) fields.physicalProperties.fulfillerId = pp.fulfillerId; if (pp.shippingGroupId) fields.physicalProperties.shippingGroupId = pp.shippingGroupId; } return { ...fields, ...customData }; })() }}',
+				value: '={{ (() => { const customData = $value.custom ? (typeof $value.custom === "string" ? JSON.parse($value.custom) : $value.custom) : {}; const fields = {}; if ($value.name) fields.name = $value.name; if ($value.description) fields.description = $value.description; if ($value.slug) fields.slug = $value.slug; if ($value.productType) fields.productType = $value.productType; if ($value.visible !== undefined) fields.visible = $value.visible; if ($value.visibleInPos !== undefined) fields.visibleInPos = $value.visibleInPos; if ($value.seoTitle) fields.seoTitle = $value.seoTitle; if ($value.seoDescription) fields.seoDescription = $value.seoDescription; if ($value.taxGroupId) fields.taxGroupId = $value.taxGroupId; if ($value.ribbon?.ribbonValues?.text) { fields.ribbon = { text: $value.ribbon.ribbonValues.text }; if ($value.ribbon.ribbonValues.id) fields.ribbon._id = $value.ribbon.ribbonValues.id; } if ($value.physicalProperties?.physicalPropertiesValues) { const pp = $value.physicalProperties.physicalPropertiesValues; fields.physicalProperties = {}; if (pp.fulfillerId) fields.physicalProperties.fulfillerId = pp.fulfillerId; if (pp.shippingGroupId) fields.physicalProperties.shippingGroupId = pp.shippingGroupId; } if ($value.variantInventory?.variant && $value.variantInventory.variant.length > 0) { fields.variantsInfo = { variants: $value.variantInventory.variant.map(v => { const variant = { _id: v.id }; if (v.inventoryTracking === "QUANTITY") { variant.inventoryItem = { quantity: v.inventoryQuantity }; } else if (v.inventoryTracking === "IN_STOCK") { variant.inventoryItem = { inStock: v.inventoryInStock }; } return variant; }) }; } return { ...fields, ...customData }; })() }}',
 			},
 		},
 	},
