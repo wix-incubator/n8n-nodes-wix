@@ -24,7 +24,7 @@ export const orderGetManyDescription: INodeProperties[] = [
 		routing: {
 			send: {
 				paginate: '={{ $value }}',
-			},			
+			},
 			operations: {
 				pagination: {
 					type: 'generic',
@@ -37,6 +37,8 @@ export const orderGetManyDescription: INodeProperties[] = [
 										cursor: '={{ $response.body?.metadata?.cursors?.next }}',
 										limit: '={{ $parameter.returnAll ? 100 : Math.min($parameter.limit || 100, 100) }}',
 									},
+									filter: '={{ $request.body?.search?.filter }}',
+									sort: '={{ $request.body?.search?.sort }}',
 								},
 							},
 						},
