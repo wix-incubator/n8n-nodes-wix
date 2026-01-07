@@ -1,6 +1,6 @@
 {
 	"name": "@wix/n8n-nodes-wix",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Wix triggers & actions integration for n8n",
 	"license": "MIT",
 	"homepage": "",
