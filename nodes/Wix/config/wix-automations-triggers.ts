@@ -4,127 +4,127 @@ export const wixAutomationsTriggers: {
 	backInStockRequests_wixECommerceBackInStockRequestCreatedStores: {
 		appId: '16be6c71-d061-4f56-8cda-c6aa911d1832',
 		triggerKey: 'wix_e_commerce-back_in_stock_request_created_stores',
-		displayName: 'Back in stock request created',
+		displayName: '再入荷通知リクエスト作成',
 	},
 	backInStockRequests_wixECommerceBackInStockStores: {
 		appId: '16be6c71-d061-4f56-8cda-c6aa911d1832',
 		triggerKey: 'wix_e_commerce-back_in_stock_stores',
-		displayName: 'Product back in stock',
+		displayName: '商品が再入荷した時',
 	},
 	cms_cmsDatasetFormSubmitted: {
 		appId: '1973457f-c021-4da5-941f-58444ff761d4',
 		triggerKey: 'cms-dataset_form_submitted',
-		displayName: 'CMS form submitted',
+		displayName: 'CMS フォームを提出',
 	},
 	contacts_contactsContactAssigned: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-contact_assigned',
-		displayName: 'Contact Assigned',
+		displayName: '連絡先が割り当てられました',
 	},
 	contacts_contactsLabelAddedToContact: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-label_added_to_contact',
-		displayName: 'Label added to contact',
+		displayName: 'ラベルが連絡先に追加された時',
 	},
 	contacts_contactsLabelRemovedFromContact: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-label_removed_from_contact',
-		displayName: 'Label removed from contact',
+		displayName: 'ラベルが連絡先から削除された時',
 	},
 	contacts_contactsNewContactWasCreated: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-new_contact_was_created',
-		displayName: 'New contact created',
+		displayName: '新規連絡先が作成された時',
 	},
 	inbox_wixChatMessageReceiveFromUou: {
 		appId: '141fbfae-511e-6817-c9f0-48993a7547d1',
 		triggerKey: 'wix_chat-message_receive_from_uou',
-		displayName: 'Message received (Wix Chat or Inbox preset email)',
+		displayName: 'Inbox メッセージを受信した時（チャットまたはメール）',
 	},
 	inbox_wixChatMessageSentToUou: {
 		appId: '141fbfae-511e-6817-c9f0-48993a7547d1',
 		triggerKey: 'wix_chat-message_sent_to_uou',
-		displayName: 'Chat message sent',
+		displayName: 'チャットでメッセージを送信した時',
 	},
 	oldWixFormsAndPayments_wixFormsFormSubmit: {
 		appId: '14ce1214-b278-a7e4-1373-00cebd1bef7c',
 		triggerKey: 'wix_forms-form_submit',
-		displayName: 'Form submitted',
+		displayName: 'フォームが提出された時',
 	},
 	payLinks_wixPaymentLinksPaymentLinkPaymentReceived: {
 		appId: '324cf725-53d9-4bb2-b8f6-0c8ec9a77f45',
 		triggerKey: 'wix_payment_links-payment_link_payment_received',
-		displayName: 'Payment received',
+		displayName: '支払済み',
 	},
 	payLinks_wixPaymentLinksSendPaymentLink: {
 		appId: '324cf725-53d9-4bb2-b8f6-0c8ec9a77f45',
 		triggerKey: 'wix_payment_links-send_payment_link',
-		displayName: 'Send a pay link',
+		displayName: '支払いリンクを送信',
 	},
 	priceQuotes_wixPriceQuoteQuoteAccepted: {
 		appId: '55cd9036-36bb-480b-8ddc-afda3cb2eb8d',
 		triggerKey: 'wix_price_quote-quote_accepted',
-		displayName: 'Price quote accepted',
+		displayName: '見積書が承諾された時',
 	},
 	priceQuotes_wixPriceQuoteQuoteExpired: {
 		appId: '55cd9036-36bb-480b-8ddc-afda3cb2eb8d',
 		triggerKey: 'wix_price_quote-quote_expired',
-		displayName: 'Price quote expired',
+		displayName: '見積書期限切れ',
 	},
 	priceQuotes_wixPriceQuoteQuoteSent: {
 		appId: '55cd9036-36bb-480b-8ddc-afda3cb2eb8d',
 		triggerKey: 'wix_price_quote-quote_sent',
-		displayName: 'Price quote sent',
+		displayName: '見積書が送信された時',
 	},
 	recurringInvoices_wixInvoicesRecurringInvoiceCanceled: {
 		appId: '35aec784-bbec-4e6e-abcb-d3d724af52cf',
 		triggerKey: 'wix_invoices-recurring_invoice_canceled',
-		displayName: 'Recurring payment canceled',
+		displayName: '定期払いがキャンセルされた時',
 	},
 	recurringInvoices_wixInvoicesRecurringInvoiceCreated: {
 		appId: '35aec784-bbec-4e6e-abcb-d3d724af52cf',
 		triggerKey: 'wix_invoices-recurring_invoice_created',
-		displayName: 'Recurring payment starts',
+		displayName: '定期払いが開始した時',
 	},
 	segments_segmentsContactEntersSegment: {
 		appId: 'ee070097-0850-4f23-ad8c-3cdd4efd5244',
 		triggerKey: 'segments-contact_enters_segment',
-		displayName: 'Contact enters segment',
+		displayName: '連絡先がセグメントに追加された時',
 	},
 	segments_segmentsContactLeavesSegment: {
 		appId: 'ee070097-0850-4f23-ad8c-3cdd4efd5244',
 		triggerKey: 'segments-contact_leaves_segment',
-		displayName: 'Contact leaves segment',
+		displayName: '連絡先がセグメントから削除された時',
 	},
 	subscriptions_billingDateUpdated: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'billing_date_updated',
-		displayName: 'Subscription`s payment date updated',
+		displayName: '定期購入の支払い日が更新',
 	},
 	subscriptions_customerPaymentMethodUpdated: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'customer_payment_method_updated',
-		displayName: 'Customer`s payment method updated',
+		displayName: '顧客のお支払い方法が更新された時',
 	},
 	subscriptions_failedPaymentGracePeriodStarted: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'failed_payment_grace_period_started',
-		displayName: 'Payment fails - grace period starts',
+		displayName: '支払い失敗のため猶予期間が始まる時',
 	},
 	subscriptions_itemPriceUpdated: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'item_price_updated',
-		displayName: 'Subscription`s item price updated',
+		displayName: '定期購入サービスのアイテム価格が更新された時',
 	},
 	subscriptions_paymentSucceededGracePeriodEnds: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'payment_succeeded_grace_period_ends',
-		displayName: 'Payment successful - grace period ends',
+		displayName: '支払い完了 - 猶予期間の終了',
 	},
 	tasks_tasksTaskOverdue: {
 		appId: '146c0d71-352e-4464-9a03-2e868aabe7b9',
 		triggerKey: 'tasks-task_overdue',
-		displayName: 'Task overdue',
+		displayName: 'タスクの期限が切れた時',
 	},
 	wixBlog_fnF525Ecd06D494C92A3647A724E191629809947B0Eb855870A828A71Cb2Bd3B31: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
@@ -135,17 +135,17 @@ export const wixAutomationsTriggers: {
 	wixBlog_wixBlogBlogPostComment: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey: 'wix_blog-blog_post_comment',
-		displayName: 'Blog post new comment',
+		displayName: 'ブログ記事新着コメント',
 	},
 	wixBlog_wixBlogBlogPostLike: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey: 'wix_blog-blog_post_like',
-		displayName: 'Blog post liked',
+		displayName: 'ブログ記事への「いいね！」',
 	},
 	wixBlog_wixBlogNewBlogPost: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey: 'wix_blog-new_blog_post',
-		displayName: 'New blog post published',
+		displayName: '新しいブログ記事公開',
 	},
 	wixBookings_fn36Fd6F5F469040FeB1D2771A7D7Ce688F85Ee74AB9Ce56B9Bff65147520Ccf8C:
 		{
@@ -162,42 +162,42 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsAnyCheckIn: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-any_check_in',
-		displayName: 'Client checks in',
+		displayName: '顧客が到着',
 	},
 	wixBookings_wixBookingsAppointmentConfirmed: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointment_confirmed',
-		displayName: 'Appointment request approved',
+		displayName: '予約リクエストが承認された時',
 	},
 	wixBookings_wixBookingsAppointmentDeclined: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointment_declined',
-		displayName: 'Appointment request declined',
+		displayName: '予約リクエストが拒否された時',
 	},
 	wixBookings_wixBookingsAppointmentRequiresConfirmation: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointment_requires_confirmation',
-		displayName: 'Appointment requested',
+		displayName: '予約リクエスト',
 	},
 	wixBookings_wixBookingsBookingCanceled: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-booking_canceled',
-		displayName: 'Booking canceled',
+		displayName: '予約がキャンセルされた時',
 	},
 	wixBookings_wixBookingsCourseSessionsUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-course_sessions_updated',
-		displayName: 'Course updated',
+		displayName: 'コースの更新',
 	},
 	wixBookings_wixBookingsDoubleBooked: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-double_booked',
-		displayName: 'Session double-booked',
+		displayName: 'セッションの重複予約',
 	},
 	wixBookings_wixBookingsFailedToApplyBookingFee: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-failed_to_apply_booking_fee',
-		displayName: 'Failed to apply booking fee',
+		displayName: '予約料金が適用されませんでした',
 	},
 	wixBookings_wixBookingsFailedToCollectAppliedBookingFees: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
@@ -207,37 +207,37 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsNoSessionsLeft: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-no_sessions_left',
-		displayName: 'No sessions left',
+		displayName: '残りセッションがなくなった時',
 	},
 	wixBookings_wixBookingsNoShow: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-no_show',
-		displayName: 'Client marked as "no-show"',
+		displayName: '顧客が「無断欠席」とマークされた時',
 	},
 	wixBookings_wixBookingsNthCheckIn: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-nth_check_in',
-		displayName: 'Client checked in X times',
+		displayName: '顧客が X 回来場した時',
 	},
 	wixBookings_wixBookingsSessionEnds: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_ends',
-		displayName: 'Session ends',
+		displayName: 'セッションが終了した時',
 	},
 	wixBookings_wixBookingsSessionsBooked: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-sessions_booked',
-		displayName: 'Session booked',
+		displayName: 'セッションが予約された時',
 	},
 	wixBookings_wixBookingsSessionStarts: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_starts',
-		displayName: 'Session starts',
+		displayName: 'セッションが開始される時',
 	},
 	wixBookings_wixBookingsSessionUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_updated',
-		displayName: 'Appointment or class updated',
+		displayName: 'プライベート予約もしくはクラスの更新',
 	},
 	wixChat_wixChatChatFormSubmitted: {
 		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
@@ -247,52 +247,52 @@ export const wixAutomationsTriggers: {
 	wixChat_wixChatNewChatMessage: {
 		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
 		triggerKey: 'wix_chat-new_chat_message',
-		displayName: 'Chat message received',
+		displayName: 'チャットでメッセージを受信した時',
 	},
 	wixChat_wixChatVisitorOnLiveSite: {
 		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
 		triggerKey: 'wix_chat-visitor_on_live_site',
-		displayName: 'Visitor on site',
+		displayName: 'サイトに訪問者がいる時',
 	},
 	wixDonations_wixDonationsDonationApproved: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
 		triggerKey: 'wix_donations-donation_approved',
-		displayName: 'Donation is made',
+		displayName: '寄付が行われた時',
 	},
 	wixDonations_wixDonationsDonationCycle: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
 		triggerKey: 'wix_donations-donation_cycle',
-		displayName: 'Recurring donation is charged',
+		displayName: '継続寄付の課金が完了した時',
 	},
 	wixDonations_wixDonationsDonationSubscriptionCanceled: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
 		triggerKey: 'wix_donations-donation_subscription_canceled',
-		displayName: 'Recurring donation is canceled',
+		displayName: '継続寄付がキャンセルされた時',
 	},
 	wixEventsTickets_domainEventsWixEventsGuestsV1GuestGuestCheckedIn: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.guests.v1.guest-guest_checked_in',
-		displayName: 'Guest checked in',
+		displayName: '来場済みゲスト',
 	},
 	wixEventsTickets_domainEventsWixEventsGuestsV1GuestGuestEventStarts: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.guests.v1.guest-guest_event_starts',
-		displayName: 'Event starts',
+		displayName: 'イベント開始',
 	},
 	wixEventsTickets_domainEventsWixEventsV3EventPublished: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.v3.event-published',
-		displayName: 'Event published',
+		displayName: 'イベントが公開された時',
 	},
 	wixEventsTickets_domainEventsWixEventsV3TicketDefinitionSaleEnded: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.v3.ticket_definition-sale_ended',
-		displayName: 'Ticket sale ended',
+		displayName: 'チケット販売は終了しました',
 	},
 	wixEventsTickets_domainEventsWixEventsV3TicketDefinitionSaleStarted: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.v3.ticket_definition-sale_started',
-		displayName: 'Ticket sale started',
+		displayName: 'チケット販売を開始',
 	},
 	wixEventsTickets_fn03Dabf87Cebf4775A48812A468Ae34281982Be9D060C5Bb8B112F93Bb2642E39:
 		{
@@ -321,7 +321,7 @@ export const wixAutomationsTriggers: {
 	wixEventsTickets_wixEventsEventEnds: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-event_ends',
-		displayName: 'Event ends',
+		displayName: 'イベントが終了した時',
 	},
 	wixEventsTickets_wixEventsInstantOrderReport: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
@@ -341,57 +341,57 @@ export const wixAutomationsTriggers: {
 	wixEventsTickets_wixEventsNotificationsEventCanceled: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_event_canceled',
-		displayName: 'Event canceled',
+		displayName: 'イベントがキャンセルされる',
 	},
 	wixEventsTickets_wixEventsNotificationsEventReminder: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_event_reminder',
-		displayName: 'Event reminder date has arrived',
+		displayName: 'イベントリマインダーの日付が到来する',
 	},
 	wixEventsTickets_wixEventsNotificationsNewSpotsAvailable: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_new_spots_available',
-		displayName: 'New spot opened for waitlist guests',
+		displayName: 'キャンセル待ちリストに空き枠ができる',
 	},
 	wixEventsTickets_wixEventsNotificationsOrderConfirmation: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_order_confirmation',
-		displayName: 'Order placed',
+		displayName: '受注',
 	},
 	wixEventsTickets_wixEventsNotificationsOrderConfirmationWithTicketsLink: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_order_confirmation_with_tickets_link',
-		displayName: 'Order confirmed but ticket couldn`t be generated',
+		displayName: '注文は確認されたがチケットが生成されない',
 	},
 	wixEventsTickets_wixEventsNotificationsRsvpConfirmation: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_rsvp_confirmation',
-		displayName: 'RSVP confirmed',
+		displayName: '参加申込が確認される',
 	},
 	wixEventsTickets_wixEventsTicketPurchase: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-ticket_purchase',
-		displayName: 'Ticket ordered',
+		displayName: 'チケットが注文された時',
 	},
 	wixEventsTickets_wixEventsUouAddedToWaitlist: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-uou_added_to_waitlist',
-		displayName: 'Guest registers to waitlist',
+		displayName: 'ゲストがキャンセル待ちに登録された時',
 	},
 	wixEventsTickets_wixEventsUouRsvp: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-uou_rsvp',
-		displayName: 'Guest RSVPs',
+		displayName: 'ゲストが出欠を連絡した時',
 	},
 	wixFileShare_wixFileShareAccessToFolderApproved: {
 		appId: '1537b24e-29d1-6d8f-b8e1-d6860f2f70b9',
 		triggerKey: 'wix_file_share-access_to_folder_approved',
-		displayName: 'Folder access given',
+		displayName: 'フォルダアクセス権付与',
 	},
 	wixFileShare_wixFileShareRequestedAccessToFolder: {
 		appId: '1537b24e-29d1-6d8f-b8e1-d6860f2f70b9',
 		triggerKey: 'wix_file_share-requested_access_to_folder',
-		displayName: 'Folder access requested',
+		displayName: 'フォルダアクセス権リクエスト',
 	},
 	wixForms_fn6E3266E324B547E29B11623Feede7B14294575A72A2D5D6AB56BC6B8Bda74B16: {
 		appId: '225dd912-7dea-4738-8688-4b8c6955ffc2',
@@ -413,42 +413,42 @@ export const wixAutomationsTriggers: {
 	wixForms_wixFormAppFormSubmitted: {
 		appId: '225dd912-7dea-4738-8688-4b8c6955ffc2',
 		triggerKey: 'wix_form_app-form_submitted',
-		displayName: 'Form submitted',
+		displayName: 'フォームが提出された時',
 	},
 	wixForum_wixForumForumCommentDeleted: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_comment_deleted',
-		displayName: 'Forum comment deleted',
+		displayName: 'フォーラムのコメントが削除された時',
 	},
 	wixForum_wixForumForumCommentPublished: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_comment_published',
-		displayName: 'Forum comment published',
+		displayName: 'フォーラムのコメントが公開された時',
 	},
 	wixForum_wixForumForumPostLiked: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_post_liked',
-		displayName: 'Reacted to Forum post',
+		displayName: 'フォーラム記事にリアクションした時',
 	},
 	wixForum_wixForumForumPostUnliked: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_post_unliked',
-		displayName: 'Removed reaction from Forum post',
+		displayName: 'フォーラム記事からリアクションが削除された時',
 	},
 	wixForum_wixForumNewPost: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-new_post',
-		displayName: 'Forum post published',
+		displayName: 'フォーラム記事が公開',
 	},
 	wixForum_wixForumReactedToComment: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-reacted_to_comment',
-		displayName: 'Reacted to Forum comment',
+		displayName: 'フォーラムのコメントにリアクションした時',
 	},
 	wixForum_wixForumRemovedReactionFromForumComment: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-removed_reaction_from_forum_comment',
-		displayName: 'Removed reaction from Forum comment',
+		displayName: 'フォーラムのコメントからリアクションが削除された時',
 	},
 	wixGroups_domainEventsWixSocialGroupsV2GroupRequestApproved: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -458,7 +458,7 @@ export const wixAutomationsTriggers: {
 	wixGroups_domainEventsWixSocialGroupsV2GroupRequestCreated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'domain_events_wix.social_groups.v2.group_request-created',
-		displayName: 'Member requests to create a group DE',
+		displayName: 'メンバーがグループの作成をリクエストした時',
 	},
 	wixGroups_domainEventsWixSocialGroupsV2GroupRequestRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -478,17 +478,17 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsCreateGroupReminder: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-create_group_reminder',
-		displayName: 'Reminder to create group',
+		displayName: 'グループ作成のリマインダー',
 	},
 	wixGroups_wixGroupsFolloweeCreatesAPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-followee_creates_a_post',
-		displayName: 'Someone you follow creates a post',
+		displayName: 'フォローしているユーザーが投稿を作成した時',
 	},
 	wixGroups_wixGroupsGroupCreated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-group_created',
-		displayName: 'New group created',
+		displayName: '新規グループの作成',
 	},
 	wixGroups_wixGroupsGroupRequestRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -498,67 +498,67 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsGroupUpdated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-group_updated',
-		displayName: 'Group Updated',
+		displayName: 'グループが更新された時',
 	},
 	wixGroups_wixGroupsInviteMembersReminder: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-invite_members_reminder',
-		displayName: 'Reminder to invite members',
+		displayName: 'メンバー招待のリマインダー',
 	},
 	wixGroups_wixGroupsJoinRequestAccepted: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-join_request_accepted',
-		displayName: 'Member request to join a group approved',
+		displayName: 'グループへの参加リクエストが承認された時',
 	},
 	wixGroups_wixGroupsJoinRequestCreated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-join_request_created',
-		displayName: 'Member requests to join a group',
+		displayName: 'メンバーがグループへの参加をリクエストした時',
 	},
 	wixGroups_wixGroupsJoinRequestRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-join_request_rejected',
-		displayName: 'Member request to join a group declined',
+		displayName: 'グループへのメンバー参加リクエストの却下',
 	},
 	wixGroups_wixGroupsMemberAddedToGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_added_to_group',
-		displayName: 'Member joins a group',
+		displayName: 'メンバーがグループに参加した時',
 	},
 	wixGroups_wixGroupsMemberAddedToGroupAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_added_to_group_agg',
-		displayName: 'Members join a group',
+		displayName: 'メンバーがグループに参加した時',
 	},
 	wixGroups_wixGroupsMemberCreatedPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post',
-		displayName: 'Member creates a post',
+		displayName: 'メンバーが記事を作成した時',
 	},
 	wixGroups_wixGroupsMemberCreatedPostAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post_agg',
-		displayName: 'Members create posts',
+		displayName: 'メンバーが投稿を作成した時',
 	},
 	wixGroups_wixGroupsMemberCreatedPostComment: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post_comment',
-		displayName: 'Member comments on a post',
+		displayName: 'メンバーが投稿にコメントした時',
 	},
 	wixGroups_wixGroupsMemberInvitedToGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_invited_to_group',
-		displayName: 'Member invited to group',
+		displayName: 'グループに招待されたメンバー',
 	},
 	wixGroups_wixGroupsMemberLeavesGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_leaves_group',
-		displayName: 'Member leaves a group',
+		displayName: 'メンバーがグループを退会した時',
 	},
 	wixGroups_wixGroupsMemberMentionedYouV3: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_mentioned_you_v3',
-		displayName: 'Member mentioned someone',
+		displayName: 'メンバーが誰かについてメンション',
 	},
 	wixGroups_wixGroupsMemberMentionsSomeoneV2: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -568,17 +568,17 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsMemberPaidForGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_paid_for_group',
-		displayName: 'Member pays for a group',
+		displayName: 'メンバーがグループの支払いをした時',
 	},
 	wixGroups_wixGroupsMemberPpExpired: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_pp_expired',
-		displayName: 'Member removed as payment plan expired',
+		displayName: '支払いプランの有効期限が切れたため、削除されたメンバー',
 	},
 	wixGroups_wixGroupsMemberReactedToYourComment: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_reacted_to_your_comment',
-		displayName: 'Member reacts to a comment',
+		displayName: 'メンバーがコメントにリアクションした時',
 	},
 	wixGroups_wixGroupsMemberReactedToYourCommentAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -588,7 +588,7 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsMemberReactedToYourPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_reacted_to_your_post',
-		displayName: 'Member reacts to a post',
+		displayName: 'メンバーが記事にリアクションした時',
 	},
 	wixGroups_wixGroupsMemberReactedToYourPostAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -598,12 +598,12 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsMemberRequestToCreateGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member-request-to-create-group',
-		displayName: 'Member requests to create a group',
+		displayName: 'メンバーがグループの作成をリクエストした時',
 	},
 	wixGroups_wixGroupsMemberRoleUpdated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_role_updated',
-		displayName: 'Member role updated',
+		displayName: 'メンバーの役割が更新された時',
 	},
 	wixGroups_wixGroupsMembersMentioned: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -613,37 +613,37 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsNewMembersJoined: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-new_members_joined',
-		displayName: 'Group has new member generic update',
+		displayName: 'グループへの新規メンバー参加（一般的な更新）',
 	},
 	wixGroups_wixGroupsPersonInvitedToGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-person_invited_to_group',
-		displayName: 'Person invited to group',
+		displayName: 'グループに招待されたユーザー',
 	},
 	wixGroups_wixGroupsWeeklyDigest: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-weekly-digest',
-		displayName: 'Weekly Digest',
+		displayName: '週刊ダイジェスト',
 	},
 	wixInvoices_wixInvoicesInvoiceOverdue: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_overdue',
-		displayName: 'Invoice overdue',
+		displayName: '請求書の期限が切れた時',
 	},
 	wixInvoices_wixInvoicesInvoicePaid: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_paid',
-		displayName: 'Invoice paid',
+		displayName: '請求書の支払いが完了した時',
 	},
 	wixInvoices_wixInvoicesInvoicePaymentReceived: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_payment_received',
-		displayName: 'Invoice payment received',
+		displayName: '請求書の支払いを受領',
 	},
 	wixInvoices_wixInvoicesInvoiceSent: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_sent',
-		displayName: 'Invoice sent',
+		displayName: '請求書が送信された時',
 	},
 	wixLoyaltyProgram_function23D95Ad46Eba5E06888E164C2B9C4F5F: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
@@ -653,32 +653,32 @@ export const wixAutomationsTriggers: {
 	wixLoyaltyProgram_wixLoyaltyLoyaltyPointsReached: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-loyalty_points_reached',
-		displayName: 'Customer has enough points for rewards',
+		displayName: '顧客のポイントが特典を獲得できる数に達した時',
 	},
 	wixLoyaltyProgram_wixLoyaltyPointsAboutToExpire: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-points_about_to_expire',
-		displayName: 'Points expire in 14 days',
+		displayName: 'ポイントの有効期限が残り14日間',
 	},
 	wixLoyaltyProgram_wixLoyaltyPointsAdjusted: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-points_adjusted',
-		displayName: 'Points balance adjusted manually',
+		displayName: 'ポイント残高が手動で更新された時',
 	},
 	wixLoyaltyProgram_wixLoyaltyPointsEarned: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-points_earned',
-		displayName: 'Customer earns points',
+		displayName: '顧客がポイントを獲得した時',
 	},
 	wixLoyaltyProgram_wixLoyaltySocialMediaChannelFollowed: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-social_media_channel_followed',
-		displayName: 'Social media profile followed',
+		displayName: 'ソーシャルメディアのプロフィールをフォロー',
 	},
 	wixLoyaltyProgram_wixLoyaltyTierUpdated: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-tier_updated',
-		displayName: 'Customer enters tier',
+		displayName: '顧客がランクに到達した時',
 	},
 	wixOnlinePrograms_wixOnlineProgramsAccessDenied: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
@@ -688,7 +688,7 @@ export const wixAutomationsTriggers: {
 	wixOnlinePrograms_wixOnlineProgramsCertificateReady: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-certificate_ready',
-		displayName: 'Certificate available to download',
+		displayName: '認定証がダウンロード可能',
 	},
 	wixOnlinePrograms_wixOnlineProgramsExportedProgramData: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
@@ -698,92 +698,92 @@ export const wixAutomationsTriggers: {
 	wixOnlinePrograms_wixOnlineProgramsJoinRequestReceived: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-join_request_received',
-		displayName: 'Program join request received',
+		displayName: 'オンラインプログラムへの参加リクエストを受信',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberInvitedToJoinAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_invited_to_join_a_program',
-		displayName: 'Member invited to join a program',
+		displayName: 'サイト会員がプログラムに招待された時',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberJoinRequestApproved: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_join_request_approved',
-		displayName: 'Member`s join request approved',
+		displayName: 'サイト会員の参加リクエストが承認された',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberJoinRequestWasDeclined: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_join_request_was_declined',
-		displayName: 'Member`s join request declined',
+		displayName: 'サイト会員の参加リクエストが却下された',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberJoinsAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_joins_a_program',
-		displayName: 'Member joins a program',
+		displayName: 'サイト会員がプログラムに参加した時',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberPaysForAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_pays_for_a_program',
-		displayName: 'Member pays for a program',
+		displayName: 'サイト会員がプログラムの支払いをした時',
 	},
 	wixOnlinePrograms_wixOnlineProgramsOfflinePaymentDeclined: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-offline_payment_declined',
-		displayName: 'Offline payment declined',
+		displayName: 'オフライン決済が却下',
 	},
 	wixOnlinePrograms_wixOnlineProgramsOfflinePaymentReceived: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-offline_payment_received',
-		displayName: 'Offline program payment received',
+		displayName: 'オンラインプログラムのオフライン決済を受信',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantCompletesAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_completes_a_program',
-		displayName: 'Participant completes a program',
+		displayName: '参加者がオンラインプログラムを完了した時',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantCompletesAStep: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_completes_a_step',
-		displayName: 'Participant completes a step',
+		displayName: '参加者がステップを完了した時',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantLeavesAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_leaves_a_program',
-		displayName: 'Participant leaves a program',
+		displayName: '参加者がオンラインプログラムを退会する時',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantManuallyAddedToProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_manually_added_to_program',
-		displayName: 'Participant manually added to program',
+		displayName: '参加者を手動でプログラムに追加',
 	},
 	wixOnlinePrograms_wixOnlineProgramsPaymentFailed: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-payment_failed',
-		displayName: 'Payment failed',
+		displayName: '支払いが失敗',
 	},
 	wixOnlinePrograms_wixOnlineProgramsProgramDurationEnds: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-program_duration_ends',
-		displayName: 'Program end date has passed',
+		displayName: 'プログラム終了日が過ぎた',
 	},
 	wixOnlinePrograms_wixOnlineProgramsProgramEndedWithoutAllStepsCompleted: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-program_ended_without_all_steps_completed',
-		displayName: 'Program ended without all steps completed',
+		displayName: 'すべてのステップを完了せずにプログラムが終了',
 	},
 	wixOnlinePrograms_wixOnlineProgramsReminderToCompleteSteps: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-reminder_to_complete_steps',
-		displayName: 'Reminder to complete scheduled steps',
+		displayName: '予定されているステップ完了のリマインダー',
 	},
 	wixOnlinePrograms_wixOnlineProgramsVisitorBlockedFromJoining: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-visitor_blocked_from_joining',
-		displayName: 'Visitor access denied',
+		displayName: '訪問者の参加をブロック',
 	},
 	wixPortfolio_wixPortfolioProjectCreated: {
 		appId: 'd90652a2-f5a1-4c7c-84c4-d4cdcc41f130',
 		triggerKey: 'wix_portfolio-project_created',
-		displayName: 'New project created',
+		displayName: '作成された新規プロジェクト',
 	},
 	wixPricingPlans_fn3D1Dd01508B14300Ab44055E149550808Aa6A53D85D257E1827D6C7Beede2D83:
 		{
@@ -851,87 +851,87 @@ export const wixAutomationsTriggers: {
 	wixPricingPlans_wixPricingPlansPlanCanceled: {
 		appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
 		triggerKey: 'wix_pricing_plans-plan_canceled',
-		displayName: 'Plan canceled',
+		displayName: 'プランが変更されたとき',
 	},
 	wixPricingPlans_wixPricingPlansPlanPurchased: {
 		appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
 		triggerKey: 'wix_pricing_plans-plan_purchased',
-		displayName: 'Plan ordered',
+		displayName: 'プランが購入されたとき',
 	},
 	wixProposals_wixProposalsProposalAccepted: {
 		appId: 'b68c2f3d-8a70-4e1f-9432-3cd1fd011965',
 		triggerKey: 'wix_proposals-proposal_accepted',
-		displayName: 'Proposal accepted',
+		displayName: '提案書が承諾された時',
 	},
 	wixProposals_wixProposalsSendProposal: {
 		appId: 'b68c2f3d-8a70-4e1f-9432-3cd1fd011965',
 		triggerKey: 'wix_proposals-send_proposal',
-		displayName: 'Proposal sent',
+		displayName: '提案書が送信された時',
 	},
 	wixRestaurantsOrders_wixRestaurantsOrdersOrderSubmitted: {
 		appId: '13e8d036-5516-6104-b456-c8466db39542',
 		triggerKey: 'wix_restaurants_orders-order_submitted',
-		displayName: 'Restaurant order placed',
+		displayName: '送信済みの注文',
 	},
 	wixRestaurantsOrdersNew_restaurantsDeliveryOrderIsReady: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-delivery-order-is-ready',
-		displayName: 'Delivery order ready',
+		displayName: '出荷準備が完了した時',
 	},
 	wixRestaurantsOrdersNew_restaurantsFutureOrderApproved: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-future-order-approved',
-		displayName: 'Future order due by',
+		displayName: '事前注文の期限',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderCanceled: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-canceled',
-		displayName: 'Order canceled',
+		displayName: '注文がキャンセルされた時',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderEdited: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-edited',
-		displayName: 'Order edited',
+		displayName: '注文が編集された時',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderIsInDelivery: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-in-delivery',
-		displayName: 'Order out for Delivery',
+		displayName: '注文が配達中のとき',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderIsPending: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-pending',
-		displayName: 'Order created',
+		displayName: '注文が作成されたとき',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderIsReady: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-ready',
-		displayName: 'Pickup order ready',
+		displayName: '店頭受け取りの準備が完了した時',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderWasAccepted: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-was-accepted',
-		displayName: 'Order accepted',
+		displayName: '注文の受付が完了した時',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderWasFulfilled: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-was-fulfilled',
-		displayName: 'Order fulfilled',
+		displayName: '配送が完了した時',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewCreated: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-created',
-		displayName: 'Review created',
+		displayName: 'レビュー作成済み',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewDeleted: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-deleted',
-		displayName: 'Review deleted',
+		displayName: 'レビュー削除済み',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewModerationStatusChanged: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-moderation_status_changed',
-		displayName: 'Review moderation status changed',
+		displayName: 'レビューの承認ステータスが変更された時',
 	},
 	wixReviewsApp_wixReviewsReviewRequestCreated: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
@@ -941,27 +941,27 @@ export const wixAutomationsTriggers: {
 	wixSiteMembersApp_wixMembersMemberApproves: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_approves',
-		displayName: 'Member approved',
+		displayName: 'サイト会員を承認した時',
 	},
 	wixSiteMembersApp_wixMembersMemberBlocked: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_blocked',
-		displayName: 'Member blocked',
+		displayName: 'メンバーをブロックした時',
 	},
 	wixSiteMembersApp_wixMembersMemberDeleted: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_deleted',
-		displayName: 'Member deleted',
+		displayName: 'メンバーは削除済み',
 	},
 	wixSiteMembersApp_wixMembersMemberLogsIn: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_logs_in',
-		displayName: 'Member logs in',
+		displayName: 'サイト会員がログインした時',
 	},
 	wixSiteMembersApp_wixMembersUouSignsUp: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-uou_signs_up',
-		displayName: 'Visitor signs up to your site',
+		displayName: 'サイト訪問者が新規登録した時',
 	},
 	wixSiteMembersApp_wixSitemembersAppMemberActivation: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
@@ -971,18 +971,18 @@ export const wixAutomationsTriggers: {
 	wixSiteMembersApp_wixSitemembersAppMemberEmailConfirmationRequired: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_sitemembers_app-member_email_confirmation_required',
-		displayName: 'Member email confirmation required',
+		displayName: '会員のメールアドレス確認が必要な時',
 	},
 	wixSiteMembersApp_wixSitemembersAppMemberResetPassword: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_sitemembers_app-member_reset_password',
-		displayName: 'Site member asks to reset password',
+		displayName: 'サイト会員がパスワードのリセットをリクエストした時',
 	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerOrderPaymentAdded: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-order_payment_added',
-		displayName: 'Payment Added to Order',
+		displayName: '注文に支払いが追加',
 	},
 	wixStores_fnB56C6504E65648C4A245935C334Fd52B78Eb5D7F788854DdBca71598B432Bfd8:
 		{
@@ -1009,51 +1009,51 @@ export const wixAutomationsTriggers: {
 	wixStores_wixECommerceCartAbandonment: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wix_e_commerce-cart_abandonment',
-		displayName: 'Checkout abandoned',
+		displayName: '購入手続きが完了されなかった時',
 	},
 	wixStores_wixECommerceOrderPlaced: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wix_e_commerce-order_placed',
-		displayName: 'Order placed',
+		displayName: '受注',
 	},
 	wixStores_wixstoresLegacyOrderPlacedV1: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wixstores-legacy_order_placed_v1',
-		displayName: 'Store order placed',
+		displayName: 'ショップで商品が注文された時',
 	},
 	wixStores_wixstoresPaymentAdded: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wixstores-payment_added',
-		displayName: 'Credit card is charged',
+		displayName: 'クレジットカード請求',
 	},
 	wixTableReservations_reservationStarted: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'reservation_started',
-		displayName: 'Table reservation starts',
+		displayName: '座席予約が開始された時',
 	},
 	wixTableReservations_reservationWasCanceled: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'reservation_was_canceled',
-		displayName: 'Table reservation canceled',
+		displayName: '座席予約がキャンセルされた時',
 	},
 	wixTableReservations_uouCreatedReservation: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'uou_created_reservation',
-		displayName: 'Table reserved by guest',
+		displayName: 'ゲストが座席を予約',
 	},
 	wixTableReservations_userCreatedReservation: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'user_created_reservation',
-		displayName: 'Table reservation added manually',
+		displayName: '座席予約が手動で追加された時',
 	},
 	wixTableReservations_userUpdatedReservation: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'user_updated_reservation',
-		displayName: 'Table reservation time updated',
+		displayName: '座席予約時間が更新されました',
 	},
 	workflows_wixWorkflowsCardAddedOrMoved: {
 		appId: 'ea2821fc-7d97-40a9-9f75-772f29178430',
 		triggerKey: 'wix_workflows-card_added_or_moved',
-		displayName: 'Card added or moved',
+		displayName: 'カードが作成または移動された時',
 	},
 };
