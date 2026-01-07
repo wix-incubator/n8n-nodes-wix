@@ -1,8 +1,8 @@
 import type { INodeProperties } from 'n8n-workflow';
-import { productGetDescription } from './get';
+import { productGetDescription, productGetBaseUrl } from './get';
 import { productGetManyDescription } from './getMany';
 import { productDeleteDescription } from './delete';
-import { productCreateDescription, productCreateVariantMerge } from './create';
+import { productCreateDescription } from './create';
 import { productUpdateDescription } from './update';
 
 const showOnlyForProducts = {
@@ -19,18 +19,18 @@ export const productDescription: INodeProperties[] = [
 			show: showOnlyForProducts,
 		},
 		options: [
-			{
-				name: 'Create',
-				value: 'create',
-				action: 'Create a product',
-				description: 'Create a new product',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/stores/v3/products',
-					},
+		{
+			name: 'Create',
+			value: 'create',
+			action: 'Create a product',
+			description: 'Create a new product with inventory',
+			routing: {
+				request: {
+					method: 'POST',
+					url: '/stores/v3/products-with-inventory',
 				},
 			},
+		},
 			{
 				name: 'Delete',
 				value: 'delete',
@@ -51,7 +51,7 @@ export const productDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '=/stores/v3/products/{{$parameter.productId}}',
+						url: `=${productGetBaseUrl}{{$parameter.productId}}`,
 					},
 				},
 			},
@@ -67,18 +67,18 @@ export const productDescription: INodeProperties[] = [
 					},
 				},
 			},
-			{
-				name: 'Update',
-				value: 'update',
-				action: 'Update a product',
-				description: 'Update an existing product',
-				routing: {
-					request: {
-						method: 'PATCH',
-						url: '=/stores/v3/products/{{$parameter.productId}}',
-					},
+		{
+			name: 'Update',
+			value: 'update',
+			action: 'Update a product',
+			description: 'Update an existing product with inventory',
+			routing: {
+				request: {
+					method: 'PATCH',
+					url: '=/stores/v3/products-with-inventory/{{$parameter.productId}}',
 				},
 			},
+		},
 		],
 		default: 'get',
 	},
@@ -86,6 +86,5 @@ export const productDescription: INodeProperties[] = [
 	...productGetManyDescription,
 	...productDeleteDescription,
 	...productCreateDescription,
-	productCreateVariantMerge,
 	...productUpdateDescription,
 ];
