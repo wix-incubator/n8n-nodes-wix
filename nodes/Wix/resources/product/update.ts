@@ -144,18 +144,12 @@ export const productUpdateDescription: INodeProperties[] = [
 				],
 			},
 			{
-				displayName: 'SEO Description',
-				name: 'seoDescription',
-				type: 'string',
+				displayName: 'SEO Data',
+				name: 'seoData',
+				type: 'json',
 				default: '',
-				description: 'SEO meta description',
-			},
-			{
-				displayName: 'SEO Title',
-				name: 'seoTitle',
-				type: 'string',
-				default: '',
-				description: 'SEO meta title',
+				placeholder: '{"tags": [{"type": "title", "children": "My Product"}, {"type": "meta", "props": {"name": "description", "content": "Product description"}}]}',
+				description: 'SEO schema with tags and settings. Tags support types: title, meta, script, link.',
 			},
 			{
 				displayName: 'Slug',
@@ -265,7 +259,7 @@ export const productUpdateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'product',
-				value: '={{ (() => { const customData = $value.custom ? (typeof $value.custom === "string" ? JSON.parse($value.custom) : $value.custom) : {}; const fields = {}; if ($value.name) fields.name = $value.name; if ($value.description) fields.description = $value.description; if ($value.slug) fields.slug = $value.slug; if ($value.productType) fields.productType = $value.productType; if ($value.visible !== undefined) fields.visible = $value.visible; if ($value.visibleInPos !== undefined) fields.visibleInPos = $value.visibleInPos; if ($value.seoTitle) fields.seoTitle = $value.seoTitle; if ($value.seoDescription) fields.seoDescription = $value.seoDescription; if ($value.taxGroupId) fields.taxGroupId = $value.taxGroupId; if ($value.ribbon?.ribbonValues?.text) { fields.ribbon = { text: $value.ribbon.ribbonValues.text }; if ($value.ribbon.ribbonValues.id) fields.ribbon._id = $value.ribbon.ribbonValues.id; } if ($value.physicalProperties?.physicalPropertiesValues) { const pp = $value.physicalProperties.physicalPropertiesValues; fields.physicalProperties = {}; if (pp.fulfillerId) fields.physicalProperties.fulfillerId = pp.fulfillerId; if (pp.shippingGroupId) fields.physicalProperties.shippingGroupId = pp.shippingGroupId; } if ($value.variantInventory?.variant && $value.variantInventory.variant.length > 0) { fields.variantsInfo = { variants: $value.variantInventory.variant.map(v => { const variant = { _id: v.id }; if (v.inventoryTracking === "QUANTITY") { variant.inventoryItem = { quantity: v.inventoryQuantity }; } else if (v.inventoryTracking === "IN_STOCK") { variant.inventoryItem = { inStock: v.inventoryInStock }; } return variant; }) }; } return { ...fields, ...customData }; })() }}',
+				value: '={{ (() => { const customData = $value.custom ? (typeof $value.custom === "string" ? JSON.parse($value.custom) : $value.custom) : {}; const fields = {}; if ($value.name) fields.name = $value.name; if ($value.description) fields.description = $value.description; if ($value.slug) fields.slug = $value.slug; if ($value.productType) fields.productType = $value.productType; if ($value.visible !== undefined) fields.visible = $value.visible; if ($value.visibleInPos !== undefined) fields.visibleInPos = $value.visibleInPos; if ($value.seoData) fields.seoData = typeof $value.seoData === "string" ? JSON.parse($value.seoData) : $value.seoData; if ($value.taxGroupId) fields.taxGroupId = $value.taxGroupId; if ($value.ribbon?.ribbonValues?.text) { fields.ribbon = { text: $value.ribbon.ribbonValues.text }; if ($value.ribbon.ribbonValues.id) fields.ribbon._id = $value.ribbon.ribbonValues.id; } if ($value.physicalProperties?.physicalPropertiesValues) { const pp = $value.physicalProperties.physicalPropertiesValues; fields.physicalProperties = {}; if (pp.fulfillerId) fields.physicalProperties.fulfillerId = pp.fulfillerId; if (pp.shippingGroupId) fields.physicalProperties.shippingGroupId = pp.shippingGroupId; } if ($value.variantInventory?.variant && $value.variantInventory.variant.length > 0) { fields.variantsInfo = { variants: $value.variantInventory.variant.map(v => { const variant = { _id: v.id }; if (v.inventoryTracking === "QUANTITY") { variant.inventoryItem = { quantity: v.inventoryQuantity }; } else if (v.inventoryTracking === "IN_STOCK") { variant.inventoryItem = { inStock: v.inventoryInStock }; } return variant; }) }; } return { ...fields, ...customData }; })() }}',
 			},
 		},
 	},

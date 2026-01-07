@@ -337,7 +337,7 @@ export const productCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'product.options',
-				value: '={{ $value.option && $value.option.length > 0 ? $value.option.map(o => { const cfg = o.settings?.config || {}; const opt = { name: o.name, optionRenderType: cfg.optionRenderType || "TEXT_CHOICES" }; if (o.id) opt._id = o.id; if (cfg.choicesSettings?.choice && cfg.choicesSettings.choice.length > 0) { opt.choicesSettings = { choices: cfg.choicesSettings.choice.map(c => { const choice = { name: c.name, choiceType: c.choiceType || "CHOICE_TEXT" }; if (c.choiceType === "ONE_COLOR" && c.colorCode) choice.colorCode = c.colorCode; return choice; }) }; } return opt; }) : undefined }}',
+				value: '={{ $value.option && $value.option.length > 0 ? $value.option.map(o => { const cfg = o.settings?.config || {}; const opt = { name: o.name, optionRenderType: cfg.optionRenderType || "TEXT_CHOICES" }; if (o.id) opt.id = o.id; if (cfg.choicesSettings?.choice && cfg.choicesSettings.choice.length > 0) { opt.choicesSettings = { choices: cfg.choicesSettings.choice.map(c => { const choice = { name: c.name, choiceType: c.choiceType || "CHOICE_TEXT" }; if (c.choiceType === "ONE_COLOR" && c.colorCode) choice.colorCode = c.colorCode; return choice; }) }; } return opt; }) : undefined }}',
 			},
 		},
 	},
@@ -535,12 +535,61 @@ export const productCreateDescription: INodeProperties[] = [
 			{
 				displayName: 'Info Sections',
 				name: 'infoSections',
-				type: 'json',
-				default: '',
-				description: 'Additional product information sections (e.g., refund policy, care instructions)',
+				type: 'fixedCollection',
 				typeOptions: {
-					alwaysOpenEditWindow: true,
+					multipleValues: true,
 				},
+				default: {},
+				placeholder: 'Add Info Section',
+				description: 'Additional product information sections (e.g., refund policy, care instructions)',
+				options: [
+					{
+						displayName: 'Info Section',
+						name: 'section',
+						values: [
+							{
+								displayName: 'Section ID',
+								name: 'id',
+								type: 'string',
+								default: '',
+								description: 'Info section ID (leave empty to create new)',
+							},							
+							{
+								displayName: 'Title',
+								name: 'title',
+								type: 'string',
+								default: '',
+								placeholder: 'e.g., Refund Policy',
+								description: 'Info section title (max 50 chars)',
+							},
+							{
+								displayName: 'Unique Name',
+								name: 'uniqueName',
+								type: 'string',
+								default: '',
+								placeholder: 'e.g., refund-policy',
+								description: 'Info section unique name (max 100 chars)',
+							},
+							{
+								displayName: 'Plain Description',
+								name: 'plainDescription',
+								type: 'string',
+								typeOptions: {
+									rows: 4,
+								},
+								default: '',
+								description: 'Info section description in HTML (max 16000 chars)',
+							},
+						],
+					},
+				],
+			},
+			{
+				displayName: 'Main Category ID',
+				name: 'mainCategoryId',
+				type: 'string',
+				default: '',
+				description: 'The ID of the product\'s primary direct category, which defines the product\'s breadcrumbs path. For example, if the product\'s main category is "T-Shirts" (which is a subcategory of "Clothing"), the breadcrumbs path will be "Clothing > T-Shirts".',
 			},
 			mediaItemsField,
 			{
@@ -616,18 +665,12 @@ export const productCreateDescription: INodeProperties[] = [
 				description: 'Product ribbon/badge text',
 			},
 			{
-				displayName: 'SEO Description',
-				name: 'seoDescription',
-				type: 'string',
-				default: '',
-				description: 'SEO meta description',
-			},
-			{
-				displayName: 'SEO Title',
-				name: 'seoTitle',
-				type: 'string',
-				default: '',
-				description: 'SEO meta title',
+				displayName: 'SEO Data',
+				name: 'seoData',
+				type: 'json',
+				default: '{}',
+				placeholder: '{"tags": [{"type": "title", "children": "My Product"}, {"type": "meta", "props": {"name": "description", "content": "Product description"}}]}',
+				description: 'SEO schema with tags and settings. Tags support types: title, meta, script, link.',
 			},
 			{
 				displayName: 'Slug',
@@ -662,7 +705,7 @@ export const productCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'product',
-				value: '={{ (() => { const customData = $value.custom ? (typeof $value.custom === "string" ? JSON.parse($value.custom) : $value.custom) : {}; const fields = {}; if ($value.description) fields.description = typeof $value.description === "string" ? JSON.parse($value.description) : $value.description; if ($value.plainDescription) fields.plainDescription = $value.plainDescription; if ($value.slug) fields.slug = $value.slug; if ($value.visible !== undefined) fields.visible = $value.visible; if ($value.visibleInPos !== undefined) fields.visibleInPos = $value.visibleInPos; if ($value.seoTitle) fields.seoTitle = $value.seoTitle; if ($value.seoDescription) fields.seoDescription = $value.seoDescription; if ($value.taxGroupId) fields.taxGroupId = $value.taxGroupId; if ($value.ribbon) fields.ribbon = { name: $value.ribbon }; if ($value.brandName) fields.brand = { name: $value.brandName }; const mediaItems = $value.mediaItems?.item; if (mediaItems && mediaItems.length > 0) { const items = mediaItems.map(m => { const item = {}; if (m.id) item.id = m.id; else if (m.url) item.url = m.url; if (m.altText) item.altText = m.altText; if (m.displayName) item.displayName = m.displayName; return item; }).filter(item => item.id || item.url); if (items.length > 0) { fields.media = { itemsInfo: { items } }; } } if ($value.infoSections) fields.infoSections = typeof $value.infoSections === "string" ? JSON.parse($value.infoSections) : $value.infoSections; if ($value.physicalProperties?.physicalPropertiesValues) { const pp = $value.physicalProperties.physicalPropertiesValues; fields.physicalProperties = {}; if (pp.fulfillerId) fields.physicalProperties.fulfillerId = pp.fulfillerId; if (pp.shippingGroupId) fields.physicalProperties.shippingGroupId = pp.shippingGroupId; if (pp.measurementUnit && pp.quantity) fields.physicalProperties.pricePerUnit = { quantity: pp.quantity, measurementUnit: pp.measurementUnit }; } else if ($parameter.productType === "PHYSICAL") { fields.physicalProperties = {}; } return { ...fields, ...customData }; })() }}',
+				value: '={{ (() => { const customData = $value.custom ? (typeof $value.custom === "string" ? JSON.parse($value.custom) : $value.custom) : {}; const fields = {}; if ($value.description) fields.description = typeof $value.description === "string" ? JSON.parse($value.description) : $value.description; if ($value.plainDescription) fields.plainDescription = $value.plainDescription; if ($value.slug) fields.slug = $value.slug; if ($value.visible !== undefined) fields.visible = $value.visible; if ($value.visibleInPos !== undefined) fields.visibleInPos = $value.visibleInPos; if ($value.seoData) fields.seoData = typeof $value.seoData === "string" ? JSON.parse($value.seoData) : $value.seoData; if ($value.taxGroupId) fields.taxGroupId = $value.taxGroupId; if ($value.ribbon) fields.ribbon = { name: $value.ribbon }; if ($value.brandName) fields.brand = { name: $value.brandName }; const mediaItems = $value.mediaItems?.item; if (mediaItems && mediaItems.length > 0) { const items = mediaItems.map(m => { const item = {}; if (m.id) item.id = m.id; else if (m.url) item.url = m.url; if (m.altText) item.altText = m.altText; if (m.displayName) item.displayName = m.displayName; return item; }).filter(item => item.id || item.url); if (items.length > 0) { fields.media = { itemsInfo: { items } }; } } if ($value.infoSections?.section && $value.infoSections.section.length > 0) { fields.infoSections = $value.infoSections.section.map(s => { const section = {}; if (s.id) section._id = s.id; if (s.title) section.title = s.title; if (s.uniqueName) section.uniqueName = s.uniqueName; if (s.plainDescription) section.plainDescription = s.plainDescription; return section; }); } if ($value.mainCategoryId) fields.mainCategoryId = $value.mainCategoryId; if ($value.physicalProperties?.physicalPropertiesValues) { const pp = $value.physicalProperties.physicalPropertiesValues; fields.physicalProperties = {}; if (pp.fulfillerId) fields.physicalProperties.fulfillerId = pp.fulfillerId; if (pp.shippingGroupId) fields.physicalProperties.shippingGroupId = pp.shippingGroupId; if (pp.measurementUnit && pp.quantity) fields.physicalProperties.pricePerUnit = { quantity: pp.quantity, measurementUnit: pp.measurementUnit }; } else if ($parameter.productType === "PHYSICAL") { fields.physicalProperties = {}; } return { ...fields, ...customData }; })() }}',
 			},
 		},
 	},
