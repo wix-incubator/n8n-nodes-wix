@@ -1,5 +1,6 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+import { createChoicesSettingsField } from '../common/productChoices';
 import { mediaItemsField } from '../common/productMedia';
 
 const showOnlyForProductCreate = {
@@ -179,16 +180,7 @@ export const productCreateDescription: INodeProperties[] = [
 									{
 										displayName: 'Choice',
 										name: 'choice',
-										values: [
-											{
-												displayName: 'Choice Name',
-												name: 'choiceName',
-												type: 'string',
-												default: '',
-												required: true,
-												placeholder: 'e.g., S',
-												description: 'The choice value for this variant',
-											},
+										values: [											
 											{
 												displayName: 'Option Name',
 												name: 'optionName',
@@ -215,6 +207,15 @@ export const productCreateDescription: INodeProperties[] = [
 												default: 'TEXT_CHOICES',
 												description: 'How this choice is displayed',
 											},
+											{
+												displayName: 'Choice Name',
+												name: 'choiceName',
+												type: 'string',
+												default: '',
+												required: true,
+												placeholder: 'e.g., S',
+												description: 'The choice value for this variant',
+											},									
 										],
 									},
 								],
@@ -287,75 +288,47 @@ export const productCreateDescription: INodeProperties[] = [
 						default: '',
 						required: true,
 						placeholder: 'e.g., Size',
-						description: 'Option name',
+						description: 'Option name (max 50 chars)',
 					},
 					{
-						displayName: 'Render Type',
-						name: 'optionRenderType',
-						type: 'options',
-						options: [
-							{
-								name: 'Color Swatch',
-								value: 'SWATCH_CHOICES',
-							},
-							{
-								name: 'Text',
-								value: 'TEXT_CHOICES',
-							},
-						],
-						default: 'TEXT_CHOICES',
-						description: 'How this option is displayed',
-					},
-					{
-						displayName: 'Choices',
-						name: 'choices',
+						displayName: 'Settings',
+						name: 'settings',
 						type: 'fixedCollection',
-						typeOptions: {
-							multipleValues: true,
-						},
 						default: {},
-						placeholder: 'Add Choice',
+						description: 'Option type and choices',
 						options: [
 							{
-								displayName: 'Choice',
-								name: 'choice',
+								displayName: 'Settings',
+								name: 'config',
 								values: [
-									{
-										displayName: 'Name',
-										name: 'name',
-										type: 'string',
-										default: '',
-										required: true,
-										placeholder: 'e.g., Small',
-										description: 'Choice name',
-									},
-									{
-										displayName: 'Choice Type',
-										name: 'choiceType',
-										type: 'options',
-										options: [
-											{
-												name: 'One Color',
-												value: 'ONE_COLOR',
-											},
-											{
-												name: 'Text',
-												value: 'CHOICE_TEXT',
-											},
-										],
-										default: 'CHOICE_TEXT',
-										description: 'Type of choice',
-									},
-									{
-										displayName: 'Color Code',
-										name: 'colorCode',
-										type: 'color',
-										default: '',
-										description: 'Hex color code (only for One Color type)',
-									},
+								{
+									displayName: 'Render Type',
+									name: 'optionRenderType',
+									type: 'options',
+									options: [
+										{
+											name: 'Swatch Choices',
+											value: 'SWATCH_CHOICES',
+										},
+										{
+											name: 'Text Choices',
+											value: 'TEXT_CHOICES',
+										},
+									],
+									default: 'TEXT_CHOICES',
+									description: 'How this option is displayed',
+								},
+								createChoicesSettingsField(),
 								],
 							},
 						],
+					},
+					{
+						displayName: 'Customization ID',
+						name: 'id',
+						type: 'string',
+						default: '',
+						description: 'ID of an existing customization to connect (leave empty to create new)',
 					},
 				],
 			},
@@ -364,7 +337,7 @@ export const productCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'product.options',
-				value: '={{ $value.option && $value.option.length > 0 ? $value.option.map(o => ({ name: o.name, optionRenderType: o.optionRenderType, choicesSettings: { choices: o.choices?.choice ? o.choices.choice.map(c => ({ name: c.name, choiceType: c.choiceType, ...(c.colorCode ? { colorCode: c.colorCode } : {}) })) : [] } })) : undefined }}',
+				value: '={{ $value.option && $value.option.length > 0 ? $value.option.map(o => { const cfg = o.settings?.config || {}; const opt = { name: o.name, optionRenderType: cfg.optionRenderType || "TEXT_CHOICES" }; if (o.id) opt._id = o.id; if (cfg.choicesSettings?.choice && cfg.choicesSettings.choice.length > 0) { opt.choicesSettings = { choices: cfg.choicesSettings.choice.map(c => { const choice = { name: c.name, choiceType: c.choiceType || "CHOICE_TEXT" }; if (c.choiceType === "ONE_COLOR" && c.colorCode) choice.colorCode = c.colorCode; return choice; }) }; } return opt; }) : undefined }}',
 			},
 		},
 	},
@@ -428,68 +401,11 @@ export const productCreateDescription: INodeProperties[] = [
 										default: 'TEXT_CHOICES',
 										description: 'Modifier input type',
 									},
-									{
-										displayName: 'Choices',
-										name: 'choicesSettings',
-										type: 'fixedCollection',
-										typeOptions: {
-											multipleValues: true,
-										},
-										default: {},
-										placeholder: 'Add Choice',
-										description: 'Available choices (max 100)',
-										displayOptions: {
-											show: {
-												modifierRenderType: ['TEXT_CHOICES', 'SWATCH_CHOICES'],
-											},
-										},
-										options: [
-											{
-												displayName: 'Choice',
-												name: 'choice',
-												values: [
-													{
-														displayName: 'Choice Type',
-														name: 'choiceType',
-														type: 'options',
-														options: [
-															{
-																name: 'One Color',
-																value: 'ONE_COLOR',
-															},
-															{
-																name: 'Text',
-																value: 'CHOICE_TEXT',
-															},
-														],
-														default: 'CHOICE_TEXT',
-														description: 'Type of choice',
-													},
-													{
-														displayName: 'Color Code',
-														name: 'colorCode',
-														type: 'color',
-														default: '',
-														description: 'Hex color code (only for One Color type)',
-														displayOptions: {
-															show: {
-																choiceType: ['ONE_COLOR'],
-															},
-														},
-													},
-													{
-														displayName: 'Name',
-														name: 'name',
-														type: 'string',
-														default: '',
-														required: true,
-														placeholder: 'e.g., Yes',
-														description: 'Choice name (max 50 chars)',
-													},
-												],
-											},
-										],
+								createChoicesSettingsField({
+									show: {
+										modifierRenderType: ['TEXT_CHOICES', 'SWATCH_CHOICES'],
 									},
+								}),
 									{
 										displayName: 'Free Text Settings',
 										name: 'freeTextSettings',
