@@ -72,119 +72,6 @@ export const productCreateDescription: INodeProperties[] = [
 				name: 'variant',
 				values: [
 					{
-						displayName: 'Barcode',
-						name: 'barcode',
-						type: 'string',
-						default: '',
-						description: 'Product barcode (UPC, EAN, etc.)',
-					},
-					{
-						displayName: 'Choices',
-						name: 'choices',
-						type: 'fixedCollection',
-						typeOptions: {
-							multipleValues: true,
-						},
-						default: {},
-						placeholder: 'Add Choice',
-						description: 'Option choices for this variant (e.g., Size: S, Color: Red). Leave empty for single-variant products.',
-						options: [
-							{
-								displayName: 'Choice',
-								name: 'choice',
-								values: [
-									{
-										displayName: 'Choice Name',
-										name: 'choiceName',
-										type: 'string',
-										default: '',
-										required: true,
-										placeholder: 'e.g., S',
-										description: 'The choice value for this variant',
-									},
-									{
-										displayName: 'Option Name',
-										name: 'optionName',
-										type: 'string',
-										default: '',
-										required: true,
-										placeholder: 'e.g., Size',
-										description: 'The name of the option (must match an option defined below)',
-									},
-									{
-										displayName: 'Render Type',
-										name: 'renderType',
-										type: 'options',
-										options: [
-											{
-												name: 'Color Swatch',
-												value: 'SWATCH_CHOICES',
-											},
-											{
-												name: 'Text',
-												value: 'TEXT_CHOICES',
-											},
-										],
-										default: 'TEXT_CHOICES',
-										description: 'How this choice is displayed',
-									},
-								],
-							},
-						],
-					},
-					{
-						displayName: 'Compare At Price',
-						name: 'compareAtPrice',
-						type: 'string',
-						default: '',
-						placeholder: 'e.g., 15.00',
-						description: 'Original price before discounts (shown with strikethrough)',
-					},
-					{
-						displayName: 'Cost',
-						name: 'cost',
-						type: 'string',
-						default: '',
-						placeholder: 'e.g., 5.00',
-						description: 'Cost for profit margin calculations',
-					},
-					{
-						displayName: 'In Stock',
-						name: 'inventoryInStock',
-						type: 'boolean',
-						default: true,
-						description: 'Whether this variant is in stock',
-						displayOptions: {
-							show: {
-								inventoryTracking: ['IN_STOCK'],
-							},
-						},
-					},
-					{
-						displayName: 'Inventory Tracking',
-						name: 'inventoryTracking',
-						type: 'options',
-						options: [
-							{
-								name: 'None',
-								value: 'NONE',
-								description: 'No inventory tracking',
-							},
-							{
-								name: 'Track by Quantity',
-								value: 'QUANTITY',
-								description: 'Track exact stock counts',
-							},
-							{
-								name: 'Track by Availability',
-								value: 'IN_STOCK',
-								description: 'Simple in stock / out of stock',
-							},
-						],
-						default: 'NONE',
-						description: 'How to track inventory for this variant',
-					},
-					{
 						displayName: 'Price',
 						name: 'price',
 						type: 'string',
@@ -194,37 +81,175 @@ export const productCreateDescription: INodeProperties[] = [
 						description: 'The selling price of this variant',
 					},
 					{
-						displayName: 'Quantity',
-						name: 'inventoryQuantity',
-						type: 'number',
-						default: 0,
-						description: 'Stock quantity for this variant',
-						displayOptions: {
-							show: {
-								inventoryTracking: ['QUANTITY'],
-							},
-						},
-					},
-					{
-						displayName: 'SKU',
-						name: 'sku',
-						type: 'string',
-						default: '',
-						description: 'Stock Keeping Unit',
-					},
-					{
 						displayName: 'Visible',
 						name: 'visible',
 						type: 'boolean',
 						default: true,
 						description: 'Whether this variant is visible',
-					},
+					},					
 					{
-						displayName: 'Weight',
-						name: 'weight',
-						type: 'number',
-						default: 0,
-						description: 'Variant weight for shipping',
+						displayName: 'Inventory',
+						name: 'inventory',
+						type: 'fixedCollection',
+						default: {},
+						placeholder: 'Track Inventory',
+						description: 'Inventory tracking settings for this variant',
+						options: [
+							{
+								displayName: 'Inventory Settings',
+								name: 'settings',
+								values: [
+									{
+										displayName: 'Tracking',
+										name: 'tracking',
+										type: 'options',
+										options: [
+											{
+												name: 'None',
+												value: 'NONE',
+												description: 'No inventory tracking',
+											},
+											{
+												name: 'Track by Availability',
+												value: 'IN_STOCK',
+												description: 'Simple in stock / out of stock',
+											},
+											{
+												name: 'Track by Quantity',
+												value: 'QUANTITY',
+												description: 'Track exact stock counts',
+											},
+										],
+										default: 'NONE',
+										description: 'How to track inventory for this variant',
+									},
+									{
+										displayName: 'In Stock',
+										name: 'inStock',
+										type: 'boolean',
+										default: true,
+										description: 'Whether this variant is in stock (only for Track by Availability)',
+										displayOptions: {
+											show: {
+												tracking: ['IN_STOCK'],
+											},
+										},
+									},
+									{
+										displayName: 'Quantity',
+										name: 'quantity',
+										type: 'number',
+										default: 0,
+										description: 'Stock quantity (only for Track by Quantity)',
+										displayOptions: {
+											show: {
+												tracking: ['QUANTITY'],
+											},
+										},
+									},
+								],
+							},
+						],
+					},					
+					{
+						displayName: 'Additional Fields',
+						name: 'additionalFields',
+						type: 'collection',
+						placeholder: 'Add Field',
+						default: {},
+						options: [
+							{
+								displayName: 'Barcode',
+								name: 'barcode',
+								type: 'string',
+								default: '',
+								description: 'Product barcode (UPC, EAN, etc.)',
+							},
+							{
+								displayName: 'Choices',
+								name: 'choices',
+								type: 'fixedCollection',
+								typeOptions: {
+									multipleValues: true,
+								},
+								default: {},
+								placeholder: 'Add Choice',
+								description: 'Option choices for this variant (e.g., Size: S, Color: Red). Leave empty for single-variant products.',
+								options: [
+									{
+										displayName: 'Choice',
+										name: 'choice',
+										values: [
+											{
+												displayName: 'Choice Name',
+												name: 'choiceName',
+												type: 'string',
+												default: '',
+												required: true,
+												placeholder: 'e.g., S',
+												description: 'The choice value for this variant',
+											},
+											{
+												displayName: 'Option Name',
+												name: 'optionName',
+												type: 'string',
+												default: '',
+												required: true,
+												placeholder: 'e.g., Size',
+												description: 'The name of the option (must match an option defined below)',
+											},
+											{
+												displayName: 'Render Type',
+												name: 'renderType',
+												type: 'options',
+												options: [
+													{
+														name: 'Color Swatch',
+														value: 'SWATCH_CHOICES',
+													},
+													{
+														name: 'Text',
+														value: 'TEXT_CHOICES',
+													},
+												],
+												default: 'TEXT_CHOICES',
+												description: 'How this choice is displayed',
+											},
+										],
+									},
+								],
+							},
+							{
+								displayName: 'Compare At Price (Strikethrough Price)',
+								name: 'compareAtPrice',
+								type: 'string',
+								default: '',
+								placeholder: 'e.g., 15.00',
+								description: 'Original price before discounts (shown with strikethrough)',
+							},
+							{
+								displayName: 'Cost Of Goods',
+								name: 'cost',
+								type: 'string',
+								default: '',
+								placeholder: 'e.g., 5.00',
+								description: 'Cost for profit margin calculations',
+							},
+							{
+								displayName: 'SKU',
+								name: 'sku',
+								type: 'string',
+								default: '',
+								description: 'Stock Keeping Unit',
+							},
+							{
+								displayName: 'Weight',
+								name: 'weight',
+								type: 'number',
+								default: 0,
+								description: 'Variant weight for shipping',
+							},
+						],
 					},
 				],
 			},
@@ -233,7 +258,7 @@ export const productCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'product.variantsInfo.variants',
-				value: '={{ $value.variant ? $value.variant.map(v => { const variant = { price: { actualPrice: { amount: v.price } }, choices: [] }; if (v.compareAtPrice) variant.price.compareAtPrice = { amount: v.compareAtPrice }; if (v.cost) variant.revenueDetails = { cost: { amount: v.cost } }; if (v.sku) variant.sku = v.sku; if (v.barcode) variant.barcode = v.barcode; if (v.visible !== undefined) variant.visible = v.visible; if (v.weight) variant.physicalProperties = { weight: v.weight }; if (v.choices?.choice && v.choices.choice.length > 0) { variant.choices = v.choices.choice.map(c => ({ optionChoiceNames: { optionName: c.optionName, choiceName: c.choiceName, renderType: c.renderType } })); } if (v.inventoryTracking === "QUANTITY") { variant.inventoryItem = { quantity: v.inventoryQuantity }; } else if (v.inventoryTracking === "IN_STOCK") { variant.inventoryItem = { inStock: v.inventoryInStock }; } return variant; }) : [] }}',
+				value: '={{ $value.variant ? $value.variant.map(v => { const af = v.additionalFields || {}; const variant = { price: { actualPrice: { amount: v.price } }, choices: [] }; if (af.compareAtPrice) variant.price.compareAtPrice = { amount: af.compareAtPrice }; if (af.cost) variant.revenueDetails = { cost: { amount: af.cost } }; if (af.sku) variant.sku = af.sku; if (af.barcode) variant.barcode = af.barcode; if (v.visible !== undefined) variant.visible = v.visible; if (af.weight) variant.physicalProperties = { weight: af.weight }; if (af.choices?.choice && af.choices.choice.length > 0) { variant.choices = af.choices.choice.map(c => ({ optionChoiceNames: { optionName: c.optionName, choiceName: c.choiceName, renderType: c.renderType } })); } const inv = v.inventory?.settings; if (inv?.tracking === "QUANTITY") { variant.inventoryItem = { quantity: inv.quantity }; } else if (inv?.tracking === "IN_STOCK") { variant.inventoryItem = { inStock: inv.inStock }; } return variant; }) : [] }}',
 			},
 		},
 	},
@@ -361,56 +386,7 @@ export const productCreateDescription: INodeProperties[] = [
 				displayName: 'Modifier',
 				name: 'modifier',
 				values: [
-					{
-						displayName: 'Choices',
-						name: 'choices',
-						type: 'fixedCollection',
-						typeOptions: {
-							multipleValues: true,
-						},
-						default: {},
-						placeholder: 'Add Choice',
-						description: 'Available choices (only for Text Choices type)',
-						options: [
-							{
-								displayName: 'Choice',
-								name: 'choice',
-								values: [
-									{
-										displayName: 'Name',
-										name: 'name',
-										type: 'string',
-										default: '',
-										required: true,
-										placeholder: 'e.g., Yes',
-										description: 'Choice name',
-									},
-								],
-							},
-						],
-					},
-					{
-						displayName: 'Free Text Title',
-						name: 'freeTextTitle',
-						type: 'string',
-						default: '',
-						placeholder: 'e.g., Enter your custom text',
-						description: 'Title shown for free text input (only for Free Text type)',
-					},
-					{
-						displayName: 'Mandatory',
-						name: 'mandatory',
-						type: 'boolean',
-						default: false,
-						description: 'Whether this modifier is required',
-					},
-					{
-						displayName: 'Max Characters',
-						name: 'maxCharCount',
-						type: 'number',
-						default: 500,
-						description: 'Maximum characters for free text input',
-					},
+					
 					{
 						displayName: 'Name',
 						name: 'name',
@@ -418,24 +394,178 @@ export const productCreateDescription: INodeProperties[] = [
 						default: '',
 						required: true,
 						placeholder: 'e.g., Engraving',
-						description: 'Modifier name',
+						description: 'Modifier title (max 50 chars)',
 					},
 					{
-						displayName: 'Type',
-						name: 'modifierRenderType',
-						type: 'options',
+						displayName: 'Settings',
+						name: 'settings',
+						type: 'fixedCollection',
+						default: {},
+						description: 'Modifier type and configuration',
 						options: [
 							{
-								name: 'Free Text',
-								value: 'FREE_TEXT',
-							},
-							{
-								name: 'Text Choices',
-								value: 'TEXT_CHOICES',
+								displayName: 'Settings',
+								name: 'config',
+								values: [
+									{
+										displayName: 'Modifier Type',
+										name: 'modifierRenderType',
+										type: 'options',
+										options: [
+											{
+												name: 'Free Text',
+												value: 'FREE_TEXT',
+											},
+											{
+												name: 'Swatch Choices',
+												value: 'SWATCH_CHOICES',
+											},
+											{
+												name: 'Text Choices',
+												value: 'TEXT_CHOICES',
+											},
+										],
+										default: 'TEXT_CHOICES',
+										description: 'Modifier input type',
+									},
+									{
+										displayName: 'Choices',
+										name: 'choicesSettings',
+										type: 'fixedCollection',
+										typeOptions: {
+											multipleValues: true,
+										},
+										default: {},
+										placeholder: 'Add Choice',
+										description: 'Available choices (max 100)',
+										displayOptions: {
+											show: {
+												modifierRenderType: ['TEXT_CHOICES', 'SWATCH_CHOICES'],
+											},
+										},
+										options: [
+											{
+												displayName: 'Choice',
+												name: 'choice',
+												values: [
+													{
+														displayName: 'Choice Type',
+														name: 'choiceType',
+														type: 'options',
+														options: [
+															{
+																name: 'One Color',
+																value: 'ONE_COLOR',
+															},
+															{
+																name: 'Text',
+																value: 'CHOICE_TEXT',
+															},
+														],
+														default: 'CHOICE_TEXT',
+														description: 'Type of choice',
+													},
+													{
+														displayName: 'Color Code',
+														name: 'colorCode',
+														type: 'color',
+														default: '',
+														description: 'Hex color code (only for One Color type)',
+														displayOptions: {
+															show: {
+																choiceType: ['ONE_COLOR'],
+															},
+														},
+													},
+													{
+														displayName: 'Name',
+														name: 'name',
+														type: 'string',
+														default: '',
+														required: true,
+														placeholder: 'e.g., Yes',
+														description: 'Choice name (max 50 chars)',
+													},
+												],
+											},
+										],
+									},
+									{
+										displayName: 'Free Text Settings',
+										name: 'freeTextSettings',
+										type: 'fixedCollection',
+										default: {},
+										description: 'Settings for free text input',
+										displayOptions: {
+											show: {
+												modifierRenderType: ['FREE_TEXT'],
+											},
+										},
+										options: [
+											{
+												displayName: 'Settings',
+												name: 'settings',
+												values: [
+													{
+														displayName: 'Title',
+														name: 'title',
+														type: 'string',
+														default: '',
+														placeholder: 'e.g., Enter your custom text',
+														description: 'Title shown for free text input (max 150 chars)',
+													},
+													{
+														displayName: 'Min Characters',
+														name: 'minCharCount',
+														type: 'number',
+														default: 0,
+														description: 'Minimum characters required',
+													},
+													{
+														displayName: 'Max Characters',
+														name: 'maxCharCount',
+														type: 'number',
+														default: 500,
+														description: 'Maximum characters allowed (max 500)',
+													},
+													{
+														displayName: 'Price Adjustment',
+														name: 'defaultAddedPrice',
+														type: 'string',
+														default: '',
+														placeholder: 'e.g., 5.00',
+														description: 'Amount added to product price',
+													},
+												],
+											},
+										],
+									},
+								],
 							},
 						],
-						default: 'TEXT_CHOICES',
-						description: 'Modifier input type',
+					},
+					{
+						displayName: 'Additional Fields',
+						name: 'additionalFields',
+						type: 'collection',
+						placeholder: 'Add Field',
+						default: {},
+						options: [
+							{
+								displayName: 'Customization ID',
+								name: 'id',
+								type: 'string',
+								default: '',
+								description: 'ID of an existing customization to connect (leave empty to create new)',
+							},
+							{
+								displayName: 'Mandatory',
+								name: 'mandatory',
+								type: 'boolean',
+								default: false,
+								description: 'Whether customer input is required for this modifier',
+							},
+						],
 					},
 				],
 			},
@@ -444,7 +574,7 @@ export const productCreateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'product.modifiers',
-				value: '={{ $value.modifier && $value.modifier.length > 0 ? $value.modifier.map(m => { const mod = { name: m.name, modifierRenderType: m.modifierRenderType, mandatory: m.mandatory }; if (m.modifierRenderType === "FREE_TEXT") { mod.freeTextSettings = { minCharCount: 0, maxCharCount: m.maxCharCount || 500, title: m.freeTextTitle || "" }; } else if (m.choices?.choice) { mod.choicesSettings = { choices: m.choices.choice.map(c => ({ choiceType: "CHOICE_TEXT", name: c.name })) }; } return mod; }) : undefined }}',
+				value: '={{ $value.modifier && $value.modifier.length > 0 ? $value.modifier.map(m => { const af = m.additionalFields || {}; const cfg = m.settings?.config || {}; const mod = { name: m.name, modifierRenderType: cfg.modifierRenderType || "TEXT_CHOICES", mandatory: af.mandatory || false }; if (af.id) mod.id = af.id; if (cfg.modifierRenderType === "FREE_TEXT") { const fs = cfg.freeTextSettings?.settings || {}; mod.freeTextSettings = { minCharCount: fs.minCharCount || 0, maxCharCount: fs.maxCharCount || 500 }; if (fs.title) mod.freeTextSettings.title = fs.title; if (fs.defaultAddedPrice) mod.freeTextSettings.defaultAddedPrice = fs.defaultAddedPrice; } else if (cfg.choicesSettings?.choice && cfg.choicesSettings.choice.length > 0) { mod.choicesSettings = { choices: cfg.choicesSettings.choice.map(c => { const choice = { name: c.name, choiceType: c.choiceType || "CHOICE_TEXT" }; if (c.choiceType === "ONE_COLOR" && c.colorCode) choice.colorCode = c.colorCode; return choice; }) }; } return mod; }) : undefined }}',
 			},
 		},
 	},
@@ -467,7 +597,7 @@ export const productCreateDescription: INodeProperties[] = [
 				description: 'Product brand name',
 			},
 			{
-				displayName: 'Custom JSON',
+				displayName: 'Custom',
 				name: 'custom',
 				type: 'json',
 				default: '{}',
