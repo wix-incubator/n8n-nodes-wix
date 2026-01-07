@@ -1,5 +1,5 @@
 import type { INodeProperties } from 'n8n-workflow';
-import { productGetDescription } from './get';
+import { productGetDescription, productGetBaseUrl } from './get';
 import { productGetManyDescription } from './getMany';
 import { productDeleteDescription } from './delete';
 import { productCreateDescription } from './create';
@@ -51,7 +51,7 @@ export const productDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '=/stores/v3/products/{{$parameter.productId}}',
+						url: `=${productGetBaseUrl}{{$parameter.productId}}`,
 					},
 				},
 			},

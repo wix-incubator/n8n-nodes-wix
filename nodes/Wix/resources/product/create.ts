@@ -3,6 +3,7 @@ import type { INodeProperties } from 'n8n-workflow';
 import {
 	createChoicesSettingsField,
 	createInventoryField,
+	createRequestedFieldsField,
 	infoSectionsField,
 	inventoryTrackingOptions,
 	mediaItemsField,
@@ -445,4 +446,5 @@ export const productCreateDescription: INodeProperties[] = [
 			},
 		},
 	},
+	createRequestedFieldsField({ show: showOnlyForProductCreate }, 'fields'),
 ];

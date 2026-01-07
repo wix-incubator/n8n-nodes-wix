@@ -4,6 +4,7 @@ import { productSelect } from '../../listSearch/product/productSelect';
 import {
 	commonProductAdditionalFields,
 	createInventoryField,
+	createRequestedFieldsField,
 	inventoryTrackingOptionsWithNoChange,
 	productTypeOptions,
 	variantAdditionalFields,
@@ -156,4 +157,5 @@ export const productUpdateDescription: INodeProperties[] = [
 			},
 		},
 	},
+	createRequestedFieldsField({ show: showOnlyForProductUpdate }, 'fields'),
 ];

@@ -5,6 +5,7 @@ import {
 	sortDirectionOptions,
 	sortRoutingValue,
 } from '../common/getMany';
+import { createRequestedFieldsField } from './common/requestedFields';
 
 const showOnlyForProductGetMany = {
 	operation: ['getMany'],
@@ -174,4 +175,5 @@ export const productGetManyDescription: INodeProperties[] = [
 			},
 		},
 	},
+	createRequestedFieldsField({ show: showOnlyForProductGetMany }, 'fields'),
 ];
