@@ -1,22 +1,13 @@
 import type { INodeProperties } from 'n8n-workflow';
 
-/**
- * Common choice field values used in both product options and modifiers.
- */
 export const choiceFieldValues: INodeProperties[] = [
 	{
 		displayName: 'Choice Type',
 		name: 'choiceType',
 		type: 'options',
 		options: [
-			{
-				name: 'One Color',
-				value: 'ONE_COLOR',
-			},
-			{
-				name: 'Text',
-				value: 'CHOICE_TEXT',
-			},
+			{ name: 'One Color', value: 'ONE_COLOR' },
+			{ name: 'Text', value: 'CHOICE_TEXT' },
 		],
 		default: 'CHOICE_TEXT',
 		description: 'Type of choice',
@@ -44,10 +35,6 @@ export const choiceFieldValues: INodeProperties[] = [
 	},
 ];
 
-/**
- * Creates a choicesSettings field configuration.
- * @param displayOptions - Optional display options for showing/hiding the field
- */
 export function createChoicesSettingsField(displayOptions?: INodeProperties['displayOptions']): INodeProperties {
 	const field: INodeProperties = {
 		displayName: 'Choices',

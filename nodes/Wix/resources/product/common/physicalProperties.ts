@@ -1,8 +1,5 @@
 import type { INodeProperties } from 'n8n-workflow';
 
-/**
- * Common measurement unit options used in price per unit settings.
- */
 export const measurementUnitOptions = [
 	{ name: 'Centiliter (CL)', value: 'CL' },
 	{ name: 'Centimeter (CM)', value: 'CM' },
@@ -27,9 +24,6 @@ export const measurementUnitOptions = [
 	{ name: 'Yard (YD)', value: 'YD' },
 ];
 
-/**
- * Price per unit field values (measurement unit and quantity).
- */
 export const pricePerUnitFieldValues: INodeProperties[] = [
 	{
 		displayName: 'Measurement Unit',
@@ -52,10 +46,6 @@ export const pricePerUnitFieldValues: INodeProperties[] = [
 	},
 ];
 
-/**
- * Creates a pricePerUnit field configuration.
- * @param description - Optional custom description
- */
 export function createPricePerUnitField(description?: string): INodeProperties {
 	return {
 		displayName: 'Price Per Unit',
@@ -72,4 +62,35 @@ export function createPricePerUnitField(description?: string): INodeProperties {
 		],
 	};
 }
+
+export const physicalPropertiesField: INodeProperties = {
+	displayName: 'Physical Properties',
+	name: 'physicalProperties',
+	type: 'fixedCollection',
+	default: {},
+	description: 'Physical properties for shipping and display',
+	options: [
+		{
+			displayName: 'Physical Properties',
+			name: 'physicalPropertiesValues',
+			values: [
+				{
+					displayName: 'Delivery Profile ID',
+					name: 'deliveryProfileId',
+					type: 'string',
+					default: '',
+					description: 'Delivery profile ID for shipping settings',
+				},
+				{
+					displayName: 'Fulfiller ID',
+					name: 'fulfillerId',
+					type: 'string',
+					default: '',
+					description: 'Fulfiller ID for this product',
+				},
+				createPricePerUnitField(),
+			],
+		},
+	],
+};
 

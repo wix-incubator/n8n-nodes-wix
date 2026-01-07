@@ -1,9 +1,5 @@
 import type { INodeProperties } from 'n8n-workflow';
 
-/**
- * Reusable field values for a single ProductMedia item.
- * Used in both main media and media items array.
- */
 export const productMediaFieldValues: INodeProperties[] = [
 	{
 		displayName: 'Alt Text',
@@ -37,10 +33,6 @@ export const productMediaFieldValues: INodeProperties[] = [
 	},
 ];
 
-/**
- * Media items array field (for itemsInfo.items).
- * Supports multiple media items. The first item becomes the main product image automatically.
- */
 export const mediaItemsField: INodeProperties = {
 	displayName: 'Media Items',
 	name: 'mediaItems',
@@ -59,31 +51,4 @@ export const mediaItemsField: INodeProperties = {
 		},
 	],
 };
-
-/**
- * Helper to build media object for API request from form values.
- * Use in routing expressions.
- *
- * Note: The "main" property is read-only and automatically set from the first item in the items array.
- */
-export const buildMediaRoutingExpression = `
-(() => {
-	const mediaItems = $value.mediaItems?.item;
-	if (mediaItems && mediaItems.length > 0) {
-		const items = mediaItems.map(m => {
-			const item = {};
-			if (m.id) item.id = m.id;
-			else if (m.url) item.url = m.url;
-			if (m.altText) item.altText = m.altText;
-			if (m.displayName) item.displayName = m.displayName;
-			return item;
-		}).filter(item => item.id || item.url);
-		
-		if (items.length > 0) {
-			return { itemsInfo: { items } };
-		}
-	}
-	return undefined;
-})()
-`.trim();
 

@@ -1,8 +1,16 @@
 import type { INodeProperties } from 'n8n-workflow';
 
-import { createPricePerUnitField } from '../common/physicalProperties';
-import { createChoicesSettingsField } from '../common/productChoices';
-import { mediaItemsField } from '../common/productMedia';
+import {
+	createChoicesSettingsField,
+	createPricePerUnitField,
+	infoSectionsField,
+	inventoryTrackingOptions,
+	mediaItemsField,
+	physicalPropertiesField,
+	productTypeOptions,
+	seoDataField,
+	subscriptionDetailsField,
+} from './common';
 
 const showOnlyForProductCreate = {
 	operation: ['create'],
@@ -31,16 +39,7 @@ export const productCreateDescription: INodeProperties[] = [
 		displayName: 'Product Type',
 		name: 'productType',
 		type: 'options',
-		options: [
-			{
-				name: 'Physical',
-				value: 'PHYSICAL',
-			},
-			{
-				name: 'Digital',
-				value: 'DIGITAL',
-			},
-		],
+		options: productTypeOptions,
 		displayOptions: {
 			show: showOnlyForProductCreate,
 		},
@@ -101,30 +100,14 @@ export const productCreateDescription: INodeProperties[] = [
 								displayName: 'Inventory Settings',
 								name: 'settings',
 								values: [
-									{
-										displayName: 'Tracking',
-										name: 'tracking',
-										type: 'options',
-										options: [
-											{
-												name: 'None',
-												value: 'NONE',
-												description: 'No inventory tracking',
-											},
-											{
-												name: 'Track by Availability',
-												value: 'IN_STOCK',
-												description: 'Simple in stock / out of stock',
-											},
-											{
-												name: 'Track by Quantity',
-												value: 'QUANTITY',
-												description: 'Track exact stock counts',
-											},
-										],
-										default: 'NONE',
-										description: 'How to track inventory for this variant',
-									},
+								{
+									displayName: 'Tracking',
+									name: 'tracking',
+									type: 'options',
+									options: inventoryTrackingOptions,
+									default: 'NONE',
+									description: 'How to track inventory for this variant',
+								},
 									{
 										displayName: 'In Stock',
 										name: 'inStock',
@@ -559,58 +542,7 @@ export const productCreateDescription: INodeProperties[] = [
 					alwaysOpenEditWindow: true,
 				},
 			},
-			{
-				displayName: 'Info Sections',
-				name: 'infoSections',
-				type: 'fixedCollection',
-				typeOptions: {
-					multipleValues: true,
-				},
-				default: {},
-				placeholder: 'Add Info Section',
-				description: 'Additional product information sections (e.g., refund policy, care instructions)',
-				options: [
-					{
-						displayName: 'Info Section',
-						name: 'section',
-						values: [
-							{
-								displayName: 'Section ID',
-								name: 'id',
-								type: 'string',
-								default: '',
-								description: 'Info section ID (leave empty to create new)',
-							},							
-							{
-								displayName: 'Title',
-								name: 'title',
-								type: 'string',
-								default: '',
-								placeholder: 'e.g., Refund Policy',
-								description: 'Info section title (max 50 chars)',
-							},
-							{
-								displayName: 'Unique Name',
-								name: 'uniqueName',
-								type: 'string',
-								default: '',
-								placeholder: 'e.g., refund-policy',
-								description: 'Info section unique name (max 100 chars)',
-							},
-							{
-								displayName: 'Plain Description',
-								name: 'plainDescription',
-								type: 'string',
-								typeOptions: {
-									rows: 4,
-								},
-								default: '',
-								description: 'Info section description in HTML (max 16000 chars)',
-							},
-						],
-					},
-				],
-			},
+			infoSectionsField,
 			{
 				displayName: 'Main Category ID',
 				name: 'mainCategoryId',
@@ -619,36 +551,7 @@ export const productCreateDescription: INodeProperties[] = [
 				description: 'The ID of the product\'s primary direct category, which defines the product\'s breadcrumbs path. For example, if the product\'s main category is "T-Shirts" (which is a subcategory of "Clothing"), the breadcrumbs path will be "Clothing > T-Shirts".',
 			},
 			mediaItemsField,
-			{
-				displayName: 'Physical Properties',
-				name: 'physicalProperties',
-				type: 'fixedCollection',
-				default: {},
-				description: 'Physical properties for shipping and display',
-				options: [
-					{
-						displayName: 'Physical Properties',
-						name: 'physicalPropertiesValues',
-						values: [
-							{
-								displayName: 'Delivery Profile ID',
-								name: 'deliveryProfileId',
-								type: 'string',
-								default: '',
-								description: 'Delivery profile ID for shipping settings',
-							},
-							{
-								displayName: 'Fulfiller ID',
-								name: 'fulfillerId',
-								type: 'string',
-								default: '',
-								description: 'Fulfiller ID for this product',
-							},
-							createPricePerUnitField(),
-						],
-					},
-				],
-			},
+			physicalPropertiesField,
 			{
 				displayName: 'Plain Description',
 				name: 'plainDescription',
@@ -667,14 +570,7 @@ export const productCreateDescription: INodeProperties[] = [
 				placeholder: 'e.g., Sale, New, Best Seller',
 				description: 'Product ribbon/badge text',
 			},
-			{
-				displayName: 'SEO Data',
-				name: 'seoData',
-				type: 'json',
-				default: '{}',
-				placeholder: '{"tags": [{"type": "title", "children": "My Product"}, {"type": "meta", "props": {"name": "description", "content": "Product description"}}]}',
-				description: 'SEO schema with tags and settings. Tags support types: title, meta, script, link.',
-			},
+			seoDataField,
 			{
 				displayName: 'Slug',
 				name: 'slug',
@@ -682,131 +578,7 @@ export const productCreateDescription: INodeProperties[] = [
 				default: '',
 				description: 'URL-friendly product identifier',
 			},
-			{
-				displayName: 'Subscription Details',
-				name: 'subscriptionDetails',
-				type: 'fixedCollection',
-				default: {},
-				description: 'Subscription-based purchase settings for the product',
-				options: [
-					{
-						displayName: 'Settings',
-						name: 'settings',
-						values: [
-							{
-								displayName: 'Allow One-Time Purchases',
-								name: 'allowOneTimePurchases',
-								type: 'boolean',
-								default: false,
-								description: 'Whether to allow one-time purchases in addition to subscription-based purchases',
-							},
-							{
-								displayName: 'Subscriptions',
-								name: 'subscriptions',
-								type: 'fixedCollection',
-								typeOptions: {
-									multipleValues: true,
-								},
-								default: {},
-								placeholder: 'Add Subscription',
-								description: 'Available subscriptions (max 6)',
-								options: [
-									{
-										displayName: 'Subscription',
-										name: 'subscription',
-										values: [
-											{
-												displayName: 'Billing Cycles',
-												name: 'billingCycles',
-												type: 'number',
-												default: 0,
-												typeOptions: {
-													minValue: 0,
-													maxValue: 999,
-												},
-												description: 'Number of billing cycles before subscription ends (0 or empty for auto-renewal)',
-											},
-											{
-												displayName: 'Description',
-												name: 'description',
-												type: 'string',
-												default: '',
-												placeholder: 'e.g., Save 10% with monthly delivery',
-												description: 'Subscription description (max 60 chars)',
-											},
-											{
-												displayName: 'Discount Type',
-												name: 'discountType',
-												type: 'options',
-												options: [
-													{ name: 'None', value: 'NONE' },
-													{ name: 'Amount Off', value: 'AMOUNT' },
-													{ name: 'Percentage Off', value: 'PERCENT' },
-												],
-												default: 'NONE',
-												description: 'Type of subscription discount',
-											},
-											{
-												displayName: 'Discount Value',
-												name: 'discountValue',
-												type: 'string',
-												default: '',
-												placeholder: 'e.g., 10',
-												description: 'Discount amount or percentage (based on discount type)',
-												displayOptions: {
-													show: {
-														discountType: ['AMOUNT', 'PERCENT'],
-													},
-												},
-											},
-											{
-												displayName: 'Frequency',
-												name: 'frequency',
-												type: 'options',
-												options: [
-													{ name: 'Day', value: 'DAY' },
-													{ name: 'Week', value: 'WEEK' },
-													{ name: 'Month', value: 'MONTH' },
-													{ name: 'Year', value: 'YEAR' },
-												],
-												default: 'MONTH',
-												description: 'Frequency of recurring payment',
-											},
-											{
-												displayName: 'Interval',
-												name: 'interval',
-												type: 'number',
-												default: 1,
-												typeOptions: {
-													minValue: 1,
-													maxValue: 50,
-												},
-												description: 'Interval of recurring payment (e.g., 2 means every 2 months if frequency is MONTH)',
-											},
-											{
-												displayName: 'Title',
-												name: 'title',
-												type: 'string',
-												default: '',
-												required: true,
-												placeholder: 'e.g., Monthly Plan',
-												description: 'Subscription title (max 20 chars)',
-											},
-											{
-												displayName: 'Visible',
-												name: 'visible',
-												type: 'boolean',
-												default: true,
-												description: 'Whether the subscription is visible to site visitors',
-											},
-										],
-									},
-								],
-							},
-						],
-					},
-				],
-			},
+			subscriptionDetailsField,
 			{
 				displayName: 'Tax Group ID',
 				name: 'taxGroupId',

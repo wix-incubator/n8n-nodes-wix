@@ -1,5 +1,11 @@
 import type { INodeProperties } from 'n8n-workflow';
+
 import { productSelect } from '../../listSearch/product/productSelect';
+import {
+	commonProductAdditionalFields,
+	inventoryTrackingOptionsWithNoChange,
+	productTypeOptions,
+} from './common';
 
 const showOnlyForProductUpdate = {
 	operation: ['update'],
@@ -40,28 +46,9 @@ export const productUpdateDescription: INodeProperties[] = [
 			show: showOnlyForProductUpdate,
 		},
 		default: {},
-		description: 'Fields to update in the product',
+		description: 'Fields to update in the product. Note: To update array fields like options, modifiers, or variants, you must pass the entire existing array.',
 		options: [
-			{
-				displayName: 'Custom JSON',
-				name: 'custom',
-				type: 'json',
-				default: '{}',
-				description: 'Custom JSON to extend the product update call with additional fields not available in this form',
-				typeOptions: {
-					alwaysOpenEditWindow: true,
-				},
-			},
-			{
-				displayName: 'Description',
-				name: 'description',
-				type: 'string',
-				typeOptions: {
-					rows: 4,
-				},
-				default: '',
-				description: 'Product description (supports rich text)',
-			},
+			...commonProductAdditionalFields,
 			{
 				displayName: 'Name',
 				name: 'name',
@@ -70,47 +57,10 @@ export const productUpdateDescription: INodeProperties[] = [
 				description: 'Product name',
 			},
 			{
-				displayName: 'Physical Properties',
-				name: 'physicalProperties',
-				type: 'fixedCollection',
-				default: {},
-				description: 'Physical properties for shipping',
-				options: [
-					{
-						displayName: 'Physical Properties',
-						name: 'physicalPropertiesValues',
-						values: [
-							{
-								displayName: 'Fulfiller ID',
-								name: 'fulfillerId',
-								type: 'string',
-								default: '',
-								description: 'Fulfiller ID for this product',
-							},
-							{
-								displayName: 'Shipping Group ID',
-								name: 'shippingGroupId',
-								type: 'string',
-								default: '',
-							},
-						],
-					},
-				],
-			},
-			{
 				displayName: 'Product Type',
 				name: 'productType',
 				type: 'options',
-				options: [
-					{
-						name: 'Physical',
-						value: 'PHYSICAL',
-					},
-					{
-						name: 'Digital',
-						value: 'DIGITAL',
-					},
-				],
+				options: productTypeOptions,
 				default: 'PHYSICAL',
 				description: 'The type of product',
 			},
@@ -144,28 +94,6 @@ export const productUpdateDescription: INodeProperties[] = [
 				],
 			},
 			{
-				displayName: 'SEO Data',
-				name: 'seoData',
-				type: 'json',
-				default: '',
-				placeholder: '{"tags": [{"type": "title", "children": "My Product"}, {"type": "meta", "props": {"name": "description", "content": "Product description"}}]}',
-				description: 'SEO schema with tags and settings. Tags support types: title, meta, script, link.',
-			},
-			{
-				displayName: 'Slug',
-				name: 'slug',
-				type: 'string',
-				default: '',
-				description: 'URL-friendly product identifier',
-			},
-			{
-				displayName: 'Tax Group ID',
-				name: 'taxGroupId',
-				type: 'string',
-				default: '',
-				description: 'Tax group ID for the product',
-			},
-			{
 				displayName: 'Update Variant Inventory',
 				name: 'variantInventory',
 				type: 'fixedCollection',
@@ -196,23 +124,7 @@ export const productUpdateDescription: INodeProperties[] = [
 								displayName: 'Inventory Tracking',
 								name: 'inventoryTracking',
 								type: 'options',
-								options: [
-									{
-										name: 'No Change',
-										value: 'NO_CHANGE',
-										description: 'Keep current inventory settings',
-									},
-									{
-										name: 'Track by Availability',
-										value: 'IN_STOCK',
-										description: 'Simple in stock / out of stock',
-									},
-									{
-										name: 'Track by Quantity',
-										value: 'QUANTITY',
-										description: 'Track exact stock counts',
-									},
-								],
+								options: inventoryTrackingOptionsWithNoChange,
 								default: 'NO_CHANGE',
 								description: 'How to track inventory for this variant',
 							},
@@ -234,34 +146,19 @@ export const productUpdateDescription: INodeProperties[] = [
 								type: 'string',
 								default: '',
 								required: true,
-								description: 'The ID of the existing variant to update',
+								description: 'The ID of the existing variant to update (required)',
 							},
 						],
 					},
 				],
-			},
-			{
-				displayName: 'Visible',
-				name: 'visible',
-				type: 'boolean',
-				default: true,
-				description: 'Whether the product is visible in the store',
-			},
-			{
-				displayName: 'Visible in POS',
-				name: 'visibleInPos',
-				type: 'boolean',
-				default: true,
-				description: 'Whether the product is visible in Point of Sale',
 			},
 		],
 		routing: {
 			send: {
 				type: 'body',
 				property: 'product',
-				value: '={{ (() => { const customData = $value.custom ? (typeof $value.custom === "string" ? JSON.parse($value.custom) : $value.custom) : {}; const fields = {}; if ($value.name) fields.name = $value.name; if ($value.description) fields.description = $value.description; if ($value.slug) fields.slug = $value.slug; if ($value.productType) fields.productType = $value.productType; if ($value.visible !== undefined) fields.visible = $value.visible; if ($value.visibleInPos !== undefined) fields.visibleInPos = $value.visibleInPos; if ($value.seoData) fields.seoData = typeof $value.seoData === "string" ? JSON.parse($value.seoData) : $value.seoData; if ($value.taxGroupId) fields.taxGroupId = $value.taxGroupId; if ($value.ribbon?.ribbonValues?.text) { fields.ribbon = { text: $value.ribbon.ribbonValues.text }; if ($value.ribbon.ribbonValues.id) fields.ribbon._id = $value.ribbon.ribbonValues.id; } if ($value.physicalProperties?.physicalPropertiesValues) { const pp = $value.physicalProperties.physicalPropertiesValues; fields.physicalProperties = {}; if (pp.fulfillerId) fields.physicalProperties.fulfillerId = pp.fulfillerId; if (pp.shippingGroupId) fields.physicalProperties.shippingGroupId = pp.shippingGroupId; } if ($value.variantInventory?.variant && $value.variantInventory.variant.length > 0) { fields.variantsInfo = { variants: $value.variantInventory.variant.map(v => { const variant = { _id: v.id }; if (v.inventoryTracking === "QUANTITY") { variant.inventoryItem = { quantity: v.inventoryQuantity }; } else if (v.inventoryTracking === "IN_STOCK") { variant.inventoryItem = { inStock: v.inventoryInStock }; } return variant; }) }; } return { ...fields, ...customData }; })() }}',
+				value: '={{ (() => { const customData = $value.custom ? (typeof $value.custom === "string" ? JSON.parse($value.custom) : $value.custom) : {}; const fields = {}; if ($value.name) fields.name = $value.name; if ($value.productType) fields.productType = $value.productType; if ($value.description) fields.description = typeof $value.description === "string" ? JSON.parse($value.description) : $value.description; if ($value.plainDescription) fields.plainDescription = $value.plainDescription; if ($value.slug) fields.slug = $value.slug; if ($value.visible !== undefined) fields.visible = $value.visible; if ($value.visibleInPos !== undefined) fields.visibleInPos = $value.visibleInPos; if ($value.seoData) fields.seoData = typeof $value.seoData === "string" ? JSON.parse($value.seoData) : $value.seoData; if ($value.taxGroupId) fields.taxGroupId = $value.taxGroupId; if ($value.mainCategoryId) fields.mainCategoryId = $value.mainCategoryId; if ($value.brandName) fields.brand = { name: $value.brandName }; if ($value.ribbon?.ribbonValues?.text) { fields.ribbon = { text: $value.ribbon.ribbonValues.text }; if ($value.ribbon.ribbonValues.id) fields.ribbon.id = $value.ribbon.ribbonValues.id; } const mediaItems = $value.mediaItems?.item; if (mediaItems && mediaItems.length > 0) { const items = mediaItems.map(m => { const item = {}; if (m.id) item.id = m.id; else if (m.url) item.url = m.url; if (m.altText) item.altText = m.altText; if (m.displayName) item.displayName = m.displayName; return item; }).filter(item => item.id || item.url); if (items.length > 0) { fields.media = { itemsInfo: { items } }; } } if ($value.infoSections?.section && $value.infoSections.section.length > 0) { fields.infoSections = $value.infoSections.section.map(s => { const section = {}; if (s.id) section.id = s.id; if (s.title) section.title = s.title; if (s.uniqueName) section.uniqueName = s.uniqueName; if (s.plainDescription) section.plainDescription = s.plainDescription; return section; }); } if ($value.physicalProperties?.physicalPropertiesValues) { const pp = $value.physicalProperties.physicalPropertiesValues; fields.physicalProperties = {}; if (pp.deliveryProfileId) fields.physicalProperties.deliveryProfileId = pp.deliveryProfileId; if (pp.fulfillerId) fields.physicalProperties.fulfillerId = pp.fulfillerId; const ppu = pp.pricePerUnit?.settings; if (ppu?.measurementUnit && ppu?.quantity) fields.physicalProperties.pricePerUnit = { quantity: ppu.quantity, measurementUnit: ppu.measurementUnit }; } if ($value.subscriptionDetails?.settings) { const sd = $value.subscriptionDetails.settings; fields.subscriptionDetails = {}; if (sd.allowOneTimePurchases !== undefined) fields.subscriptionDetails.allowOneTimePurchases = sd.allowOneTimePurchases; if (sd.subscriptions?.subscription && sd.subscriptions.subscription.length > 0) { fields.subscriptionDetails.subscriptions = sd.subscriptions.subscription.map(sub => { const s = { title: sub.title, frequency: sub.frequency || "MONTH" }; if (sub.description) s.description = sub.description; if (sub.interval) s.interval = sub.interval; if (sub.billingCycles && sub.billingCycles > 0) s.billingCycles = sub.billingCycles; else s.autoRenewal = true; if (sub.visible !== undefined) s.visible = sub.visible; if (sub.discountType && sub.discountType !== "NONE" && sub.discountValue) { s.discount = { type: sub.discountType }; if (sub.discountType === "AMOUNT") s.discount.amountOff = sub.discountValue; else s.discount.percentOff = parseFloat(sub.discountValue); } return s; }); } } if ($value.variantInventory?.variant && $value.variantInventory.variant.length > 0) { fields.variantsInfo = { variants: $value.variantInventory.variant.map(v => { const variant = { id: v.id }; if (v.inventoryTracking === "QUANTITY") { variant.inventoryItem = { quantity: v.inventoryQuantity }; } else if (v.inventoryTracking === "IN_STOCK") { variant.inventoryItem = { inStock: v.inventoryInStock }; } return variant; }) }; } return { ...fields, ...customData }; })() }}',
 			},
 		},
 	},
 ];
-
