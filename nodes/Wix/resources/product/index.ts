@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties, INodeExecutionData, IN8nHttpFullResponse, IDataObject } from 'n8n-workflow';
 import { productGetDescription, productGetBaseUrl } from './get';
 import { productGetManyDescription } from './getMany';
 import { productDeleteDescription } from './delete';
@@ -55,18 +55,33 @@ export const productDescription: INodeProperties[] = [
 					},
 				},
 			},
-			{
-				name: 'Get Many',
-				value: 'getMany',
-				action: 'Get many products',
-				description: 'Query and list products',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/stores/v3/products/search',
-					},
+		{
+			name: 'Get Many',
+			value: 'getMany',
+			action: 'Get many products',
+			description: 'Query and list products',
+			routing: {
+				request: {
+					method: 'POST',
+					url: '/stores/v3/products/search',
+				},
+				output: {
+					postReceive: [
+						async function (
+							_items: INodeExecutionData[],
+							response: IN8nHttpFullResponse,
+						): Promise<INodeExecutionData[]> {
+							const body = response.body as { products?: IDataObject[]; pagingMetadata?: IDataObject };
+							const products = body.products ?? [];
+							const pagingMetadata = body.pagingMetadata;
+							return products.map((product) => ({
+								json: { ...product, _pagingMetadata: pagingMetadata },
+							}));
+						},
+					],
 				},
 			},
+		},
 		{
 			name: 'Update',
 			value: 'update',

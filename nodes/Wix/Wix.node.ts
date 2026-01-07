@@ -1,9 +1,6 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
 import { orderDescription } from './resources/order';
 import { productDescription } from './resources/product';
-import { postDescription } from './resources/post';
-import { contactDescription } from './resources/contact';
-import { communicationDescription } from './resources/communication';
 import { getOrders } from './listSearch/order/getOrders';
 import { getProducts } from './listSearch/product/getProducts';
 
@@ -38,20 +35,8 @@ export class Wix implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Communication',
-						value: 'communication',
-					},
-					{
-						name: 'Contact',
-						value: 'contact',
-					},
-					{
 						name: 'Order',
 						value: 'order',
-					},
-					{
-						name: 'Post',
-						value: 'post',
 					},
 					{
 						name: 'Product',
@@ -62,9 +47,6 @@ export class Wix implements INodeType {
 			},
 			...orderDescription,
 			...productDescription,
-			...postDescription,
-			...contactDescription,
-			...communicationDescription,
 		],
 	};
 
