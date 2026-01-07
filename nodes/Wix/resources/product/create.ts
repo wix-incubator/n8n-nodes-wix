@@ -2,7 +2,7 @@ import type { INodeProperties } from 'n8n-workflow';
 
 import {
 	createChoicesSettingsField,
-	createPricePerUnitField,
+	createInventoryField,
 	infoSectionsField,
 	inventoryTrackingOptions,
 	mediaItemsField,
@@ -10,7 +10,8 @@ import {
 	productTypeOptions,
 	seoDataField,
 	subscriptionDetailsField,
-} from './common';
+	variantAdditionalFields,
+} from './common/index';
 
 const showOnlyForProductCreate = {
 	operation: ['create'],
@@ -88,179 +89,14 @@ export const productCreateDescription: INodeProperties[] = [
 						default: true,
 						description: 'Whether this variant is visible',
 					},					
-					{
-						displayName: 'Inventory',
-						name: 'inventory',
-						type: 'fixedCollection',
-						default: {},
-						placeholder: 'Track Inventory',
-						description: 'Inventory tracking settings for this variant',
-						options: [
-							{
-								displayName: 'Inventory Settings',
-								name: 'settings',
-								values: [
-								{
-									displayName: 'Tracking',
-									name: 'tracking',
-									type: 'options',
-									options: inventoryTrackingOptions,
-									default: 'NONE',
-									description: 'How to track inventory for this variant',
-								},
-									{
-										displayName: 'In Stock',
-										name: 'inStock',
-										type: 'boolean',
-										default: true,
-										description: 'Whether this variant is in stock (only for Track by Availability)',
-										displayOptions: {
-											show: {
-												tracking: ['IN_STOCK'],
-											},
-										},
-									},
-									{
-										displayName: 'Quantity',
-										name: 'quantity',
-										type: 'number',
-										default: 0,
-										description: 'Stock quantity (only for Track by Quantity)',
-										displayOptions: {
-											show: {
-												tracking: ['QUANTITY'],
-											},
-										},
-									},
-								],
-							},
-						],
-					},					
+					createInventoryField(inventoryTrackingOptions, 'NONE'),
 					{
 						displayName: 'Additional Fields',
 						name: 'additionalFields',
 						type: 'collection',
 						placeholder: 'Add Field',
 						default: {},
-						options: [
-							{
-								displayName: 'Barcode',
-								name: 'barcode',
-								type: 'string',
-								default: '',
-								description: 'Product barcode (UPC, EAN, etc.)',
-							},
-							{
-								displayName: 'Choices',
-								name: 'choices',
-								type: 'fixedCollection',
-								typeOptions: {
-									multipleValues: true,
-								},
-								default: {},
-								placeholder: 'Add Choice',
-								description: 'Option choices for this variant (e.g., Size: S, Color: Red). Leave empty for single-variant products.',
-								options: [
-									{
-										displayName: 'Choice',
-										name: 'choice',
-										values: [											
-											{
-												displayName: 'Option Name',
-												name: 'optionName',
-												type: 'string',
-												default: '',
-												required: true,
-												placeholder: 'e.g., Size',
-												description: 'The name of the option (must match an option defined below)',
-											},
-											{
-												displayName: 'Render Type',
-												name: 'renderType',
-												type: 'options',
-												options: [
-													{
-														name: 'Color Swatch',
-														value: 'SWATCH_CHOICES',
-													},
-													{
-														name: 'Text',
-														value: 'TEXT_CHOICES',
-													},
-												],
-												default: 'TEXT_CHOICES',
-												description: 'How this choice is displayed',
-											},
-											{
-												displayName: 'Choice Name',
-												name: 'choiceName',
-												type: 'string',
-												default: '',
-												required: true,
-												placeholder: 'e.g., S',
-												description: 'The choice value for this variant',
-											},									
-										],
-									},
-								],
-							},
-							{
-								displayName: 'Compare At Price (Strikethrough Price)',
-								name: 'compareAtPrice',
-								type: 'string',
-								default: '',
-								placeholder: 'e.g., 15.00',
-								description: 'Original price before discounts (shown with strikethrough)',
-							},
-							{
-								displayName: 'Cost Of Goods',
-								name: 'cost',
-								type: 'string',
-								default: '',
-								placeholder: 'e.g., 5.00',
-								description: 'Cost for profit margin calculations',
-							},
-							{
-								displayName: 'Digital File ID',
-								name: 'digitalFileId',
-								type: 'string',
-								default: '',
-								description: 'ID of the digital file to be downloaded after purchase',
-							},
-							{
-								displayName: 'Physical Properties',
-								name: 'physicalProperties',
-								type: 'fixedCollection',
-								default: {},
-								description: 'Physical properties for this variant',
-								options: [
-									{
-										displayName: 'Settings',
-										name: 'settings',
-										values: [
-											createPricePerUnitField('Price per unit settings for this variant'),
-											{
-												displayName: 'Weight',
-												name: 'weight',
-												type: 'number',
-												default: 0,
-												typeOptions: {
-													maxValue: 999999999.99,
-												},
-												description: 'Variant shipping weight',
-											},
-										],
-									},
-								],
-							},
-							{
-								displayName: 'SKU',
-								name: 'sku',
-								type: 'string',
-								default: '',
-								description: 'Stock Keeping Unit',
-							},
-						],
+						options: variantAdditionalFields,
 					},
 				],
 			},
