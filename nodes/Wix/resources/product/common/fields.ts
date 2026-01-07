@@ -182,7 +182,7 @@ export const seoDataField: INodeProperties = {
 	type: 'json',
 	default: '{}',
 	placeholder: '{"tags": [{"type": "title", "children": "My Product"}, {"type": "meta", "props": {"name": "description", "content": "Product description"}}]}',
-	description: 'SEO schema with tags and settings. Tags support types: title, meta, script, link',
+	description: 'SEO schema with tags and settings. Tags support types: title, meta, script, link.',
 };
 
 export const commonProductAdditionalFields: INodeProperties[] = [
