@@ -4,127 +4,127 @@ export const wixAutomationsTriggers: {
 	backInStockRequests_wixECommerceBackInStockRequestCreatedStores: {
 		appId: '16be6c71-d061-4f56-8cda-c6aa911d1832',
 		triggerKey: 'wix_e_commerce-back_in_stock_request_created_stores',
-		displayName: 'Створено запит «Знову в наявності»',
+		displayName: 'Back in stock request created',
 	},
 	backInStockRequests_wixECommerceBackInStockStores: {
 		appId: '16be6c71-d061-4f56-8cda-c6aa911d1832',
 		triggerKey: 'wix_e_commerce-back_in_stock_stores',
-		displayName: 'Товар знову в наявності',
+		displayName: 'Product back in stock',
 	},
 	cms_cmsDatasetFormSubmitted: {
 		appId: '1973457f-c021-4da5-941f-58444ff761d4',
 		triggerKey: 'cms-dataset_form_submitted',
-		displayName: 'Форму CMS надіслано',
+		displayName: 'CMS form submitted',
 	},
 	contacts_contactsContactAssigned: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-contact_assigned',
-		displayName: 'Контакт призначено',
+		displayName: 'Contact Assigned',
 	},
 	contacts_contactsLabelAddedToContact: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-label_added_to_contact',
-		displayName: 'Мітку додано до контакту',
+		displayName: 'Label added to contact',
 	},
 	contacts_contactsLabelRemovedFromContact: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-label_removed_from_contact',
-		displayName: 'Мітку видалено з контакту',
+		displayName: 'Label removed from contact',
 	},
 	contacts_contactsNewContactWasCreated: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-new_contact_was_created',
-		displayName: 'Новий контакт створено',
+		displayName: 'New contact created',
 	},
 	inbox_wixChatMessageReceiveFromUou: {
 		appId: '141fbfae-511e-6817-c9f0-48993a7547d1',
 		triggerKey: 'wix_chat-message_receive_from_uou',
-		displayName: 'Отримано повідомлення (в чаті або ел. поштою)',
+		displayName: 'Message received (Wix Chat or Inbox preset email)',
 	},
 	inbox_wixChatMessageSentToUou: {
 		appId: '141fbfae-511e-6817-c9f0-48993a7547d1',
 		triggerKey: 'wix_chat-message_sent_to_uou',
-		displayName: 'Повідомлення чату надіслано',
+		displayName: 'Chat message sent',
 	},
 	oldWixFormsAndPayments_wixFormsFormSubmit: {
 		appId: '14ce1214-b278-a7e4-1373-00cebd1bef7c',
 		triggerKey: 'wix_forms-form_submit',
-		displayName: 'Форму надіслано',
+		displayName: 'Form submitted',
 	},
 	payLinks_wixPaymentLinksPaymentLinkPaymentReceived: {
 		appId: '324cf725-53d9-4bb2-b8f6-0c8ec9a77f45',
 		triggerKey: 'wix_payment_links-payment_link_payment_received',
-		displayName: 'Платіж отримано',
+		displayName: 'Payment received',
 	},
 	payLinks_wixPaymentLinksSendPaymentLink: {
 		appId: '324cf725-53d9-4bb2-b8f6-0c8ec9a77f45',
 		triggerKey: 'wix_payment_links-send_payment_link',
-		displayName: 'Надіслати посилання на оплату',
+		displayName: 'Send a pay link',
 	},
 	priceQuotes_wixPriceQuoteQuoteAccepted: {
 		appId: '55cd9036-36bb-480b-8ddc-afda3cb2eb8d',
 		triggerKey: 'wix_price_quote-quote_accepted',
-		displayName: 'Цінову пропозицію прийнято',
+		displayName: 'Price quote accepted',
 	},
 	priceQuotes_wixPriceQuoteQuoteExpired: {
 		appId: '55cd9036-36bb-480b-8ddc-afda3cb2eb8d',
 		triggerKey: 'wix_price_quote-quote_expired',
-		displayName: 'Дія цінової пропозиції закінчилась',
+		displayName: 'Price quote expired',
 	},
 	priceQuotes_wixPriceQuoteQuoteSent: {
 		appId: '55cd9036-36bb-480b-8ddc-afda3cb2eb8d',
 		triggerKey: 'wix_price_quote-quote_sent',
-		displayName: 'Цінову пропозицію надіслано',
+		displayName: 'Price quote sent',
 	},
 	recurringInvoices_wixInvoicesRecurringInvoiceCanceled: {
 		appId: '35aec784-bbec-4e6e-abcb-d3d724af52cf',
 		triggerKey: 'wix_invoices-recurring_invoice_canceled',
-		displayName: 'Регулярні платежі скасовано',
+		displayName: 'Recurring payment canceled',
 	},
 	recurringInvoices_wixInvoicesRecurringInvoiceCreated: {
 		appId: '35aec784-bbec-4e6e-abcb-d3d724af52cf',
 		triggerKey: 'wix_invoices-recurring_invoice_created',
-		displayName: 'Регулярні платежі почато',
+		displayName: 'Recurring payment starts',
 	},
 	segments_segmentsContactEntersSegment: {
 		appId: 'ee070097-0850-4f23-ad8c-3cdd4efd5244',
 		triggerKey: 'segments-contact_enters_segment',
-		displayName: 'Контакт входить у сегмент',
+		displayName: 'Contact enters segment',
 	},
 	segments_segmentsContactLeavesSegment: {
 		appId: 'ee070097-0850-4f23-ad8c-3cdd4efd5244',
 		triggerKey: 'segments-contact_leaves_segment',
-		displayName: 'Контакт виходить із сегмента',
+		displayName: 'Contact leaves segment',
 	},
 	subscriptions_billingDateUpdated: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'billing_date_updated',
-		displayName: 'Дату оплати підписки оновлено',
+		displayName: 'Subscription`s payment date updated',
 	},
 	subscriptions_customerPaymentMethodUpdated: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'customer_payment_method_updated',
-		displayName: 'Спосіб оплати клієнта оновлено',
+		displayName: 'Customer`s payment method updated',
 	},
 	subscriptions_failedPaymentGracePeriodStarted: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'failed_payment_grace_period_started',
-		displayName: 'Платіж не пройшов — почався пільговий період',
+		displayName: 'Payment fails - grace period starts',
 	},
 	subscriptions_itemPriceUpdated: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'item_price_updated',
-		displayName: 'Ціну позиції в підписці оновлено',
+		displayName: 'Subscription`s item price updated',
 	},
 	subscriptions_paymentSucceededGracePeriodEnds: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'payment_succeeded_grace_period_ends',
-		displayName: 'Успішний платіж — пільговий період закінчився',
+		displayName: 'Payment successful - grace period ends',
 	},
 	tasks_tasksTaskOverdue: {
 		appId: '146c0d71-352e-4464-9a03-2e868aabe7b9',
 		triggerKey: 'tasks-task_overdue',
-		displayName: 'Завдання прострочено',
+		displayName: 'Task overdue',
 	},
 	wixBlog_fnF525Ecd06D494C92A3647A724E191629809947B0Eb855870A828A71Cb2Bd3B31: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
@@ -135,17 +135,17 @@ export const wixAutomationsTriggers: {
 	wixBlog_wixBlogBlogPostComment: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey: 'wix_blog-blog_post_comment',
-		displayName: 'Новий коментар до посту в блозі',
+		displayName: 'Blog post new comment',
 	},
 	wixBlog_wixBlogBlogPostLike: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey: 'wix_blog-blog_post_like',
-		displayName: 'Вподобано пост блогу',
+		displayName: 'Blog post liked',
 	},
 	wixBlog_wixBlogNewBlogPost: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey: 'wix_blog-new_blog_post',
-		displayName: 'Новий пост блогу опубліковано',
+		displayName: 'New blog post published',
 	},
 	wixBookings_fn36Fd6F5F469040FeB1D2771A7D7Ce688F85Ee74AB9Ce56B9Bff65147520Ccf8C:
 		{
@@ -162,42 +162,42 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsAnyCheckIn: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-any_check_in',
-		displayName: 'Клієнт реєструється',
+		displayName: 'Client checks in',
 	},
 	wixBookings_wixBookingsAppointmentConfirmed: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointment_confirmed',
-		displayName: 'Запит на візит підтверджено',
+		displayName: 'Appointment request approved',
 	},
 	wixBookings_wixBookingsAppointmentDeclined: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointment_declined',
-		displayName: 'Запит на візит відхилено',
+		displayName: 'Appointment request declined',
 	},
 	wixBookings_wixBookingsAppointmentRequiresConfirmation: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointment_requires_confirmation',
-		displayName: 'Запит на візит надіслано',
+		displayName: 'Appointment requested',
 	},
 	wixBookings_wixBookingsBookingCanceled: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-booking_canceled',
-		displayName: 'Запис на послугу скасовано',
+		displayName: 'Booking canceled',
 	},
 	wixBookings_wixBookingsCourseSessionsUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-course_sessions_updated',
-		displayName: 'Курс оновлено',
+		displayName: 'Course updated',
 	},
 	wixBookings_wixBookingsDoubleBooked: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-double_booked',
-		displayName: 'Подвійний запис на сеанс',
+		displayName: 'Session double-booked',
 	},
 	wixBookings_wixBookingsFailedToApplyBookingFee: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-failed_to_apply_booking_fee',
-		displayName: 'Не вдалося застосувати комісію послуги',
+		displayName: 'Failed to apply booking fee',
 	},
 	wixBookings_wixBookingsFailedToCollectAppliedBookingFees: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
@@ -207,37 +207,37 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsNoSessionsLeft: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-no_sessions_left',
-		displayName: 'Сеансів не залишилося',
+		displayName: 'No sessions left',
 	},
 	wixBookings_wixBookingsNoShow: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-no_show',
-		displayName: 'Клієнта позначено як «не було»',
+		displayName: 'Client marked as "no-show"',
 	},
 	wixBookings_wixBookingsNthCheckIn: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-nth_check_in',
-		displayName: 'Клієнт реєструється X-ий раз',
+		displayName: 'Client checked in X times',
 	},
 	wixBookings_wixBookingsSessionEnds: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_ends',
-		displayName: 'Сеанс закінчується',
+		displayName: 'Session ends',
 	},
 	wixBookings_wixBookingsSessionsBooked: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-sessions_booked',
-		displayName: 'Запис на сеанс отримано',
+		displayName: 'Session booked',
 	},
 	wixBookings_wixBookingsSessionStarts: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_starts',
-		displayName: 'Сеанс починається',
+		displayName: 'Session starts',
 	},
 	wixBookings_wixBookingsSessionUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_updated',
-		displayName: 'Візит або заняття оновлено',
+		displayName: 'Appointment or class updated',
 	},
 	wixChat_wixChatChatFormSubmitted: {
 		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
@@ -247,52 +247,52 @@ export const wixAutomationsTriggers: {
 	wixChat_wixChatNewChatMessage: {
 		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
 		triggerKey: 'wix_chat-new_chat_message',
-		displayName: 'Повідомлення чату отримано',
+		displayName: 'Chat message received',
 	},
 	wixChat_wixChatVisitorOnLiveSite: {
 		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
 		triggerKey: 'wix_chat-visitor_on_live_site',
-		displayName: 'На сайті є відвідувач',
+		displayName: 'Visitor on site',
 	},
 	wixDonations_wixDonationsDonationApproved: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
 		triggerKey: 'wix_donations-donation_approved',
-		displayName: 'Донат надіслано',
+		displayName: 'Donation is made',
 	},
 	wixDonations_wixDonationsDonationCycle: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
 		triggerKey: 'wix_donations-donation_cycle',
-		displayName: 'Регулярний донат стягнено',
+		displayName: 'Recurring donation is charged',
 	},
 	wixDonations_wixDonationsDonationSubscriptionCanceled: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
 		triggerKey: 'wix_donations-donation_subscription_canceled',
-		displayName: 'Регулярний донат скасовано',
+		displayName: 'Recurring donation is canceled',
 	},
 	wixEventsTickets_domainEventsWixEventsGuestsV1GuestGuestCheckedIn: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.guests.v1.guest-guest_checked_in',
-		displayName: 'Гість реєструється',
+		displayName: 'Guest checked in',
 	},
 	wixEventsTickets_domainEventsWixEventsGuestsV1GuestGuestEventStarts: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.guests.v1.guest-guest_event_starts',
-		displayName: 'Захід починається',
+		displayName: 'Event starts',
 	},
 	wixEventsTickets_domainEventsWixEventsV3EventPublished: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.v3.event-published',
-		displayName: 'Захід опубліковано',
+		displayName: 'Event published',
 	},
 	wixEventsTickets_domainEventsWixEventsV3TicketDefinitionSaleEnded: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.v3.ticket_definition-sale_ended',
-		displayName: 'Продаж квитків завершився',
+		displayName: 'Ticket sale ended',
 	},
 	wixEventsTickets_domainEventsWixEventsV3TicketDefinitionSaleStarted: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.v3.ticket_definition-sale_started',
-		displayName: 'Продаж квитків розпочався',
+		displayName: 'Ticket sale started',
 	},
 	wixEventsTickets_fn03Dabf87Cebf4775A48812A468Ae34281982Be9D060C5Bb8B112F93Bb2642E39:
 		{
@@ -321,7 +321,7 @@ export const wixAutomationsTriggers: {
 	wixEventsTickets_wixEventsEventEnds: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-event_ends',
-		displayName: 'Захід закінчується',
+		displayName: 'Event ends',
 	},
 	wixEventsTickets_wixEventsInstantOrderReport: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
@@ -341,57 +341,57 @@ export const wixAutomationsTriggers: {
 	wixEventsTickets_wixEventsNotificationsEventCanceled: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_event_canceled',
-		displayName: 'Захід скасовано',
+		displayName: 'Event canceled',
 	},
 	wixEventsTickets_wixEventsNotificationsEventReminder: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_event_reminder',
-		displayName: 'Настала дата нагадування про захід',
+		displayName: 'Event reminder date has arrived',
 	},
 	wixEventsTickets_wixEventsNotificationsNewSpotsAvailable: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_new_spots_available',
-		displayName: 'Місце стало доступним для гостей зі списку очікування',
+		displayName: 'New spot opened for waitlist guests',
 	},
 	wixEventsTickets_wixEventsNotificationsOrderConfirmation: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_order_confirmation',
-		displayName: 'Замовлення розміщено',
+		displayName: 'Order placed',
 	},
 	wixEventsTickets_wixEventsNotificationsOrderConfirmationWithTicketsLink: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_order_confirmation_with_tickets_link',
-		displayName: 'Замовлення підтверджено, але квиток не згенеровано',
+		displayName: 'Order confirmed but ticket couldn`t be generated',
 	},
 	wixEventsTickets_wixEventsNotificationsRsvpConfirmation: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_rsvp_confirmation',
-		displayName: 'Участь підтверджено',
+		displayName: 'RSVP confirmed',
 	},
 	wixEventsTickets_wixEventsTicketPurchase: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-ticket_purchase',
-		displayName: 'Квиток замовлено',
+		displayName: 'Ticket ordered',
 	},
 	wixEventsTickets_wixEventsUouAddedToWaitlist: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-uou_added_to_waitlist',
-		displayName: 'Гість реєструється в списку очікування',
+		displayName: 'Guest registers to waitlist',
 	},
 	wixEventsTickets_wixEventsUouRsvp: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-uou_rsvp',
-		displayName: 'Гість реєструється',
+		displayName: 'Guest RSVPs',
 	},
 	wixFileShare_wixFileShareAccessToFolderApproved: {
 		appId: '1537b24e-29d1-6d8f-b8e1-d6860f2f70b9',
 		triggerKey: 'wix_file_share-access_to_folder_approved',
-		displayName: 'Надано доступ до папки',
+		displayName: 'Folder access given',
 	},
 	wixFileShare_wixFileShareRequestedAccessToFolder: {
 		appId: '1537b24e-29d1-6d8f-b8e1-d6860f2f70b9',
 		triggerKey: 'wix_file_share-requested_access_to_folder',
-		displayName: 'Надіслано запит на доступ до папки',
+		displayName: 'Folder access requested',
 	},
 	wixForms_fn6E3266E324B547E29B11623Feede7B14294575A72A2D5D6AB56BC6B8Bda74B16: {
 		appId: '225dd912-7dea-4738-8688-4b8c6955ffc2',
@@ -413,42 +413,42 @@ export const wixAutomationsTriggers: {
 	wixForms_wixFormAppFormSubmitted: {
 		appId: '225dd912-7dea-4738-8688-4b8c6955ffc2',
 		triggerKey: 'wix_form_app-form_submitted',
-		displayName: 'Форму надіслано',
+		displayName: 'Form submitted',
 	},
 	wixForum_wixForumForumCommentDeleted: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_comment_deleted',
-		displayName: 'Коментар видалено з форуму',
+		displayName: 'Forum comment deleted',
 	},
 	wixForum_wixForumForumCommentPublished: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_comment_published',
-		displayName: 'Коментар опубліковано у форумі',
+		displayName: 'Forum comment published',
 	},
 	wixForum_wixForumForumPostLiked: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_post_liked',
-		displayName: 'Реагує на пост форуму',
+		displayName: 'Reacted to Forum post',
 	},
 	wixForum_wixForumForumPostUnliked: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_post_unliked',
-		displayName: 'Видаляє реакцію з посту форуму',
+		displayName: 'Removed reaction from Forum post',
 	},
 	wixForum_wixForumNewPost: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-new_post',
-		displayName: 'Пост форуму опубліковано',
+		displayName: 'Forum post published',
 	},
 	wixForum_wixForumReactedToComment: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-reacted_to_comment',
-		displayName: 'Реагує на коментар у форумі',
+		displayName: 'Reacted to Forum comment',
 	},
 	wixForum_wixForumRemovedReactionFromForumComment: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-removed_reaction_from_forum_comment',
-		displayName: 'Видаляє реакцію з коментаря у форумі',
+		displayName: 'Removed reaction from Forum comment',
 	},
 	wixGroups_domainEventsWixSocialGroupsV2GroupRequestApproved: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -458,7 +458,7 @@ export const wixAutomationsTriggers: {
 	wixGroups_domainEventsWixSocialGroupsV2GroupRequestCreated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'domain_events_wix.social_groups.v2.group_request-created',
-		displayName: 'Учасник надсилає запит на створення групи',
+		displayName: 'Member requests to create a group DE',
 	},
 	wixGroups_domainEventsWixSocialGroupsV2GroupRequestRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -478,17 +478,17 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsCreateGroupReminder: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-create_group_reminder',
-		displayName: 'Нагадування про створення групи',
+		displayName: 'Reminder to create group',
 	},
 	wixGroups_wixGroupsFolloweeCreatesAPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-followee_creates_a_post',
-		displayName: 'Хтось, на кого ви підписані, створює пост',
+		displayName: 'Someone you follow creates a post',
 	},
 	wixGroups_wixGroupsGroupCreated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-group_created',
-		displayName: 'Створено нову групу',
+		displayName: 'New group created',
 	},
 	wixGroups_wixGroupsGroupRequestRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -498,67 +498,67 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsGroupUpdated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-group_updated',
-		displayName: 'Групу оновлено',
+		displayName: 'Group Updated',
 	},
 	wixGroups_wixGroupsInviteMembersReminder: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-invite_members_reminder',
-		displayName: 'Нагадування про запрошення учасників',
+		displayName: 'Reminder to invite members',
 	},
 	wixGroups_wixGroupsJoinRequestAccepted: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-join_request_accepted',
-		displayName: 'Запит учасника на приєднання до групи схвалено',
+		displayName: 'Member request to join a group approved',
 	},
 	wixGroups_wixGroupsJoinRequestCreated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-join_request_created',
-		displayName: 'Учасник надсилає запит на приєднання до групи',
+		displayName: 'Member requests to join a group',
 	},
 	wixGroups_wixGroupsJoinRequestRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-join_request_rejected',
-		displayName: 'Запит учасника на приєднання до групи відхилено',
+		displayName: 'Member request to join a group declined',
 	},
 	wixGroups_wixGroupsMemberAddedToGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_added_to_group',
-		displayName: 'Учасник приєднується до групи',
+		displayName: 'Member joins a group',
 	},
 	wixGroups_wixGroupsMemberAddedToGroupAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_added_to_group_agg',
-		displayName: 'Учасники приєднуються до групи',
+		displayName: 'Members join a group',
 	},
 	wixGroups_wixGroupsMemberCreatedPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post',
-		displayName: 'Учасник створює пост',
+		displayName: 'Member creates a post',
 	},
 	wixGroups_wixGroupsMemberCreatedPostAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post_agg',
-		displayName: 'Учасники створюють пости',
+		displayName: 'Members create posts',
 	},
 	wixGroups_wixGroupsMemberCreatedPostComment: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post_comment',
-		displayName: 'Учасник коментує пост',
+		displayName: 'Member comments on a post',
 	},
 	wixGroups_wixGroupsMemberInvitedToGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_invited_to_group',
-		displayName: 'Учасника запрошено до групи',
+		displayName: 'Member invited to group',
 	},
 	wixGroups_wixGroupsMemberLeavesGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_leaves_group',
-		displayName: 'Учасник покидає групу',
+		displayName: 'Member leaves a group',
 	},
 	wixGroups_wixGroupsMemberMentionedYouV3: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_mentioned_you_v3',
-		displayName: 'Учасник когось згадав',
+		displayName: 'Member mentioned someone',
 	},
 	wixGroups_wixGroupsMemberMentionsSomeoneV2: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -568,17 +568,17 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsMemberPaidForGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_paid_for_group',
-		displayName: 'Учасник платить за групу',
+		displayName: 'Member pays for a group',
 	},
 	wixGroups_wixGroupsMemberPpExpired: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_pp_expired',
-		displayName: 'Учасника видалено, бо закінчився термін дії плану оплат',
+		displayName: 'Member removed as payment plan expired',
 	},
 	wixGroups_wixGroupsMemberReactedToYourComment: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_reacted_to_your_comment',
-		displayName: 'Учасник реагує на коментар',
+		displayName: 'Member reacts to a comment',
 	},
 	wixGroups_wixGroupsMemberReactedToYourCommentAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -588,7 +588,7 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsMemberReactedToYourPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_reacted_to_your_post',
-		displayName: 'Учасник реагує на пост',
+		displayName: 'Member reacts to a post',
 	},
 	wixGroups_wixGroupsMemberReactedToYourPostAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -598,12 +598,12 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsMemberRequestToCreateGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member-request-to-create-group',
-		displayName: 'Учасник надсилає запит на створення групи',
+		displayName: 'Member requests to create a group',
 	},
 	wixGroups_wixGroupsMemberRoleUpdated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_role_updated',
-		displayName: 'Роль учасника оновлено',
+		displayName: 'Member role updated',
 	},
 	wixGroups_wixGroupsMembersMentioned: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -613,37 +613,37 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsNewMembersJoined: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-new_members_joined',
-		displayName: 'Загальне оновлення: новий учасник у групі',
+		displayName: 'Group has new member generic update',
 	},
 	wixGroups_wixGroupsPersonInvitedToGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-person_invited_to_group',
-		displayName: 'Людину запрошено до групи',
+		displayName: 'Person invited to group',
 	},
 	wixGroups_wixGroupsWeeklyDigest: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-weekly-digest',
-		displayName: 'Щотижневий дайджест',
+		displayName: 'Weekly Digest',
 	},
 	wixInvoices_wixInvoicesInvoiceOverdue: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_overdue',
-		displayName: 'Рахунок прострочено',
+		displayName: 'Invoice overdue',
 	},
 	wixInvoices_wixInvoicesInvoicePaid: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_paid',
-		displayName: 'Рахунок оплачено',
+		displayName: 'Invoice paid',
 	},
 	wixInvoices_wixInvoicesInvoicePaymentReceived: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_payment_received',
-		displayName: 'Оплату рахунка отримано',
+		displayName: 'Invoice payment received',
 	},
 	wixInvoices_wixInvoicesInvoiceSent: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_sent',
-		displayName: 'Рахунок надіслано',
+		displayName: 'Invoice sent',
 	},
 	wixLoyaltyProgram_function23D95Ad46Eba5E06888E164C2B9C4F5F: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
@@ -653,32 +653,32 @@ export const wixAutomationsTriggers: {
 	wixLoyaltyProgram_wixLoyaltyLoyaltyPointsReached: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-loyalty_points_reached',
-		displayName: 'У клієнта достатньо балів для винагород',
+		displayName: 'Customer has enough points for rewards',
 	},
 	wixLoyaltyProgram_wixLoyaltyPointsAboutToExpire: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-points_about_to_expire',
-		displayName: 'Термін дії балів мине через 14 днів',
+		displayName: 'Points expire in 14 days',
 	},
 	wixLoyaltyProgram_wixLoyaltyPointsAdjusted: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-points_adjusted',
-		displayName: 'Баланс балів змінено вручну',
+		displayName: 'Points balance adjusted manually',
 	},
 	wixLoyaltyProgram_wixLoyaltyPointsEarned: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-points_earned',
-		displayName: 'Клієнт отримує бали',
+		displayName: 'Customer earns points',
 	},
 	wixLoyaltyProgram_wixLoyaltySocialMediaChannelFollowed: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-social_media_channel_followed',
-		displayName: 'Підписка на профіль у соцмережі',
+		displayName: 'Social media profile followed',
 	},
 	wixLoyaltyProgram_wixLoyaltyTierUpdated: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-tier_updated',
-		displayName: 'Клієнт переходить на рівень',
+		displayName: 'Customer enters tier',
 	},
 	wixOnlinePrograms_wixOnlineProgramsAccessDenied: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
@@ -688,7 +688,7 @@ export const wixAutomationsTriggers: {
 	wixOnlinePrograms_wixOnlineProgramsCertificateReady: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-certificate_ready',
-		displayName: 'Сертифікат доступний для скачування',
+		displayName: 'Certificate available to download',
 	},
 	wixOnlinePrograms_wixOnlineProgramsExportedProgramData: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
@@ -698,92 +698,92 @@ export const wixAutomationsTriggers: {
 	wixOnlinePrograms_wixOnlineProgramsJoinRequestReceived: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-join_request_received',
-		displayName: 'Запит на приєднання до курсу отримано',
+		displayName: 'Program join request received',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberInvitedToJoinAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_invited_to_join_a_program',
-		displayName: 'Учасника запрошено приєднатися до курсу',
+		displayName: 'Member invited to join a program',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberJoinRequestApproved: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_join_request_approved',
-		displayName: 'Запит учасника на приєднання схвалено',
+		displayName: 'Member`s join request approved',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberJoinRequestWasDeclined: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_join_request_was_declined',
-		displayName: 'Запит учасника на приєднання відхилено',
+		displayName: 'Member`s join request declined',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberJoinsAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_joins_a_program',
-		displayName: 'Учасник приєднується до курсу',
+		displayName: 'Member joins a program',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberPaysForAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_pays_for_a_program',
-		displayName: 'Учасник оплачує курс',
+		displayName: 'Member pays for a program',
 	},
 	wixOnlinePrograms_wixOnlineProgramsOfflinePaymentDeclined: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-offline_payment_declined',
-		displayName: 'Офлайн‑платіж відхилено',
+		displayName: 'Offline payment declined',
 	},
 	wixOnlinePrograms_wixOnlineProgramsOfflinePaymentReceived: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-offline_payment_received',
-		displayName: 'Отримано офлайн-платіж за курс',
+		displayName: 'Offline program payment received',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantCompletesAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_completes_a_program',
-		displayName: 'Учасник завершує курс',
+		displayName: 'Participant completes a program',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantCompletesAStep: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_completes_a_step',
-		displayName: 'Учасник виконує завдання',
+		displayName: 'Participant completes a step',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantLeavesAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_leaves_a_program',
-		displayName: 'Учасник покидає курс',
+		displayName: 'Participant leaves a program',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantManuallyAddedToProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_manually_added_to_program',
-		displayName: 'Учасника додано на курс вручну',
+		displayName: 'Participant manually added to program',
 	},
 	wixOnlinePrograms_wixOnlineProgramsPaymentFailed: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-payment_failed',
-		displayName: 'Платіж не пройшов',
+		displayName: 'Payment failed',
 	},
 	wixOnlinePrograms_wixOnlineProgramsProgramDurationEnds: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-program_duration_ends',
-		displayName: 'Дата закінчення курсу минула',
+		displayName: 'Program end date has passed',
 	},
 	wixOnlinePrograms_wixOnlineProgramsProgramEndedWithoutAllStepsCompleted: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-program_ended_without_all_steps_completed',
-		displayName: 'Курс завершено з невиконаними завданнями',
+		displayName: 'Program ended without all steps completed',
 	},
 	wixOnlinePrograms_wixOnlineProgramsReminderToCompleteSteps: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-reminder_to_complete_steps',
-		displayName: 'Нагадування про виконання запланованих завдань',
+		displayName: 'Reminder to complete scheduled steps',
 	},
 	wixOnlinePrograms_wixOnlineProgramsVisitorBlockedFromJoining: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-visitor_blocked_from_joining',
-		displayName: 'Приєднання відвідувача заблоковано',
+		displayName: 'Visitor access denied',
 	},
 	wixPortfolio_wixPortfolioProjectCreated: {
 		appId: 'd90652a2-f5a1-4c7c-84c4-d4cdcc41f130',
 		triggerKey: 'wix_portfolio-project_created',
-		displayName: 'Новий проєкт створено',
+		displayName: 'New project created',
 	},
 	wixPricingPlans_fn3D1Dd01508B14300Ab44055E149550808Aa6A53D85D257E1827D6C7Beede2D83:
 		{
@@ -851,87 +851,87 @@ export const wixAutomationsTriggers: {
 	wixPricingPlans_wixPricingPlansPlanCanceled: {
 		appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
 		triggerKey: 'wix_pricing_plans-plan_canceled',
-		displayName: 'План скасовано',
+		displayName: 'Plan canceled',
 	},
 	wixPricingPlans_wixPricingPlansPlanPurchased: {
 		appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
 		triggerKey: 'wix_pricing_plans-plan_purchased',
-		displayName: 'План замовлено',
+		displayName: 'Plan ordered',
 	},
 	wixProposals_wixProposalsProposalAccepted: {
 		appId: 'b68c2f3d-8a70-4e1f-9432-3cd1fd011965',
 		triggerKey: 'wix_proposals-proposal_accepted',
-		displayName: 'Пропозицію прийнято',
+		displayName: 'Proposal accepted',
 	},
 	wixProposals_wixProposalsSendProposal: {
 		appId: 'b68c2f3d-8a70-4e1f-9432-3cd1fd011965',
 		triggerKey: 'wix_proposals-send_proposal',
-		displayName: 'Пропозицію надіслано',
+		displayName: 'Proposal sent',
 	},
 	wixRestaurantsOrders_wixRestaurantsOrdersOrderSubmitted: {
 		appId: '13e8d036-5516-6104-b456-c8466db39542',
 		triggerKey: 'wix_restaurants_orders-order_submitted',
-		displayName: 'Замовлення розміщено',
+		displayName: 'Restaurant order placed',
 	},
 	wixRestaurantsOrdersNew_restaurantsDeliveryOrderIsReady: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-delivery-order-is-ready',
-		displayName: 'Замовлення готове для доставки',
+		displayName: 'Delivery order ready',
 	},
 	wixRestaurantsOrdersNew_restaurantsFutureOrderApproved: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-future-order-approved',
-		displayName: 'Наближається термін виконання замовлення',
+		displayName: 'Future order due by',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderCanceled: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-canceled',
-		displayName: 'Замовлення скасовано',
+		displayName: 'Order canceled',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderEdited: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-edited',
-		displayName: 'Замовлення відредаговано',
+		displayName: 'Order edited',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderIsInDelivery: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-in-delivery',
-		displayName: 'Замовлення доставляється',
+		displayName: 'Order out for Delivery',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderIsPending: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-pending',
-		displayName: 'Замовлення створено',
+		displayName: 'Order created',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderIsReady: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-ready',
-		displayName: 'Замовлення готове для самовивозу',
+		displayName: 'Pickup order ready',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderWasAccepted: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-was-accepted',
-		displayName: 'Замовлення прийнято',
+		displayName: 'Order accepted',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderWasFulfilled: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-was-fulfilled',
-		displayName: 'Замовлення виконано',
+		displayName: 'Order fulfilled',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewCreated: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-created',
-		displayName: 'Відгук створено',
+		displayName: 'Review created',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewDeleted: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-deleted',
-		displayName: 'Відгук видалено',
+		displayName: 'Review deleted',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewModerationStatusChanged: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-moderation_status_changed',
-		displayName: 'Змінено статус модерації відгуку',
+		displayName: 'Review moderation status changed',
 	},
 	wixReviewsApp_wixReviewsReviewRequestCreated: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
@@ -941,27 +941,27 @@ export const wixAutomationsTriggers: {
 	wixSiteMembersApp_wixMembersMemberApproves: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_approves',
-		displayName: 'Учасника підтверджено',
+		displayName: 'Member approved',
 	},
 	wixSiteMembersApp_wixMembersMemberBlocked: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_blocked',
-		displayName: 'Учасника заблоковано',
+		displayName: 'Member blocked',
 	},
 	wixSiteMembersApp_wixMembersMemberDeleted: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_deleted',
-		displayName: 'Учасника видалено',
+		displayName: 'Member deleted',
 	},
 	wixSiteMembersApp_wixMembersMemberLogsIn: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_logs_in',
-		displayName: 'Учасник заходить на сайт',
+		displayName: 'Member logs in',
 	},
 	wixSiteMembersApp_wixMembersUouSignsUp: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-uou_signs_up',
-		displayName: 'Відвідувач реєструється на вашому сайті',
+		displayName: 'Visitor signs up to your site',
 	},
 	wixSiteMembersApp_wixSitemembersAppMemberActivation: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
@@ -971,18 +971,18 @@ export const wixAutomationsTriggers: {
 	wixSiteMembersApp_wixSitemembersAppMemberEmailConfirmationRequired: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_sitemembers_app-member_email_confirmation_required',
-		displayName: 'Необхідне підтвердження ел. пошти учасника',
+		displayName: 'Member email confirmation required',
 	},
 	wixSiteMembersApp_wixSitemembersAppMemberResetPassword: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_sitemembers_app-member_reset_password',
-		displayName: 'Учасник сайту подає запит на скидання пароля',
+		displayName: 'Site member asks to reset password',
 	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerOrderPaymentAdded: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-order_payment_added',
-		displayName: 'Платіж додано до замовлення',
+		displayName: 'Payment Added to Order',
 	},
 	wixStores_fnB56C6504E65648C4A245935C334Fd52B78Eb5D7F788854DdBca71598B432Bfd8:
 		{
@@ -1009,51 +1009,51 @@ export const wixAutomationsTriggers: {
 	wixStores_wixECommerceCartAbandonment: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wix_e_commerce-cart_abandonment',
-		displayName: 'Оформлення покинуто',
+		displayName: 'Checkout abandoned',
 	},
 	wixStores_wixECommerceOrderPlaced: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wix_e_commerce-order_placed',
-		displayName: 'Замовлення розміщено',
+		displayName: 'Order placed',
 	},
 	wixStores_wixstoresLegacyOrderPlacedV1: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wixstores-legacy_order_placed_v1',
-		displayName: 'Замовлення розміщено',
+		displayName: 'Store order placed',
 	},
 	wixStores_wixstoresPaymentAdded: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wixstores-payment_added',
-		displayName: 'Плату стягнено з кредитної картки',
+		displayName: 'Credit card is charged',
 	},
 	wixTableReservations_reservationStarted: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'reservation_started',
-		displayName: 'Початок резервування',
+		displayName: 'Table reservation starts',
 	},
 	wixTableReservations_reservationWasCanceled: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'reservation_was_canceled',
-		displayName: 'Скасовано резерв стола',
+		displayName: 'Table reservation canceled',
 	},
 	wixTableReservations_uouCreatedReservation: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'uou_created_reservation',
-		displayName: 'Гість резервує столик',
+		displayName: 'Table reserved by guest',
 	},
 	wixTableReservations_userCreatedReservation: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'user_created_reservation',
-		displayName: 'Резерв стола додано вручну',
+		displayName: 'Table reservation added manually',
 	},
 	wixTableReservations_userUpdatedReservation: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'user_updated_reservation',
-		displayName: 'Час резервування стола оновлено',
+		displayName: 'Table reservation time updated',
 	},
 	workflows_wixWorkflowsCardAddedOrMoved: {
 		appId: 'ea2821fc-7d97-40a9-9f75-772f29178430',
 		triggerKey: 'wix_workflows-card_added_or_moved',
-		displayName: 'Картку додано або переміщено',
+		displayName: 'Card added or moved',
 	},
 };
