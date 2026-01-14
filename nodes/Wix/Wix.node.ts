@@ -3,6 +3,7 @@ import { orderDescription } from './resources/order';
 import { productDescription } from './resources/product';
 import { getOrders } from './listSearch/order/getOrders';
 import { getProducts } from './listSearch/product/getProducts';
+import { addTelemetryHeader } from './utils/addBiHeader';
 
 export class Wix implements INodeType {
 	description: INodeTypeDescription = {
@@ -44,6 +45,11 @@ export class Wix implements INodeType {
 					},
 				],
 				default: 'order',
+				routing: {
+					send: {
+						preSend: [addTelemetryHeader],
+					},
+				},
 			},
 			...orderDescription,
 			...productDescription,
