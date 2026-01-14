@@ -25,10 +25,14 @@ export async function wixApiRequest(
 		options.body = body;
 	}
 
+	const mode = this.getMode?.() ?? 'prod';
+	const environment = mode === 'manual' ? 'test' : 'prod';
+	
 	const credentials = await this.getCredentials(credentialType);
 	options.headers = {
 		'wix-site-id': credentials.siteId as string,
 		Authorization: credentials.apiKey as string,
+		'x-wix-bi-gateway': `environment=n8n-${environment}`,
 	};
 
 	return this.helpers.httpRequestWithAuthentication.call(this, credentialType, options);
