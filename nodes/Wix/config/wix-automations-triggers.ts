@@ -978,11 +978,62 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_sitemembers_app-member_reset_password',
 		displayName: 'Site member asks to reset password',
 	},
+	wixStores_domainEventsWixEcomV1AutomationTriggerDigitalItemConfirmationIssued:
+		{
+			appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+			triggerKey:
+				'domain_events_wix.ecom.v1.automation_trigger-digital_item_confirmation_issued',
+			displayName: 'Payment made for digital item',
+		},
+	wixStores_domainEventsWixEcomV1AutomationTriggerOrderCancellationIssued: {
+		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+		triggerKey:
+			'domain_events_wix.ecom.v1.automation_trigger-order_cancellation_issued',
+		displayName: 'Order canceled',
+	},
+	wixStores_domainEventsWixEcomV1AutomationTriggerOrderConfirmationIssuedToBuyer:
+		{
+			appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+			triggerKey:
+				'domain_events_wix.ecom.v1.automation_trigger-order_confirmation_issued_to_buyer',
+			displayName: 'Eligible order placed',
+		},
+	wixStores_domainEventsWixEcomV1AutomationTriggerOrderConfirmationIssuedToMerchant:
+		{
+			appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+			triggerKey:
+				'domain_events_wix.ecom.v1.automation_trigger-order_confirmation_issued_to_merchant',
+			displayName: 'Eligible order placed',
+		},
 	wixStores_domainEventsWixEcomV1AutomationTriggerOrderPaymentAdded: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-order_payment_added',
 		displayName: 'Payment Added to Order',
+	},
+	wixStores_domainEventsWixEcomV1AutomationTriggerOrderUpdatedIssued: {
+		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+		triggerKey:
+			'domain_events_wix.ecom.v1.automation_trigger-order_updated_issued',
+		displayName: 'Order updated',
+	},
+	wixStores_domainEventsWixEcomV1AutomationTriggerReadyForPickupIssued: {
+		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+		triggerKey:
+			'domain_events_wix.ecom.v1.automation_trigger-ready_for_pickup_issued',
+		displayName: 'Order ready for pickup',
+	},
+	wixStores_domainEventsWixEcomV1AutomationTriggerRefundConfirmationIssued: {
+		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+		triggerKey:
+			'domain_events_wix.ecom.v1.automation_trigger-refund_confirmation_issued',
+		displayName: 'Refund initiated',
+	},
+	wixStores_domainEventsWixEcomV1AutomationTriggerShippingConfirmationIssued: {
+		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+		triggerKey:
+			'domain_events_wix.ecom.v1.automation_trigger-shipping_confirmation_issued',
+		displayName: 'Order shipped',
 	},
 	wixStores_fnB56C6504E65648C4A245935C334Fd52B78Eb5D7F788854DdBca71598B432Bfd8:
 		{
