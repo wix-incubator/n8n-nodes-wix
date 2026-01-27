@@ -1,5 +1,6 @@
 import * as crypto from 'crypto';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject, IHookFunctions } from 'n8n-workflow';
+import { getWixBiValues } from './addBiHeader';
 
 interface TriggerConfig {
 	appId: string;
@@ -7,15 +8,18 @@ interface TriggerConfig {
 }
 
 export function createWixAutomationsRequest(
+	context: IHookFunctions,
 	webhookUrl: string,
 	event: string,
 	trigger: TriggerConfig,
 ): IDataObject {
 	const actionId = crypto.randomUUID();
 
+	const { environment, workflowId } = getWixBiValues(context);
+
 	return {
 		automation: {
-			name: `n8n Webhook - ${event}`,
+			name: `n8n|${environment}|${trigger.appId}|${trigger.triggerKey}|${workflowId}`,
 			origin: 'USER',
 			settings: {
 				hidden: true,

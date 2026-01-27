@@ -159,7 +159,7 @@ export class WixTrigger implements INodeType {
 					throw new NodeOperationError(this.getNode(), `Unknown event: ${event}`);
 				}
 
-				const automationBody = createWixAutomationsRequest(webhookUrl, event, trigger);
+				const automationBody = createWixAutomationsRequest(this, webhookUrl, event, trigger);
 
 				const responseData = (await wixApiRequest.call(
 					this,
