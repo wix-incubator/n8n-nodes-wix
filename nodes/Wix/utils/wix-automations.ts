@@ -54,8 +54,11 @@ export function createWixAutomationsRequest(
  * Checks if an automation has a webhook action with the specified URL
  */
 export function hasWebhookWithUrl(automation: IDataObject, webhookUrl: string): boolean {
-	const actions = (automation.actions as IDataObject[]) || [];
-	for (const action of actions) {
+	const configuration = automation.configuration as IDataObject;
+	const actions = (configuration?.actions as IDataObject) || {};
+		
+	const actionObjects = Object.values(actions);
+	for (const action of actionObjects) {
 		const appDefinedInfo = (action as IDataObject).appDefinedInfo as IDataObject;
 		const inputMapping = appDefinedInfo?.inputMapping as IDataObject;
 		if (appDefinedInfo?.actionKey === 'webhooks-action' && inputMapping?.url === webhookUrl) {

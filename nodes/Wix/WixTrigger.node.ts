@@ -15,6 +15,46 @@ import {
 	findAutomationWithWebhookUrl,
 } from './utils/wix-automations';
 
+const AUTOMATIONS_BASE_PATH = '/automations-service/v2/automations';
+const AUTOMATIONS_QUERY_ENDPOINT = `${AUTOMATIONS_BASE_PATH}/query`;
+const getAutomationEndpoint = (id: string) => `${AUTOMATIONS_BASE_PATH}/${id}`;
+
+async function findAutomationByWebhookUrl(
+	hookContext: IHookFunctions,
+	webhookUrl: string,
+): Promise<IDataObject | null> {
+	try {
+		const response = (await wixApiRequest.call(
+			hookContext,
+			'POST',
+			AUTOMATIONS_QUERY_ENDPOINT,
+		)) as IDataObject;
+		const automations =
+			(response.automations as IDataObject[]) || (Array.isArray(response) ? response : []);
+
+		const automationList = Array.isArray(automations) ? automations : [];
+
+		return findAutomationWithWebhookUrl(automationList, webhookUrl);
+	} catch {
+		return null;
+	}
+}
+
+async function getAutomationIdToDelete(
+	hookContext: IHookFunctions,
+	storedAutomationId: string | undefined,
+	webhookUrl: string,
+): Promise<string | null> {
+	// First, try to use the stored automation ID
+	if (storedAutomationId !== undefined) {
+		return storedAutomationId;
+	}
+
+	// If no stored ID, try to find the automation by webhook URL
+	const foundAutomation = await findAutomationByWebhookUrl(hookContext, webhookUrl);
+	return (foundAutomation?.id as string) || null;
+}
+
 export class WixTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Wix Trigger',
@@ -79,16 +119,19 @@ export class WixTrigger implements INodeType {
 		default: {
 			async checkExists(this: IHookFunctions): Promise<boolean> {
 				const webhookData = this.getWorkflowStaticData('node');
-				const webhookUrl = this.getNodeWebhookUrl('default');
+				const webhookUrl = this.getNodeWebhookUrl('default') as string;
 
 				// First, check if we have a stored automationId
 				if (webhookData.automationId !== undefined) {
 					try {
-						const endpoint = `/automations-service/v2/automations/${webhookData.automationId}`;
-						const automation = (await wixApiRequest.call(this, 'GET', endpoint)) as IDataObject;
+						const automation = (await wixApiRequest.call(
+							this,
+							'GET',
+							getAutomationEndpoint(webhookData.automationId as string),
+						)) as IDataObject;
 
 						// Verify the automation still has our webhook URL
-						if (hasWebhookWithUrl(automation, webhookUrl as string)) {
+						if (hasWebhookWithUrl(automation, webhookUrl)) {
 							return true;
 						}
 					} catch {
@@ -98,27 +141,10 @@ export class WixTrigger implements INodeType {
 				}
 
 				// If no stored ID or stored ID is invalid, try to query automations
-				// Note: This assumes there's a query endpoint. If not available, this will fail gracefully.
-				try {
-					const endpoint = '/automations-service/v2/automations/query';
-					const response = (await wixApiRequest.call(this, 'POST', endpoint)) as IDataObject;
-					const automations =
-						(response.automations as IDataObject[]) || (Array.isArray(response) ? response : []);
-
-					// Handle both array and object with automations property
-					const automationList = Array.isArray(automations) ? automations : [];
-
-					const foundAutomation = findAutomationWithWebhookUrl(
-						automationList,
-						webhookUrl as string,
-					);
-					if (foundAutomation) {
-						webhookData.automationId = foundAutomation.id;
-						return true;
-					}
-				} catch {
-					// Query endpoint might not exist or failed, return false
-					return false;
+				const foundAutomation = await findAutomationByWebhookUrl(this, webhookUrl);
+				if (foundAutomation && foundAutomation.id) {
+					webhookData.automationId = foundAutomation.id as string;
+					return true;
 				}
 
 				return false;
@@ -135,11 +161,10 @@ export class WixTrigger implements INodeType {
 
 				const automationBody = createWixAutomationsRequest(webhookUrl, event, trigger);
 
-				const endpoint = '/automations-service/v2/automations';
 				const responseData = (await wixApiRequest.call(
 					this,
 					'POST',
-					endpoint,
+					AUTOMATIONS_BASE_PATH,
 					automationBody,
 				)) as IDataObject;
 
@@ -155,15 +180,29 @@ export class WixTrigger implements INodeType {
 			},
 			async delete(this: IHookFunctions): Promise<boolean> {
 				const webhookData = this.getWorkflowStaticData('node');
+				const webhookUrl = this.getNodeWebhookUrl('default') as string;
+
+				const automationId = await getAutomationIdToDelete(
+					this,
+					webhookData.automationId as string | undefined,
+					webhookUrl,
+				);
+
+				if (!automationId) {
+					return false;
+				}
+
+				try {
+					await wixApiRequest.call(this, 'DELETE', getAutomationEndpoint(automationId));
+				} catch {
+					return false;
+				}
+
+				// Clear the stored automation ID if it was set
 				if (webhookData.automationId !== undefined) {
-					const endpoint = `/automations-service/v2/automations/${webhookData.automationId}`;
-					try {
-						await wixApiRequest.call(this, 'DELETE', endpoint);
-					} catch {
-						return false;
-					}
 					delete webhookData.automationId;
 				}
+
 				return true;
 			},
 		},
