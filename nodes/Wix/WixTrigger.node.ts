@@ -40,6 +40,21 @@ async function findAutomationByWebhookUrl(
 	}
 }
 
+async function getAutomationIdToDelete(
+	hookContext: IHookFunctions,
+	storedAutomationId: string | undefined,
+	webhookUrl: string,
+): Promise<string | null> {
+	// First, try to use the stored automation ID
+	if (storedAutomationId !== undefined) {
+		return storedAutomationId;
+	}
+
+	// If no stored ID, try to find the automation by webhook URL
+	const foundAutomation = await findAutomationByWebhookUrl(hookContext, webhookUrl);
+	return (foundAutomation?.id as string) || null;
+}
+
 export class WixTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Wix Trigger',
@@ -139,13 +154,6 @@ export class WixTrigger implements INodeType {
 				const event = this.getNodeParameter('event') as string;
 				const webhookData = this.getWorkflowStaticData('node');
 
-				// First, check if an automation with this webhook URL already exists
-				const foundAutomation = await findAutomationByWebhookUrl(this, webhookUrl);				
-				if (foundAutomation && foundAutomation.id) {
-					webhookData.automationId = foundAutomation.id as string;
-					return true;
-				}
-
 				const trigger = wixAutomationsTriggers[event];
 				if (!trigger) {
 					throw new NodeOperationError(this.getNode(), `Unknown event: ${event}`);
@@ -172,18 +180,29 @@ export class WixTrigger implements INodeType {
 			},
 			async delete(this: IHookFunctions): Promise<boolean> {
 				const webhookData = this.getWorkflowStaticData('node');
+				const webhookUrl = this.getNodeWebhookUrl('default') as string;
+
+				const automationId = await getAutomationIdToDelete(
+					this,
+					webhookData.automationId as string | undefined,
+					webhookUrl,
+				);
+
+				if (!automationId) {
+					return false;
+				}
+
+				try {
+					await wixApiRequest.call(this, 'DELETE', getAutomationEndpoint(automationId));
+				} catch {
+					return false;
+				}
+
+				// Clear the stored automation ID if it was set
 				if (webhookData.automationId !== undefined) {
-					try {
-						await wixApiRequest.call(
-							this,
-							'DELETE',
-							getAutomationEndpoint(webhookData.automationId as string),
-						);
-					} catch {
-						return false;
-					}
 					delete webhookData.automationId;
 				}
+
 				return true;
 			},
 		},
