@@ -918,31 +918,6 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'restaurants-order-was-fulfilled',
 		displayName: 'Order fulfilled',
 	},
-	wixRestaurantsReservations_reservationStarted: {
-		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
-		triggerKey: 'reservation_started',
-		displayName: 'Table reservation starts',
-	},
-	wixRestaurantsReservations_reservationWasCanceled: {
-		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
-		triggerKey: 'reservation_was_canceled',
-		displayName: 'Table reservation canceled',
-	},
-	wixRestaurantsReservations_uouCreatedReservation: {
-		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
-		triggerKey: 'uou_created_reservation',
-		displayName: 'Table reserved by guest',
-	},
-	wixRestaurantsReservations_userCreatedReservation: {
-		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
-		triggerKey: 'user_created_reservation',
-		displayName: 'Table reservation added manually',
-	},
-	wixRestaurantsReservations_userUpdatedReservation: {
-		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
-		triggerKey: 'user_updated_reservation',
-		displayName: 'Table reservation time updated',
-	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewCreated: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-created',
@@ -1112,6 +1087,31 @@ export const wixAutomationsTriggers: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wixstores-payment_added',
 		displayName: 'Credit card is charged',
+	},
+	wixTableReservations_reservationStarted: {
+		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
+		triggerKey: 'reservation_started',
+		displayName: 'Table reservation starts',
+	},
+	wixTableReservations_reservationWasCanceled: {
+		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
+		triggerKey: 'reservation_was_canceled',
+		displayName: 'Table reservation canceled',
+	},
+	wixTableReservations_uouCreatedReservation: {
+		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
+		triggerKey: 'uou_created_reservation',
+		displayName: 'Table reserved by guest',
+	},
+	wixTableReservations_userCreatedReservation: {
+		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
+		triggerKey: 'user_created_reservation',
+		displayName: 'Table reservation added manually',
+	},
+	wixTableReservations_userUpdatedReservation: {
+		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
+		triggerKey: 'user_updated_reservation',
+		displayName: 'Table reservation time updated',
 	},
 	workflows_wixWorkflowsCardAddedOrMoved: {
 		appId: 'ea2821fc-7d97-40a9-9f75-772f29178430',
