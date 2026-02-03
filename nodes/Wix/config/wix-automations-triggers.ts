@@ -1019,7 +1019,7 @@ export const wixAutomationsTriggers: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-fulfillment_request_issued',
-		displayName: 'AutomationTrigger Fulfillment Request Issued',
+		displayName: 'Automation Trigger Fulfillment Request Issued',
 	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerOrderCancellationIssued: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
