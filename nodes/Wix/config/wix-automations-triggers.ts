@@ -1113,4 +1113,9 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'user_updated_reservation',
 		displayName: 'Table reservation time updated',
 	},
+	workflows_wixWorkflowsCardAddedOrMoved: {
+		appId: 'ea2821fc-7d97-40a9-9f75-772f29178430',
+		triggerKey: 'wix_workflows-card_added_or_moved',
+		displayName: 'Card added or moved',
+	},
 };
