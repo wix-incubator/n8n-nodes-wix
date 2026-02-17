@@ -868,7 +868,7 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_proposals-send_proposal',
 		displayName: 'Proposal sent',
 	},
-	wixRestaurantsOrders_wixRestaurantsOrdersOrderSubmitted: {
+	wixRestaurantsOrders2_wixRestaurantsOrdersOrderSubmitted: {
 		appId: '13e8d036-5516-6104-b456-c8466db39542',
 		triggerKey: 'wix_restaurants_orders-order_submitted',
 		displayName: 'Restaurant order placed',
