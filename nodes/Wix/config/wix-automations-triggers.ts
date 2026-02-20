@@ -785,6 +785,13 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_portfolio-project_created',
 		displayName: 'New project created',
 	},
+	wixPricingPlans_fn214D1C3FD56B467FA95D927Cd3E367A5765A669949435F2E9Aeb4Bd78D72454D:
+		{
+			appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
+			triggerKey:
+				'fn_214d1c3f-d56b-467f-a95d-927cd3e367a5_765a6699-4943-5f2e-9aeb-4bd78d72454d',
+			displayName: 'Function trigger',
+		},
 	wixPricingPlans_fn3D1Dd01508B14300Ab44055E149550808Aa6A53D85D257E1827D6C7Beede2D83:
 		{
 			appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
