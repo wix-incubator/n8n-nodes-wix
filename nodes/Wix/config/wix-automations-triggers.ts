@@ -126,6 +126,11 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'tasks-task_overdue',
 		displayName: 'Task overdue',
 	},
+	virtualNumbers_virtualNumbersAutomatedSmsLimitExceeded: {
+		appId: '94bc563b-675f-41ad-a2a6-5494f211c47b',
+		triggerKey: 'virtual_numbers-automated-sms-limit-exceeded',
+		displayName: 'Automated Sms Limit Exceeded',
+	},
 	wixBlog_fnF525Ecd06D494C92A3647A724E191629809947B0Eb855870A828A71Cb2Bd3B31: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey:
