@@ -995,6 +995,11 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_sitemembers_app-member_reset_password',
 		displayName: 'Site member asks to reset password',
 	},
+	wixSiteMembersApp_wixSitemembersAppNewMemberRequestsApproval: {
+		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
+		triggerKey: 'wix_sitemembers_app-new_member_requests_approval',
+		displayName: 'New member requests approval',
+	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerDigitalItemConfirmationIssued:
 		{
 			appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
