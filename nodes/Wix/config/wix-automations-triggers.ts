@@ -1080,11 +1080,6 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'function_424205e1-e086-5e1a-8f2f-63040cf1b22b',
 		displayName: 'Function trigger',
 	},
-	wixStores_function64Fac571B6Ec5Bd885F526628C2A1688: {
-		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
-		triggerKey: 'function_64fac571-b6ec-5bd8-85f5-26628c2a1688',
-		displayName: 'Function trigger',
-	},
 	wixStores_wixECommerceCartAbandonment: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wix_e_commerce-cart_abandonment',
