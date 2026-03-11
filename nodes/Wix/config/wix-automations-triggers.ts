@@ -4,127 +4,127 @@ export const wixAutomationsTriggers: {
 	backInStockRequests_wixECommerceBackInStockRequestCreatedStores: {
 		appId: '16be6c71-d061-4f56-8cda-c6aa911d1832',
 		triggerKey: 'wix_e_commerce-back_in_stock_request_created_stores',
-		displayName: 'Solicitud de producto disponible nuevamente creada',
+		displayName: 'Solicitação de estoque criada',
 	},
 	backInStockRequests_wixECommerceBackInStockStores: {
 		appId: '16be6c71-d061-4f56-8cda-c6aa911d1832',
 		triggerKey: 'wix_e_commerce-back_in_stock_stores',
-		displayName: 'Un producto vuelve a estar disponible',
+		displayName: 'Produto está de volta ao estoque',
 	},
 	cms_cmsDatasetFormSubmitted: {
 		appId: '1973457f-c021-4da5-941f-58444ff761d4',
 		triggerKey: 'cms-dataset_form_submitted',
-		displayName: 'Se envía un formulario de CMS',
+		displayName: 'Formulário do CMS é enviado',
 	},
 	contacts_contactsContactAssigned: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-contact_assigned',
-		displayName: 'contactar a Vinculado',
+		displayName: 'Contato atribuído',
 	},
 	contacts_contactsLabelAddedToContact: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-label_added_to_contact',
-		displayName: 'Se agrega una etiqueta al contacto',
+		displayName: 'Etiqueta é adicionada ao contato',
 	},
 	contacts_contactsLabelRemovedFromContact: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-label_removed_from_contact',
-		displayName: 'Se elimina una etiqueta de un contacto',
+		displayName: 'Etiqueta é removida do contato',
 	},
 	contacts_contactsNewContactWasCreated: {
 		appId: '74bff718-5977-47f2-9e5f-a9fd0047fd1f',
 		triggerKey: 'contacts-new_contact_was_created',
-		displayName: 'Se crea un nuevo contacto',
+		displayName: 'Novo contato é criado',
 	},
 	inbox_wixChatMessageReceiveFromUou: {
 		appId: '141fbfae-511e-6817-c9f0-48993a7547d1',
 		triggerKey: 'wix_chat-message_receive_from_uou',
-		displayName: 'Se recibe un mensaje en bandeja de entrada (chat o email)',
+		displayName: 'Mensagem é recebida no Inbox (chat ou email)',
 	},
 	inbox_wixChatMessageSentToUou: {
 		appId: '141fbfae-511e-6817-c9f0-48993a7547d1',
 		triggerKey: 'wix_chat-message_sent_to_uou',
-		displayName: 'Se envía un mensaje de chat',
+		displayName: 'Mensagem do chat é enviada',
 	},
 	oldWixFormsAndPayments_wixFormsFormSubmit: {
 		appId: '14ce1214-b278-a7e4-1373-00cebd1bef7c',
 		triggerKey: 'wix_forms-form_submit',
-		displayName: 'Se envía un formulario',
+		displayName: 'Formulário é enviado',
 	},
 	payLinks_wixPaymentLinksPaymentLinkPaymentReceived: {
 		appId: '324cf725-53d9-4bb2-b8f6-0c8ec9a77f45',
 		triggerKey: 'wix_payment_links-payment_link_payment_received',
-		displayName: 'Se recibe un pago',
+		displayName: 'Pagamento é recebido',
 	},
 	payLinks_wixPaymentLinksSendPaymentLink: {
 		appId: '324cf725-53d9-4bb2-b8f6-0c8ec9a77f45',
 		triggerKey: 'wix_payment_links-send_payment_link',
-		displayName: 'Enviar un enlace de pago',
+		displayName: 'Enviar um link de pagamento',
 	},
 	priceQuotes_wixPriceQuoteQuoteAccepted: {
 		appId: '55cd9036-36bb-480b-8ddc-afda3cb2eb8d',
 		triggerKey: 'wix_price_quote-quote_accepted',
-		displayName: 'Se acepta una cotización',
+		displayName: 'Orçamento é aceito',
 	},
 	priceQuotes_wixPriceQuoteQuoteExpired: {
 		appId: '55cd9036-36bb-480b-8ddc-afda3cb2eb8d',
 		triggerKey: 'wix_price_quote-quote_expired',
-		displayName: 'Venció una cotización',
+		displayName: 'Orçamento expirou',
 	},
 	priceQuotes_wixPriceQuoteQuoteSent: {
 		appId: '55cd9036-36bb-480b-8ddc-afda3cb2eb8d',
 		triggerKey: 'wix_price_quote-quote_sent',
-		displayName: 'Se envía una cotización',
+		displayName: 'Orçamento é enviado',
 	},
 	recurringInvoices_wixInvoicesRecurringInvoiceCanceled: {
 		appId: '35aec784-bbec-4e6e-abcb-d3d724af52cf',
 		triggerKey: 'wix_invoices-recurring_invoice_canceled',
-		displayName: 'Se cancela un pago recurrente',
+		displayName: 'Pagamento recorrente é cancelado',
 	},
 	recurringInvoices_wixInvoicesRecurringInvoiceCreated: {
 		appId: '35aec784-bbec-4e6e-abcb-d3d724af52cf',
 		triggerKey: 'wix_invoices-recurring_invoice_created',
-		displayName: 'Comienza un pago recurrente',
+		displayName: 'Pagamento recorrente começa',
 	},
 	segments_segmentsContactEntersSegment: {
 		appId: 'ee070097-0850-4f23-ad8c-3cdd4efd5244',
 		triggerKey: 'segments-contact_enters_segment',
-		displayName: 'El contacto ingresa al segmento',
+		displayName: 'Contato entra no segmento',
 	},
 	segments_segmentsContactLeavesSegment: {
 		appId: 'ee070097-0850-4f23-ad8c-3cdd4efd5244',
 		triggerKey: 'segments-contact_leaves_segment',
-		displayName: 'El contacto abandona el segmento',
+		displayName: 'Contato sai do segmento',
 	},
 	subscriptions_billingDateUpdated: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'billing_date_updated',
-		displayName: 'Fecha de pago de la suscripción actualizada',
+		displayName: 'Data do pagamento da assinatura atualizada',
 	},
 	subscriptions_customerPaymentMethodUpdated: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'customer_payment_method_updated',
-		displayName: 'Se actualiza el método de pago del cliente',
+		displayName: 'Método de pagamento do cliente atualizado',
 	},
 	subscriptions_failedPaymentGracePeriodStarted: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'failed_payment_grace_period_started',
-		displayName: 'El pago no se efectúa y comienza el periodo de gracia',
+		displayName: 'Falha no pagamento (início do período de carência)',
 	},
 	subscriptions_itemPriceUpdated: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'item_price_updated',
-		displayName: 'Se actualiza el precio del ítem de la suscripción',
+		displayName: 'Preço do item da assinatura atualizado',
 	},
 	subscriptions_paymentSucceededGracePeriodEnds: {
 		appId: '8725b255-2aa2-4a53-b76d-7d3c363aaeea',
 		triggerKey: 'payment_succeeded_grace_period_ends',
-		displayName: 'Pago exitoso - Finaliza el periodo de gracia',
+		displayName: 'Pagamento bem-sucedido (período de carência encerrado)',
 	},
 	tasks_tasksTaskOverdue: {
 		appId: '146c0d71-352e-4464-9a03-2e868aabe7b9',
 		triggerKey: 'tasks-task_overdue',
-		displayName: 'Se atrasa una tarea',
+		displayName: 'Tarefa está atrasada',
 	},
 	virtualNumbers_virtualNumbersAutomatedSmsLimitExceeded: {
 		appId: '94bc563b-675f-41ad-a2a6-5494f211c47b',
@@ -140,315 +140,315 @@ export const wixAutomationsTriggers: {
 	wixBlog_wixBlogBlogPostComment: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey: 'wix_blog-blog_post_comment',
-		displayName: 'Nuevo comentario en la entrada del blog',
+		displayName: 'Novo comentário no post do blog',
 	},
 	wixBlog_wixBlogBlogPostLike: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey: 'wix_blog-blog_post_like',
-		displayName: 'Entrada del blog recibe un Me gusta',
+		displayName: 'Curtida no post do blog',
 	},
 	wixBlog_wixBlogNewBlogPost: {
 		appId: '14bcded7-0066-7c35-14d7-466cb3f09103',
 		triggerKey: 'wix_blog-new_blog_post',
-		displayName: 'Se publica una nueva entrada del blog',
+		displayName: 'Novo post do blog é publicado',
 	},
 	wixBookings_fn36Fd6F5F469040FeB1D2771A7D7Ce688F85Ee74AB9Ce56B9Bff65147520Ccf8C:
 		{
 			appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 			triggerKey:
 				'fn_36fd6f5f-4690-40fe-b1d2-771a7d7ce688_f85ee74a-b9ce-56b9-bff6-5147520ccf8c',
-			displayName: 'Disparador de función',
+			displayName: 'Gatilho de função',
 		},
 	wixBookings_function110369A31027526EB16AC016F9B889B1: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'function_110369a3-1027-526e-b16a-c016f9b889b1',
-		displayName: 'Disparador de función',
+		displayName: 'Gatilho de função',
 	},
 	wixBookings_wixBookingsAnyCheckIn: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-any_check_in',
-		displayName: 'Se registra un cliente',
+		displayName: 'Cliente faz check-in',
 	},
 	wixBookings_wixBookingsAppointmentConfirmed: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointment_confirmed',
-		displayName: 'Se aprueba una solicitud de cita',
+		displayName: 'Solicitação de agendamento é aprovada',
 	},
 	wixBookings_wixBookingsAppointmentDeclined: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointment_declined',
-		displayName: 'Se rechaza una solicitud de cita',
+		displayName: 'Solicitação de agendamento é recusada',
 	},
 	wixBookings_wixBookingsAppointmentRequiresConfirmation: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointment_requires_confirmation',
-		displayName: 'Se solicita una cita',
+		displayName: 'Agendamento é solicitado',
 	},
 	wixBookings_wixBookingsBookingCanceled: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-booking_canceled',
-		displayName: 'Se cancela una reserva',
+		displayName: 'Agendamento é cancelado',
 	},
 	wixBookings_wixBookingsCourseSessionsUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-course_sessions_updated',
-		displayName: 'Se actualiza un curso',
+		displayName: 'Curso é atualizado',
 	},
 	wixBookings_wixBookingsDoubleBooked: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-double_booked',
-		displayName: 'Se reserva una sesión dos veces',
+		displayName: 'Sessão com reserva duplicada',
 	},
 	wixBookings_wixBookingsFailedToApplyBookingFee: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-failed_to_apply_booking_fee',
-		displayName: 'No se pudo aplicar el cargo de la reserva',
+		displayName: 'Falha ao aplicar taxa de agendamento',
 	},
 	wixBookings_wixBookingsFailedToCollectAppliedBookingFees: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-failed_to_collect_applied_booking_fees',
-		displayName: 'No se pudieron cobrar las tarifas de reserva aplicadas',
+		displayName: 'Falha ao coletar taxas de agendamento aplicadas',
 	},
 	wixBookings_wixBookingsNoSessionsLeft: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-no_sessions_left',
-		displayName: 'No quedan sesiones',
+		displayName: 'Nenhuma sessão restante',
 	},
 	wixBookings_wixBookingsNoShow: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-no_show',
-		displayName: 'Se marca un cliente como "No se presentó"',
+		displayName: 'Cliente é marcado como "Não compareceu"',
 	},
 	wixBookings_wixBookingsNthCheckIn: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-nth_check_in',
-		displayName: 'Un cliente se registró X veces',
+		displayName: 'Cliente fez check-in X vezes',
 	},
 	wixBookings_wixBookingsSessionEnds: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_ends',
-		displayName: 'Termina una sesión',
+		displayName: 'Sessão termina',
 	},
 	wixBookings_wixBookingsSessionsBooked: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-sessions_booked',
-		displayName: 'Se reserva una sesión',
+		displayName: 'Sessão é agendada',
 	},
 	wixBookings_wixBookingsSessionStarts: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_starts',
-		displayName: 'Comienza una sesión',
+		displayName: 'Sessão começa',
 	},
 	wixBookings_wixBookingsSessionUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_updated',
-		displayName: 'Se actualiza una cita o clase',
+		displayName: 'Agendamento ou aula é atualizada',
 	},
 	wixDonations_wixDonationsDonationApproved: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
 		triggerKey: 'wix_donations-donation_approved',
-		displayName: 'Se realiza una donación',
+		displayName: 'Doação é feita',
 	},
 	wixDonations_wixDonationsDonationCycle: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
 		triggerKey: 'wix_donations-donation_cycle',
-		displayName: 'Se cobra una donación recurrente',
+		displayName: 'Doação recorrente é cobrada',
 	},
 	wixDonations_wixDonationsDonationSubscriptionCanceled: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
 		triggerKey: 'wix_donations-donation_subscription_canceled',
-		displayName: 'Se cancela una donación recurrente',
+		displayName: 'Doação recorrente é cancelada',
 	},
 	wixEventsTickets_domainEventsWixEventsGuestsV1GuestGuestCheckedIn: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.guests.v1.guest-guest_checked_in',
-		displayName: 'Invitado registrado',
+		displayName: 'Convidado fez check-in',
 	},
 	wixEventsTickets_domainEventsWixEventsGuestsV1GuestGuestEventStarts: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.guests.v1.guest-guest_event_starts',
-		displayName: 'El evento comienza',
+		displayName: 'Evento começa',
 	},
 	wixEventsTickets_domainEventsWixEventsV3EventPublished: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.v3.event-published',
-		displayName: 'Evento publicado',
+		displayName: 'Evento é publicado',
 	},
 	wixEventsTickets_domainEventsWixEventsV3TicketDefinitionSaleEnded: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.v3.ticket_definition-sale_ended',
-		displayName: 'Venta de entradas finalizada',
+		displayName: 'Venda de ingressos é encerrada',
 	},
 	wixEventsTickets_domainEventsWixEventsV3TicketDefinitionSaleStarted: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'domain_events_wix.events.v3.ticket_definition-sale_started',
-		displayName: 'Venta de entradas iniciada',
+		displayName: 'Início da venda de ingressos',
 	},
 	wixEventsTickets_fn03Dabf87Cebf4775A48812A468Ae34281982Be9D060C5Bb8B112F93Bb2642E39:
 		{
 			appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 			triggerKey:
 				'fn_03dabf87-cebf-4775-a488-12a468ae3428_1982be9d-060c-5bb8-b112-f93bb2642e39',
-			displayName: 'Disparador de función',
+			displayName: 'Gatilho de função',
 		},
 	wixEventsTickets_fn8F57E5Df0Adb49B1A3F31Ad3D744Bcd4Ff59D8057F7C5Ba7A3C300919A3768E9:
 		{
 			appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 			triggerKey:
 				'fn_8f57e5df-0adb-49b1-a3f3-1ad3d744bcd4_ff59d805-7f7c-5ba7-a3c3-00919a3768e9',
-			displayName: 'Disparador de función',
+			displayName: 'Gatilho de função',
 		},
 	wixEventsTickets_wixEventsDailyReport: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-daily_report',
-		displayName: 'Informe diario',
+		displayName: 'Relatório diário',
 	},
 	wixEventsTickets_wixEventsDailyRsvpReport: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-daily_rsvp_report',
-		displayName: 'Informe diario de confirmación de asistencia',
+		displayName: 'Relatório diário de RSVP',
 	},
 	wixEventsTickets_wixEventsEventEnds: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-event_ends',
-		displayName: 'El evento termina',
+		displayName: 'Evento termina',
 	},
 	wixEventsTickets_wixEventsInstantOrderReport: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-instant_order_report',
-		displayName: 'email de pedido de entrada',
+		displayName: 'Email de pedido de solicitações',
 	},
 	wixEventsTickets_wixEventsInstantRsvpNoReport: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-instant_rsvp_no_report',
-		displayName: 'Invitado confirmó NO email',
+		displayName: 'Email de RSVP negado do convidado',
 	},
 	wixEventsTickets_wixEventsInstantRsvpYesReport: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-instant_rsvp_yes_report',
-		displayName: 'email RSVP SÍ invitado',
+		displayName: 'Email do convidado RSVPd SIM',
 	},
 	wixEventsTickets_wixEventsNotificationsEventCanceled: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_event_canceled',
-		displayName: 'Evento Cancelada',
+		displayName: 'Evento cancelado',
 	},
 	wixEventsTickets_wixEventsNotificationsEventReminder: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_event_reminder',
-		displayName: 'Es el día de enviar el recordatorio del evento',
+		displayName: 'A data do lembrete do evento chegou',
 	},
 	wixEventsTickets_wixEventsNotificationsNewSpotsAvailable: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_new_spots_available',
-		displayName: 'Nueva plaza disponible para invitados en lista de espera',
+		displayName: 'Novo vaga aberta para convidados na lista de espera',
 	},
 	wixEventsTickets_wixEventsNotificationsOrderConfirmation: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_order_confirmation',
-		displayName: 'Pedido realizado',
+		displayName: 'Pedido é feito',
 	},
 	wixEventsTickets_wixEventsNotificationsOrderConfirmationWithTicketsLink: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_order_confirmation_with_tickets_link',
-		displayName: 'Pedido confirmado, pero no se generó la entrada',
+		displayName: 'Pedido confirmado, mas o ingresso não foi gerado',
 	},
 	wixEventsTickets_wixEventsNotificationsRsvpConfirmation: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_rsvp_confirmation',
-		displayName: 'Confirmación de asistencia',
+		displayName: 'RSVP confirmado',
 	},
 	wixEventsTickets_wixEventsTicketPurchase: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-ticket_purchase',
-		displayName: 'Se compra una entrada',
+		displayName: 'Ingresso é adquirido',
 	},
 	wixEventsTickets_wixEventsUouAddedToWaitlist: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-uou_added_to_waitlist',
-		displayName: 'El invitado se registra en la lista de espera',
+		displayName: 'Convidado é adicionado à lista de espera',
 	},
 	wixEventsTickets_wixEventsUouRsvp: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-uou_rsvp',
-		displayName: 'Confirmación de asistencia de invitados',
+		displayName: 'RSVP de convidado',
 	},
 	wixFileShare_wixFileShareAccessToFolderApproved: {
 		appId: '1537b24e-29d1-6d8f-b8e1-d6860f2f70b9',
 		triggerKey: 'wix_file_share-access_to_folder_approved',
-		displayName: 'Se otorga acceso a una carpeta',
+		displayName: 'Acesso à pasta concedido',
 	},
 	wixFileShare_wixFileShareRequestedAccessToFolder: {
 		appId: '1537b24e-29d1-6d8f-b8e1-d6860f2f70b9',
 		triggerKey: 'wix_file_share-requested_access_to_folder',
-		displayName: 'Se solicita acceso a una carpeta',
+		displayName: 'Acesso à pasta solicitado',
 	},
 	wixForms_fn6E3266E324B547E29B11623Feede7B14294575A72A2D5D6AB56BC6B8Bda74B16: {
 		appId: '225dd912-7dea-4738-8688-4b8c6955ffc2',
 		triggerKey:
 			'fn_6e3266e3-24b5-47e2-9b11-623feede7b14_294575a7-2a2d-5d6a-b56b-c6b8bda74b16',
-		displayName: 'Disparador de función',
+		displayName: 'Gatilho de função',
 	},
 	wixForms_fn8951D6BdB6B84016B07742Fd5B93D79E18F07A715Fb95A0D8E3E2D124Acf3846: {
 		appId: '225dd912-7dea-4738-8688-4b8c6955ffc2',
 		triggerKey:
 			'fn_8951d6bd-b6b8-4016-b077-42fd5b93d79e_18f07a71-5fb9-5a0d-8e3e-2d124acf3846',
-		displayName: 'Disparador de función',
+		displayName: 'Gatilho de função',
 	},
 	wixForms_functionF85Ee74AB9Ce56B9Bff65147520Ccf8C: {
 		appId: '225dd912-7dea-4738-8688-4b8c6955ffc2',
 		triggerKey: 'function_f85ee74a-b9ce-56b9-bff6-5147520ccf8c',
-		displayName: 'Disparador de función',
+		displayName: 'Gatilho de função',
 	},
 	wixForms_wixFormAppFormSubmitted: {
 		appId: '225dd912-7dea-4738-8688-4b8c6955ffc2',
 		triggerKey: 'wix_form_app-form_submitted',
-		displayName: 'Se envía un formulario',
+		displayName: 'Formulário é enviado',
 	},
 	wixForum_wixForumForumCommentDeleted: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_comment_deleted',
-		displayName: 'Se elimina un comentario del foro',
+		displayName: 'Comentário do fórum excluído',
 	},
 	wixForum_wixForumForumCommentPublished: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_comment_published',
-		displayName: 'Se publica un comentario en el foro',
+		displayName: 'Comentário do fórum é publicado',
 	},
 	wixForum_wixForumForumPostLiked: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_post_liked',
-		displayName: 'Hubo una reacción a una entrada del foro',
+		displayName: 'Nova curtida no post do fórum',
 	},
 	wixForum_wixForumForumPostUnliked: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_post_unliked',
-		displayName: 'Se elimina una reacción de una entrada del foro',
+		displayName: 'Removeu reação do post do fórum',
 	},
 	wixForum_wixForumNewPost: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-new_post',
-		displayName: 'Se publica una entrada del foro',
+		displayName: 'Post do fórum é publicado',
 	},
 	wixForum_wixForumReactedToComment: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-reacted_to_comment',
-		displayName: 'Hubo una reacción a un comentario del foro',
+		displayName: 'Reagiu ao comentário do fórum',
 	},
 	wixForum_wixForumRemovedReactionFromForumComment: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-removed_reaction_from_forum_comment',
-		displayName: 'Se elimina una reacción de un comentario del foro',
+		displayName: 'Removeu reação do comentário do fórum',
 	},
 	wixGroups_domainEventsWixSocialGroupsV2GroupRequestApproved: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'domain_events_wix.social_groups.v2.group_request-approved',
-		displayName: 'Solicitud de grupo aprobada DE',
+		displayName: 'Group Request Approved DE',
 	},
 	wixGroups_domainEventsWixSocialGroupsV2GroupRequestCreated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'domain_events_wix.social_groups.v2.group_request-created',
-		displayName: 'Un miembro solicita crear un grupo',
+		displayName: 'Membro solicita criar um grupo',
 	},
 	wixGroups_domainEventsWixSocialGroupsV2GroupRequestRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -458,7 +458,7 @@ export const wixAutomationsTriggers: {
 	wixGroups_domainEventsWixSocialgroupsV3GroupMemberAccepted: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'domain_events_wix.socialgroups.v3.group_member-accepted',
-		displayName: 'Join Request Accepted NOT USED',
+		displayName: 'Solicitação para Juntar Aceita NÃO USADO',
 	},
 	wixGroups_domainEventsWixSocialgroupsV3GroupMemberRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -468,17 +468,17 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsCreateGroupReminder: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-create_group_reminder',
-		displayName: 'Recordatorio para crear un grupo',
+		displayName: 'Lembrete para criar grupo',
 	},
 	wixGroups_wixGroupsFolloweeCreatesAPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-followee_creates_a_post',
-		displayName: 'Alguien a quien sigues crea una entrada',
+		displayName: 'Alguém que você segue cria um post',
 	},
 	wixGroups_wixGroupsGroupCreated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-group_created',
-		displayName: 'Nuevo grupo creado',
+		displayName: 'Novo grupo criado',
 	},
 	wixGroups_wixGroupsGroupRequestRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -488,67 +488,67 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsGroupUpdated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-group_updated',
-		displayName: 'Grupo actualizado',
+		displayName: 'Grupo atualizado',
 	},
 	wixGroups_wixGroupsInviteMembersReminder: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-invite_members_reminder',
-		displayName: 'Recordatorio para invitar a los miembros',
+		displayName: 'Lembrete para convidar membros',
 	},
 	wixGroups_wixGroupsJoinRequestAccepted: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-join_request_accepted',
-		displayName: 'Solicitud de un miembro para unirse a un grupo aprobada',
+		displayName: 'Solicitação de entrada em um grupo aprovada',
 	},
 	wixGroups_wixGroupsJoinRequestCreated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-join_request_created',
-		displayName: 'Un miembro solicita unirse a un grupo',
+		displayName: 'Membro solicita entrar em um grupo',
 	},
 	wixGroups_wixGroupsJoinRequestRejected: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-join_request_rejected',
-		displayName: 'Solicitud de un miembro para unirse a un grupo rechazada',
+		displayName: 'Solicitação de membro para entrar no grupo é recusada',
 	},
 	wixGroups_wixGroupsMemberAddedToGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_added_to_group',
-		displayName: 'Un miembro se une a un grupo',
+		displayName: 'Membro entra em um grupo',
 	},
 	wixGroups_wixGroupsMemberAddedToGroupAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_added_to_group_agg',
-		displayName: 'Un miembro se une a un grupo',
+		displayName: 'Membro entra em um grupo',
 	},
 	wixGroups_wixGroupsMemberCreatedPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post',
-		displayName: 'Un miembro crea una entrada',
+		displayName: 'Membro cria um post',
 	},
 	wixGroups_wixGroupsMemberCreatedPostAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post_agg',
-		displayName: 'Los miembros crean entradas',
+		displayName: 'Membros criam posts',
 	},
 	wixGroups_wixGroupsMemberCreatedPostComment: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post_comment',
-		displayName: 'Un miembro comenta una entrada',
+		displayName: 'Membro comenta em um post',
 	},
 	wixGroups_wixGroupsMemberInvitedToGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_invited_to_group',
-		displayName: 'Miembro invitado a unirse al grupo',
+		displayName: 'Membro convidado para o grupo',
 	},
 	wixGroups_wixGroupsMemberLeavesGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_leaves_group',
-		displayName: 'Un miembro abandona un grupo',
+		displayName: 'Membro sai de um grupo',
 	},
 	wixGroups_wixGroupsMemberMentionedYouV3: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_mentioned_you_v3',
-		displayName: 'Un miembro mencionó a alguien',
+		displayName: 'Membro mencionou alguém',
 	},
 	wixGroups_wixGroupsMemberMentionsSomeoneV2: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -558,17 +558,17 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsMemberPaidForGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_paid_for_group',
-		displayName: 'Un miembro paga por un grupo',
+		displayName: 'Membro paga por um grupo',
 	},
 	wixGroups_wixGroupsMemberPpExpired: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_pp_expired',
-		displayName: 'Miembro eliminado porque venció el plan de pagos',
+		displayName: 'Membro removido porque o plano de pagamento expirou',
 	},
 	wixGroups_wixGroupsMemberReactedToYourComment: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_reacted_to_your_comment',
-		displayName: 'Un miembro reacciona a un comentario',
+		displayName: 'Membro reage a um comentário',
 	},
 	wixGroups_wixGroupsMemberReactedToYourCommentAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -578,7 +578,7 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsMemberReactedToYourPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_reacted_to_your_post',
-		displayName: 'Un miembro reacciona a una entrada',
+		displayName: 'Membro reage a um post',
 	},
 	wixGroups_wixGroupsMemberReactedToYourPostAgg: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -588,12 +588,12 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsMemberRequestToCreateGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member-request-to-create-group',
-		displayName: 'Un miembro solicita crear un grupo',
+		displayName: 'Membro solicita criar um grupo',
 	},
 	wixGroups_wixGroupsMemberRoleUpdated: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_role_updated',
-		displayName: 'Rol del miembro actualizado',
+		displayName: 'Função do membro atualizada',
 	},
 	wixGroups_wixGroupsMembersMentioned: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
@@ -603,37 +603,37 @@ export const wixAutomationsTriggers: {
 	wixGroups_wixGroupsNewMembersJoined: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-new_members_joined',
-		displayName: 'El grupo tiene una nueva actualización genérica de miembros',
+		displayName: 'Grupo tem nova atualização genérica de membros',
 	},
 	wixGroups_wixGroupsPersonInvitedToGroup: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-person_invited_to_group',
-		displayName: 'Persona invitada al grupo',
+		displayName: 'Pessoa convidada para o grupo',
 	},
 	wixGroups_wixGroupsWeeklyDigest: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-weekly-digest',
-		displayName: 'Resumen semanal',
+		displayName: 'Resumo semanal',
 	},
 	wixInvoices_wixInvoicesInvoiceOverdue: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_overdue',
-		displayName: 'Vence una factura',
+		displayName: 'Fatura está vencida',
 	},
 	wixInvoices_wixInvoicesInvoicePaid: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_paid',
-		displayName: 'Factura pagada',
+		displayName: 'Fatura é paga',
 	},
 	wixInvoices_wixInvoicesInvoicePaymentReceived: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_payment_received',
-		displayName: 'Se recibe el pago de una factura',
+		displayName: 'Pagamento da fatura é recebido',
 	},
 	wixInvoices_wixInvoicesInvoiceSent: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_sent',
-		displayName: 'Factura enviada',
+		displayName: 'Fatura é enviada',
 	},
 	wixLoyaltyProgram_function23D95Ad46Eba5E06888E164C2B9C4F5F: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
@@ -643,145 +643,144 @@ export const wixAutomationsTriggers: {
 	wixLoyaltyProgram_wixLoyaltyLoyaltyPointsReached: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-loyalty_points_reached',
-		displayName:
-			'Un cliente tiene suficientes puntos para recibir una recompensa',
+		displayName: 'Cliente tem pontos suficientes para recompensas',
 	},
 	wixLoyaltyProgram_wixLoyaltyPointsAboutToExpire: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-points_about_to_expire',
-		displayName: 'Los puntos vencen en 14 días',
+		displayName: 'Pontos expiram em 14 dias',
 	},
 	wixLoyaltyProgram_wixLoyaltyPointsAdjusted: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-points_adjusted',
-		displayName: 'Se ajusta el saldo de puntos manualmente',
+		displayName: 'Saldo de pontos ajustado manualmente',
 	},
 	wixLoyaltyProgram_wixLoyaltyPointsEarned: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-points_earned',
-		displayName: 'El cliente gana puntos',
+		displayName: 'Cliente ganha pontos',
 	},
 	wixLoyaltyProgram_wixLoyaltySocialMediaChannelFollowed: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-social_media_channel_followed',
-		displayName: 'Perfil de redes sociales seguido',
+		displayName: 'Perfil de rede social seguido',
 	},
 	wixLoyaltyProgram_wixLoyaltyTierUpdated: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'wix_loyalty-tier_updated',
-		displayName: 'El cliente entra en un nuevo nivel',
+		displayName: 'Cliente entra no nível',
 	},
 	wixOnlinePrograms_wixOnlineProgramsAccessDenied: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-access_denied',
-		displayName: 'Acceso denegado al participante',
+		displayName: 'Acesso negado ao participante',
 	},
 	wixOnlinePrograms_wixOnlineProgramsCertificateReady: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-certificate_ready',
-		displayName: 'Certificado disponible para descargar',
+		displayName: 'Certificado está disponível para download',
 	},
 	wixOnlinePrograms_wixOnlineProgramsExportedProgramData: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-exported_program_data',
-		displayName: 'Datos del participante exportados',
+		displayName: 'Dados do participante exportados',
 	},
 	wixOnlinePrograms_wixOnlineProgramsJoinRequestReceived: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-join_request_received',
-		displayName: 'Se recibe una solicitud para unirse al programa',
+		displayName: 'Solicitação de participação é recebida',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberInvitedToJoinAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_invited_to_join_a_program',
-		displayName: 'Se invitó a un miembro a unirse a un programa',
+		displayName: 'Membro é convidado a participar de um programa',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberJoinRequestApproved: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_join_request_approved',
-		displayName: 'Se aprobó la solicitud de un miembro para unirse',
+		displayName: 'Solicitação de participação do membro é aprovada',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberJoinRequestWasDeclined: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_join_request_was_declined',
-		displayName: 'Se rechazó la solicitud de un miembro para unirse',
+		displayName: 'Solicitação de participação do membro é recusada',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberJoinsAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_joins_a_program',
-		displayName: 'Un miembro se une a un programa',
+		displayName: 'Membro participa de um programa',
 	},
 	wixOnlinePrograms_wixOnlineProgramsMemberPaysForAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-member_pays_for_a_program',
-		displayName: 'Miembro paga un programa',
+		displayName: 'Membro paga por um programa',
 	},
 	wixOnlinePrograms_wixOnlineProgramsOfflinePaymentDeclined: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-offline_payment_declined',
-		displayName: 'Pago sin conexión rechazado',
+		displayName: 'Pagamento offline é recusado',
 	},
 	wixOnlinePrograms_wixOnlineProgramsOfflinePaymentReceived: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-offline_payment_received',
-		displayName: 'Pago sin conexión recibido para un programa',
+		displayName: 'Pagamento offline do programa é recebido',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantCompletesAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_completes_a_program',
-		displayName: 'El participante completa un programa',
+		displayName: 'Participante conclui um programa',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantCompletesAStep: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_completes_a_step',
-		displayName: 'El participante completa un paso',
+		displayName: 'Participante conclui uma etapa',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantLeavesAProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_leaves_a_program',
-		displayName: 'El participante abandona un programa',
+		displayName: 'Participante sai de um programa',
 	},
 	wixOnlinePrograms_wixOnlineProgramsParticipantManuallyAddedToProgram: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-participant_manually_added_to_program',
-		displayName: 'Se agregó manualmente un participante al programa',
+		displayName: 'Participante é adicionado manualmente ao programa',
 	},
 	wixOnlinePrograms_wixOnlineProgramsPaymentFailed: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-payment_failed',
-		displayName: 'Falló el pago',
+		displayName: 'Pagamento falhou',
 	},
 	wixOnlinePrograms_wixOnlineProgramsProgramDurationEnds: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-program_duration_ends',
-		displayName: 'La fecha de finalización del programa pasó',
+		displayName: 'Data de término do programa já passou',
 	},
 	wixOnlinePrograms_wixOnlineProgramsProgramEndedWithoutAllStepsCompleted: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-program_ended_without_all_steps_completed',
-		displayName: 'El programa finalizó sin que se completen todos los pasos',
+		displayName: 'Programa termina sem que todas as etapas sejam concluídas',
 	},
 	wixOnlinePrograms_wixOnlineProgramsReminderToCompleteSteps: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-reminder_to_complete_steps',
-		displayName: 'Recordatorio para completar pasos programados',
+		displayName: 'Lembrete para concluir etapas programadas',
 	},
 	wixOnlinePrograms_wixOnlineProgramsVisitorBlockedFromJoining: {
 		appId: '2936472a-a1ed-4ae5-9f71-614313a9f4e7',
 		triggerKey: 'wix_online_programs-visitor_blocked_from_joining',
-		displayName: 'Acceso de visitante denegado',
+		displayName: 'Acesso negado ao visitante',
 	},
 	wixPortfolio_wixPortfolioProjectCreated: {
 		appId: 'd90652a2-f5a1-4c7c-84c4-d4cdcc41f130',
 		triggerKey: 'wix_portfolio-project_created',
-		displayName: 'Nuevo proyecto creado',
+		displayName: 'Novo projeto criado',
 	},
 	wixPricingPlans_fn214D1C3FD56B467FA95D927Cd3E367A5765A669949435F2E9Aeb4Bd78D72454D:
 		{
 			appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
 			triggerKey:
 				'fn_214d1c3f-d56b-467f-a95d-927cd3e367a5_765a6699-4943-5f2e-9aeb-4bd78d72454d',
-			displayName: 'Disparador de función',
+			displayName: 'Gatilho de função',
 		},
 	wixPricingPlans_fn3D1Dd01508B14300Ab44055E149550808Aa6A53D85D257E1827D6C7Beede2D83:
 		{
@@ -849,22 +848,22 @@ export const wixAutomationsTriggers: {
 	wixPricingPlans_wixPricingPlansPlanCanceled: {
 		appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
 		triggerKey: 'wix_pricing_plans-plan_canceled',
-		displayName: 'Se cancela un plan',
+		displayName: 'Plano é cancelado',
 	},
 	wixPricingPlans_wixPricingPlansPlanPurchased: {
 		appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
 		triggerKey: 'wix_pricing_plans-plan_purchased',
-		displayName: 'Se pide un plan',
+		displayName: 'Plano é adquirido',
 	},
 	wixProposals_wixProposalsProposalAccepted: {
 		appId: 'b68c2f3d-8a70-4e1f-9432-3cd1fd011965',
 		triggerKey: 'wix_proposals-proposal_accepted',
-		displayName: 'Se acepta una propuesta',
+		displayName: 'Proposta aceita',
 	},
 	wixProposals_wixProposalsSendProposal: {
 		appId: 'b68c2f3d-8a70-4e1f-9432-3cd1fd011965',
 		triggerKey: 'wix_proposals-send_proposal',
-		displayName: 'Se envía una propuesta',
+		displayName: 'Proposta enviada',
 	},
 	wixRestaurantsOrders2_wixRestaurantsOrdersOrderSubmitted: {
 		appId: '13e8d036-5516-6104-b456-c8466db39542',
@@ -874,112 +873,112 @@ export const wixAutomationsTriggers: {
 	wixRestaurantsOrdersNew_restaurantsDeliveryOrderIsReady: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-delivery-order-is-ready',
-		displayName: 'Pedido de envío listo',
+		displayName: 'Pedido de entrega pronto',
 	},
 	wixRestaurantsOrdersNew_restaurantsFutureOrderApproved: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-future-order-approved',
-		displayName: 'Pedido futuro previsto antes de',
+		displayName: 'Pedido futuro deve ser atendido até',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderCanceled: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-canceled',
-		displayName: 'Se cancela un pedido',
+		displayName: 'Pedido é cancelado',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderEdited: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-edited',
-		displayName: 'Se edita un pedido',
+		displayName: 'Pedido é editado',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderIsInDelivery: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-in-delivery',
-		displayName: 'El pedido está en camino',
+		displayName: 'Pedido saiu para entrega',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderIsPending: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-pending',
-		displayName: 'Se crea un pedido',
+		displayName: 'Pedido é criado',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderIsReady: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-ready',
-		displayName: 'Pedido de recogida listo',
+		displayName: 'Pedido de retirada pronto',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderWasAccepted: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-was-accepted',
-		displayName: 'Se acepta un pedido',
+		displayName: 'Pedido aceito',
 	},
 	wixRestaurantsOrdersNew_restaurantsOrderWasFulfilled: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-was-fulfilled',
-		displayName: 'Se cumple un pedido',
+		displayName: 'Pedido atendido',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewCreated: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-created',
-		displayName: 'Se crea una reseña',
+		displayName: 'Avaliação é criada',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewDeleted: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-deleted',
-		displayName: 'Se elimina una reseña',
+		displayName: 'Avaliação é excluída',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewModerationStatusChanged: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-moderation_status_changed',
-		displayName: 'Cambia el estado de moderación de la revisión',
+		displayName: 'Status da moderação da avaliação é alterado',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewReviewPublished: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'domain_events_wix.reviews.v1.review-review_published',
-		displayName: 'Se publica una reseña',
+		displayName: 'Avaliação é publicada',
 	},
 	wixReviewsApp_wixReviewsReviewRequestCreated: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
 		triggerKey: 'wix_reviews_review-request-created',
-		displayName: 'Solicitud de reseña creada',
+		displayName: 'Review request created',
 	},
 	wixSiteMembersApp_wixMembersMemberApproves: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_approves',
-		displayName: 'Se aprueba a un miembro',
+		displayName: 'Membro é aprovado',
 	},
 	wixSiteMembersApp_wixMembersMemberBlocked: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_blocked',
-		displayName: 'Se bloquea a un miembro',
+		displayName: 'Membro é bloqueado',
 	},
 	wixSiteMembersApp_wixMembersMemberDeleted: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_deleted',
-		displayName: 'Se elimina a un miembro',
+		displayName: 'Membro é excluído',
 	},
 	wixSiteMembersApp_wixMembersMemberLogsIn: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-member_logs_in',
-		displayName: 'Un miembro inicia sesión',
+		displayName: 'Membro faz login',
 	},
 	wixSiteMembersApp_wixMembersUouSignsUp: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_members-uou_signs_up',
-		displayName: 'Un visitante se registra en tu sitio',
+		displayName: 'Visitante se inscreve no seu site',
 	},
 	wixSiteMembersApp_wixSitemembersAppMemberActivation: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_sitemembers_app-member_activation',
-		displayName: 'Configurar contacto como miembro',
+		displayName: 'Definir contato como membro',
 	},
 	wixSiteMembersApp_wixSitemembersAppMemberEmailConfirmationRequired: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_sitemembers_app-member_email_confirmation_required',
-		displayName: 'Se requiere confirmación de email de un miembro',
+		displayName: 'Confirmação de email de membro necessária',
 	},
 	wixSiteMembersApp_wixSitemembersAppMemberResetPassword: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
 		triggerKey: 'wix_sitemembers_app-member_reset_password',
-		displayName: 'Un miembro del sitio solicita restablecer la contraseña',
+		displayName: 'Membro do site pede para redefinir senha',
 	},
 	wixSiteMembersApp_wixSitemembersAppNewMemberRequestsApproval: {
 		appId: 'eb377299-86b4-4a86-a1b5-774a2d1d374b',
@@ -991,70 +990,71 @@ export const wixAutomationsTriggers: {
 			appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 			triggerKey:
 				'domain_events_wix.ecom.v1.automation_trigger-digital_item_confirmation_issued',
-			displayName: 'Se realiza un pago por un ítem digital',
+			displayName: 'Pagamento feito por item digital',
 		},
 	wixStores_domainEventsWixEcomV1AutomationTriggerFulfillmentRequestIssued: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-fulfillment_request_issued',
-		displayName: 'Automation Trigger Fulfillment Request Issued',
+		displayName: 'Automação Acionada: Solicitação de Processamento Emitido',
 	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerOrderCancellationIssued: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-order_cancellation_issued',
-		displayName: 'Se cancela un pedido',
+		displayName: 'Cancelamento de Pedidos de Automação emitido',
 	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerOrderConfirmationIssuedToBuyer:
 		{
 			appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 			triggerKey:
 				'domain_events_wix.ecom.v1.automation_trigger-order_confirmation_issued_to_buyer',
-			displayName: 'Se realiza un pedido que cumple con los requisitos',
+			displayName:
+				'Confirmação de Pedidos do Wix Restaurantes emitida para o comprador',
 		},
 	wixStores_domainEventsWixEcomV1AutomationTriggerOrderConfirmationIssuedToMerchant:
 		{
 			appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 			triggerKey:
 				'domain_events_wix.ecom.v1.automation_trigger-order_confirmation_issued_to_merchant',
-			displayName: 'Se realiza un pedido que cumple con los requisitos',
+			displayName: 'Confirmação de pedido emitida para o comerciante',
 		},
 	wixStores_domainEventsWixEcomV1AutomationTriggerOrderPaymentAdded: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-order_payment_added',
-		displayName: 'Pago agregado al pedido',
+		displayName: 'Pagamento adicionado ao pedido',
 	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerOrderUpdatedIssued: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-order_updated_issued',
-		displayName: 'Pedido actualizado',
+		displayName: 'Pedidos do Wix Restaurantes Atualizado emitido',
 	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerReadyForPickupIssued: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-ready_for_pickup_issued',
-		displayName: 'Pedido listo para ser recogido',
+		displayName: 'Pedido pronto para retirada',
 	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerRefundConfirmationIssued: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-refund_confirmation_issued',
-		displayName: 'Se inicia un reembolso',
+		displayName: 'Reembolso iniciado',
 	},
 	wixStores_domainEventsWixEcomV1AutomationTriggerShippingConfirmationIssued: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey:
 			'domain_events_wix.ecom.v1.automation_trigger-shipping_confirmation_issued',
-		displayName: 'Se envía un pedido',
+		displayName: 'Pedido enviado',
 	},
 	wixStores_fnB56C6504E65648C4A245935C334Fd52B78Eb5D7F788854DdBca71598B432Bfd8:
 		{
 			appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 			triggerKey:
 				'fn_b56c6504-e656-48c4-a245-935c334fd52b_78eb5d7f-7888-54dd-bca7-1598b432bfd8',
-			displayName: 'Disparador de función',
+			displayName: 'Gatilho de função',
 		},
 	wixStores_function2646Ba8896A8526BBada351Ee357Ad78: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
@@ -1064,7 +1064,7 @@ export const wixAutomationsTriggers: {
 	wixStores_function424205E1E0865E1A8F2F63040Cf1B22B: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'function_424205e1-e086-5e1a-8f2f-63040cf1b22b',
-		displayName: 'Disparador de función',
+		displayName: 'Gatilho de função',
 	},
 	wixStores_function64Fac571B6Ec5Bd885F526628C2A1688: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
@@ -1074,51 +1074,51 @@ export const wixAutomationsTriggers: {
 	wixStores_wixECommerceCartAbandonment: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wix_e_commerce-cart_abandonment',
-		displayName: 'Carrito abandonado',
+		displayName: 'Checkout é abandonado',
 	},
 	wixStores_wixECommerceOrderPlaced: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wix_e_commerce-order_placed',
-		displayName: 'Se realiza un pedido',
+		displayName: 'Pedido é feito',
 	},
 	wixStores_wixstoresLegacyOrderPlacedV1: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wixstores-legacy_order_placed_v1',
-		displayName: 'Pedido realizado',
+		displayName: 'Pedido é feito na loja',
 	},
 	wixStores_wixstoresPaymentAdded: {
 		appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
 		triggerKey: 'wixstores-payment_added',
-		displayName: 'Se cobra a la tarjeta de crédito',
+		displayName: 'O cartão de crédito é cobrado',
 	},
 	wixTableReservations_reservationStarted: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'reservation_started',
-		displayName: 'Comienza una reserva de mesa',
+		displayName: 'Reserva começa',
 	},
 	wixTableReservations_reservationWasCanceled: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'reservation_was_canceled',
-		displayName: 'Se cancela una reserva de mesa',
+		displayName: 'Reserva de mesa é cancelada',
 	},
 	wixTableReservations_uouCreatedReservation: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'uou_created_reservation',
-		displayName: 'Un comensal reserva una mesa',
+		displayName: 'Mesa é reservada pelo cliente',
 	},
 	wixTableReservations_userCreatedReservation: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'user_created_reservation',
-		displayName: 'Se agrega una reserva de mesa manualmente',
+		displayName: 'Reserva é adicionada manualmente',
 	},
 	wixTableReservations_userUpdatedReservation: {
 		appId: 'f9c07de2-5341-40c6-b096-8eb39de391fb',
 		triggerKey: 'user_updated_reservation',
-		displayName: 'Se actualiza el horario de una reserva de mesa',
+		displayName: 'Horário da reserva de mesa é atualizado',
 	},
 	workflows_wixWorkflowsCardAddedOrMoved: {
 		appId: 'ea2821fc-7d97-40a9-9f75-772f29178430',
 		triggerKey: 'wix_workflows-card_added_or_moved',
-		displayName: 'Se agrega o mueve una tarjeta',
+		displayName: 'Cartão é adicionado ou movido',
 	},
 };
