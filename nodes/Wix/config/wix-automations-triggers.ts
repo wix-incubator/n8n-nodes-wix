@@ -11,7 +11,7 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_e_commerce-back_in_stock_stores',
 		displayName: 'Product back in stock',
 	},
-	cms_cmsDatasetFormSubmitted: {
+	cmsDeprecated_cmsDatasetFormSubmitted: {
 		appId: '1973457f-c021-4da5-941f-58444ff761d4',
 		triggerKey: 'cms-dataset_form_submitted',
 		displayName: 'CMS form submitted',
