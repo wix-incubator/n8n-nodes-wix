@@ -635,6 +635,13 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_invoices-invoice_sent',
 		displayName: 'Invoice sent',
 	},
+	wixLoyaltyProgram_fn5105Cf0C67D0479D96E15D1A23Dab32C19C88145C6405Eb980308Af23445A0F3:
+		{
+			appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
+			triggerKey:
+				'fn_5105cf0c-67d0-479d-96e1-5d1a23dab32c_19c88145-c640-5eb9-8030-8af23445a0f3',
+			displayName: 'Function trigger',
+		},
 	wixLoyaltyProgram_function23D95Ad46Eba5E06888E164C2B9C4F5F: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'function_23d95ad4-6eba-5e06-888e-164c2b9c4f5f',
