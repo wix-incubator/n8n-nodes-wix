@@ -872,55 +872,55 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_proposals-send_proposal',
 		displayName: 'Proposal sent',
 	},
-	wixRestaurantsOrders2_wixRestaurantsOrdersOrderSubmitted: {
-		appId: '13e8d036-5516-6104-b456-c8466db39542',
-		triggerKey: 'wix_restaurants_orders-order_submitted',
-		displayName: 'Restaurant order placed',
-	},
-	wixRestaurantsOrdersNew_restaurantsDeliveryOrderIsReady: {
+	wixRestaurantsOrders_restaurantsDeliveryOrderIsReady: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-delivery-order-is-ready',
 		displayName: 'Delivery order ready',
 	},
-	wixRestaurantsOrdersNew_restaurantsFutureOrderApproved: {
+	wixRestaurantsOrders_restaurantsFutureOrderApproved: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-future-order-approved',
 		displayName: 'Future order due by',
 	},
-	wixRestaurantsOrdersNew_restaurantsOrderCanceled: {
+	wixRestaurantsOrders_restaurantsOrderCanceled: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-canceled',
 		displayName: 'Order canceled',
 	},
-	wixRestaurantsOrdersNew_restaurantsOrderEdited: {
+	wixRestaurantsOrders_restaurantsOrderEdited: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-edited',
 		displayName: 'Order edited',
 	},
-	wixRestaurantsOrdersNew_restaurantsOrderIsInDelivery: {
+	wixRestaurantsOrders_restaurantsOrderIsInDelivery: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-in-delivery',
 		displayName: 'Order out for Delivery',
 	},
-	wixRestaurantsOrdersNew_restaurantsOrderIsPending: {
+	wixRestaurantsOrders_restaurantsOrderIsPending: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-pending',
 		displayName: 'Order created',
 	},
-	wixRestaurantsOrdersNew_restaurantsOrderIsReady: {
+	wixRestaurantsOrders_restaurantsOrderIsReady: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-is-ready',
 		displayName: 'Pickup order ready',
 	},
-	wixRestaurantsOrdersNew_restaurantsOrderWasAccepted: {
+	wixRestaurantsOrders_restaurantsOrderWasAccepted: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-was-accepted',
 		displayName: 'Order accepted',
 	},
-	wixRestaurantsOrdersNew_restaurantsOrderWasFulfilled: {
+	wixRestaurantsOrders_restaurantsOrderWasFulfilled: {
 		appId: '9a5d83fd-8570-482e-81ab-cfa88942ee60',
 		triggerKey: 'restaurants-order-was-fulfilled',
 		displayName: 'Order fulfilled',
+	},
+	wixRestaurantsOrders2_wixRestaurantsOrdersOrderSubmitted: {
+		appId: '13e8d036-5516-6104-b456-c8466db39542',
+		triggerKey: 'wix_restaurants_orders-order_submitted',
+		displayName: 'Restaurant order placed',
 	},
 	wixReviewsApp_domainEventsWixReviewsV1ReviewCreated: {
 		appId: 'a95a5fce-e370-4402-9ce4-96956acc747d',
