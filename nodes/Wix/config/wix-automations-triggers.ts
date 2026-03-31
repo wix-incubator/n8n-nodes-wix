@@ -642,6 +642,13 @@ export const wixAutomationsTriggers: {
 				'fn_5105cf0c-67d0-479d-96e1-5d1a23dab32c_19c88145-c640-5eb9-8030-8af23445a0f3',
 			displayName: 'Function trigger',
 		},
+	wixLoyaltyProgram_fnE7Fd7Eaa90Ef46E0A177D808532Fe5A31B4F97E5Ecaf50408179020D820B1Ee8:
+		{
+			appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
+			triggerKey:
+				'fn_e7fd7eaa-90ef-46e0-a177-d808532fe5a3_1b4f97e5-ecaf-5040-8179-020d820b1ee8',
+			displayName: 'Function trigger',
+		},
 	wixLoyaltyProgram_function23D95Ad46Eba5E06888E164C2B9C4F5F: {
 		appId: '553c79f3-5625-4f38-b14b-ef7c0d1e87df',
 		triggerKey: 'function_23d95ad4-6eba-5e06-888e-164c2b9c4f5f',
