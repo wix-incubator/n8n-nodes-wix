@@ -520,6 +520,11 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_groups-member_added_to_group_agg',
 		displayName: 'Members join a group',
 	},
+	wixGroups_wixGroupsMemberCreatedPendingPostComment: {
+		appId: '148c2287-c669-d849-d153-463c7486a694',
+		triggerKey: 'wix_groups-member_created_pending_post_comment',
+		displayName: 'Member comments on a post (Pending)',
+	},
 	wixGroups_wixGroupsMemberCreatedPost: {
 		appId: '148c2287-c669-d849-d153-463c7486a694',
 		triggerKey: 'wix_groups-member_created_post',
