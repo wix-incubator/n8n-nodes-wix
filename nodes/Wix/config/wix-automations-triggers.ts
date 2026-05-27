@@ -184,10 +184,20 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_bookings-appointment_requires_confirmation',
 		displayName: 'Appointment requested',
 	},
+	wixBookings_wixBookingsAppointmentsConfirmed: {
+		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+		triggerKey: 'wix_bookings-appointments_confirmed',
+		displayName: 'Multi Appointments Requests Approved',
+	},
 	wixBookings_wixBookingsBookingCanceled: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-booking_canceled',
 		displayName: 'Booking canceled',
+	},
+	wixBookings_wixBookingsBookingsCanceled: {
+		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+		triggerKey: 'wix_bookings-bookings_canceled',
+		displayName: 'Multi Bookings Canceled',
 	},
 	wixBookings_wixBookingsCourseSessionsUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
@@ -239,10 +249,20 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_bookings-session_starts',
 		displayName: 'Session starts',
 	},
+	wixBookings_wixBookingsSessionsUpdated: {
+		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+		triggerKey: 'wix_bookings-sessions_updated',
+		displayName: 'Multi Appointments or Classes Updated',
+	},
 	wixBookings_wixBookingsSessionUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_updated',
 		displayName: 'Appointment or class updated',
+	},
+	wixBookings_wixBookingsUnifiedSessionsBooked: {
+		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+		triggerKey: 'wix_bookings-unified_sessions_booked',
+		displayName: 'Multi Sessions Booked',
 	},
 	wixDonations_wixDonationsDonationApproved: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
