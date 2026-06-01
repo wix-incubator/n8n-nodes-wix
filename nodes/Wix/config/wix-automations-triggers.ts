@@ -187,7 +187,17 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsAppointmentsConfirmed: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointments_confirmed',
-		displayName: 'Multi Appointments Requests Approved',
+		displayName: 'Appointment requests approved (Multi-service)',
+	},
+	wixBookings_wixBookingsAppointmentsDeclined: {
+		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+		triggerKey: 'wix_bookings-appointments_declined',
+		displayName: 'Appointment requests declined (Multi-service)',
+	},
+	wixBookings_wixBookingsAppointmentsRequireConfirmation: {
+		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+		triggerKey: 'wix_bookings-appointments_require_confirmation',
+		displayName: 'Appointments requested (Multi-service)',
 	},
 	wixBookings_wixBookingsBookingCanceled: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
@@ -197,7 +207,7 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsBookingsCanceled: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-bookings_canceled',
-		displayName: 'Multi Bookings Canceled',
+		displayName: 'Booking canceled (Multi-service)',
 	},
 	wixBookings_wixBookingsCourseSessionsUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
@@ -252,7 +262,7 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsSessionsUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-sessions_updated',
-		displayName: 'Multi Appointments or Classes Updated',
+		displayName: 'Appointments or classes updated (Multi-service)',
 	},
 	wixBookings_wixBookingsSessionUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
@@ -262,7 +272,22 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsUnifiedSessionsBooked: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-unified_sessions_booked',
-		displayName: 'Multi Sessions Booked',
+		displayName: 'Sessions booked (Multi-service)',
+	},
+	wixChat_wixChatChatFormSubmitted: {
+		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
+		triggerKey: 'wix_chat-chat_form_submitted',
+		displayName: 'Pre-chat form submitted',
+	},
+	wixChat_wixChatNewChatMessage: {
+		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
+		triggerKey: 'wix_chat-new_chat_message',
+		displayName: 'Chat message received',
+	},
+	wixChat_wixChatVisitorOnLiveSite: {
+		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
+		triggerKey: 'wix_chat-visitor_on_live_site',
+		displayName: 'Visitor on site',
 	},
 	wixDonations_wixDonationsDonationApproved: {
 		appId: '333b456e-dd48-4d6b-b32b-9fd48d74e163',
