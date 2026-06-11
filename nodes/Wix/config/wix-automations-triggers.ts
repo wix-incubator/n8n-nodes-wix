@@ -919,6 +919,11 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_pricing_plans-plan_purchased',
 		displayName: 'Plan ordered',
 	},
+	wixPricingPlans_wixPricingPlansSiteMigratedToEcom: {
+		appId: '1522827f-c56c-a5c9-2ac9-00f9e6ae12d3',
+		triggerKey: 'wix_pricing_plans-site_migrated_to_ecom',
+		displayName: 'Site migrated to ECOM',
+	},
 	wixProposals_wixProposalsProposalAccepted: {
 		appId: 'b68c2f3d-8a70-4e1f-9432-3cd1fd011965',
 		triggerKey: 'wix_proposals-proposal_accepted',
