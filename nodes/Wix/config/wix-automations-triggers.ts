@@ -378,11 +378,6 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_events-notifications_event_canceled',
 		displayName: 'Event canceled',
 	},
-	wixEventsTickets_wixEventsNotificationsEventReminder: {
-		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
-		triggerKey: 'wix_events-notifications_event_reminder',
-		displayName: 'Event reminder date has arrived',
-	},
 	wixEventsTickets_wixEventsNotificationsNewSpotsAvailable: {
 		appId: '140603ad-af8d-84a5-2c80-a0f60cb47351',
 		triggerKey: 'wix_events-notifications_new_spots_available',
