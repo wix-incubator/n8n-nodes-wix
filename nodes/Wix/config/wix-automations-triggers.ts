@@ -244,6 +244,16 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_bookings-nth_check_in',
 		displayName: 'Client checked in X times',
 	},
+	wixBookings_wixBookingsSavedCardCharged: {
+		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+		triggerKey: 'wix_bookings-saved_card_charged',
+		displayName: 'Saved card charged',
+	},
+	wixBookings_wixBookingsSavedCardDeclined: {
+		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+		triggerKey: 'wix_bookings-saved_card_declined',
+		displayName: 'Saved card declined',
+	},
 	wixBookings_wixBookingsSessionEnds: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-session_ends',
