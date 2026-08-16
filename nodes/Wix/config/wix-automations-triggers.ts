@@ -187,17 +187,17 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsAppointmentsConfirmed: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointments_confirmed',
-		displayName: 'Appointment request approved (per booking)',
+		displayName: 'Appointment requests approved (Multi-service)',
 	},
 	wixBookings_wixBookingsAppointmentsDeclined: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointments_declined',
-		displayName: 'Appointment request declined (per booking)',
+		displayName: 'Appointment requests declined (Multi-service)',
 	},
 	wixBookings_wixBookingsAppointmentsRequireConfirmation: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-appointments_require_confirmation',
-		displayName: 'Appointment requested (per booking)',
+		displayName: 'Appointments requested (Multi-service)',
 	},
 	wixBookings_wixBookingsBookingCanceled: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
@@ -207,7 +207,7 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsBookingsCanceled: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-bookings_canceled',
-		displayName: 'Booking canceled (per booking)',
+		displayName: 'Booking canceled (Multi-service)',
 	},
 	wixBookings_wixBookingsCourseSessionsUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
@@ -272,7 +272,7 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsSessionsUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-sessions_updated',
-		displayName: 'Appointment or class updated (per booking)',
+		displayName: 'Appointments or classes updated (Multi-service)',
 	},
 	wixBookings_wixBookingsSessionUpdated: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
@@ -282,7 +282,7 @@ export const wixAutomationsTriggers: {
 	wixBookings_wixBookingsUnifiedSessionsBooked: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-unified_sessions_booked',
-		displayName: 'Session booked (per booking)',
+		displayName: 'Sessions booked (Multi-service)',
 	},
 	wixChat_wixChatChatFormSubmitted: {
 		appId: '14517e1a-3ff0-af98-408e-2bd6953c36a2',
