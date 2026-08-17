@@ -244,6 +244,11 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_bookings-nth_check_in',
 		displayName: 'Client checked in X times',
 	},
+	wixBookings_wixBookingsRefundFailed: {
+		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
+		triggerKey: 'wix_bookings-refund_failed',
+		displayName: 'Refund Failed',
+	},
 	wixBookings_wixBookingsSavedCardCharged: {
 		appId: '13d21c63-b5ec-5912-8397-c3a5ddb27a97',
 		triggerKey: 'wix_bookings-saved_card_charged',
