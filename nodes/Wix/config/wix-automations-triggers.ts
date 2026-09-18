@@ -465,6 +465,11 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_form_app-form_submitted',
 		displayName: 'Form submitted',
 	},
+	wixForms_wixFormsFormInvitationSent: {
+		appId: '225dd912-7dea-4738-8688-4b8c6955ffc2',
+		triggerKey: 'wix_forms-form_invitation_sent',
+		displayName: 'Form invitation sent',
+	},
 	wixForum_wixForumForumCommentDeleted: {
 		appId: '14724f35-6794-cd1a-0244-25fd138f9242',
 		triggerKey: 'wix_forum-forum_comment_deleted',
