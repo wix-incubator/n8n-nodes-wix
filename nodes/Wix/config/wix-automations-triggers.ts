@@ -685,11 +685,6 @@ export const wixAutomationsTriggers: {
 		triggerKey: 'wix_groups-weekly-digest',
 		displayName: 'Weekly Digest',
 	},
-	wixInvoices_wixInvoicesInvoiceIssued: {
-		appId: '13ee94c1-b635-8505-3391-97919052c16f',
-		triggerKey: 'wix_invoices-invoice_issued',
-		displayName: 'Invoice issued',
-	},
 	wixInvoices_wixInvoicesInvoiceOverdue: {
 		appId: '13ee94c1-b635-8505-3391-97919052c16f',
 		triggerKey: 'wix_invoices-invoice_overdue',
